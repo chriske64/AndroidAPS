@@ -9,19 +9,19 @@ import info.nightscout.androidaps.Config;
 import info.nightscout.androidaps.MainApp;
 import info.nightscout.androidaps.R;
 import info.nightscout.androidaps.events.EventBolusRequested;
+import info.nightscout.androidaps.events.EventExtendedBolusChange;
 import info.nightscout.androidaps.events.EventNewBG;
 import info.nightscout.androidaps.events.EventNewBasalProfile;
 import info.nightscout.androidaps.events.EventPreferenceChange;
-import info.nightscout.androidaps.events.EventRefreshGui;
+import info.nightscout.androidaps.events.EventRefreshOverview;
 import info.nightscout.androidaps.events.EventTempBasalChange;
 import info.nightscout.androidaps.events.EventTreatmentChange;
 import info.nightscout.androidaps.interfaces.PluginBase;
 import info.nightscout.androidaps.plugins.Loop.LoopPlugin;
-import info.nightscout.androidaps.plugins.Loop.events.EventNewOpenLoopNotification;
 import info.nightscout.androidaps.plugins.Overview.events.EventDismissBolusprogressIfRunning;
 import info.nightscout.androidaps.plugins.Overview.events.EventOverviewBolusProgress;
 import info.nightscout.androidaps.plugins.Wear.wearintegration.WatchUpdaterService;
-import info.nightscout.utils.ToastUtils;
+import info.nightscout.utils.SP;
 
 /**
  * Created by adrian on 17/11/16.
@@ -29,10 +29,24 @@ import info.nightscout.utils.ToastUtils;
 
 public class WearPlugin implements PluginBase {
 
-    static boolean fragmentEnabled = Config.WEAR;
-    static boolean fragmentVisible = true;
+    private static boolean fragmentEnabled = true;
+    private boolean fragmentVisible = true;
     private static WatchUpdaterService watchUS;
     private final Context ctx;
+
+    private static WearPlugin wearPlugin;
+
+    public static WearPlugin getPlugin() {
+        return wearPlugin;
+    }
+    public static WearPlugin initPlugin(Context ctx) {
+
+        if (wearPlugin == null) {
+            wearPlugin = new WearPlugin(ctx);
+        }
+
+        return wearPlugin;
+    }
 
     WearPlugin(Context ctx) {
         this.ctx = ctx;
@@ -105,6 +119,11 @@ public class WearPlugin implements PluginBase {
         if (type == GENERAL) this.fragmentVisible = fragmentVisible;
     }
 
+    @Override
+    public int getPreferencesId() {
+        return R.xml.pref_wear;
+    }
+
     private void sendDataToWatch(boolean status, boolean basals, boolean bgValue) {
         if (isEnabled(getType())) { //only start service when this plugin is enabled
 
@@ -150,6 +169,11 @@ public class WearPlugin implements PluginBase {
     }
 
     @Subscribe
+    public void onStatusEvent(final EventExtendedBolusChange ev) {
+        sendDataToWatch(true, true, false);
+    }
+
+    @Subscribe
     public void onStatusEvent(final EventNewBG ev) {
         sendDataToWatch(true, true, true);
     }
@@ -160,7 +184,7 @@ public class WearPlugin implements PluginBase {
     }
 
     @Subscribe
-    public void onStatusEvent(final EventRefreshGui ev) {
+    public void onStatusEvent(final EventRefreshOverview ev) {
 
         LoopPlugin activeloop = MainApp.getConfigBuilder().getActiveLoop();
         if (activeloop == null) return;
@@ -224,5 +248,10 @@ public class WearPlugin implements PluginBase {
         watchUS = null;
     }
 
+    public void overviewNotification(int id, String message) {
+        if(SP.getBoolean("wear_overview_notification", false)){
+            ActionStringHandler.expectNotificationAction(message, id);
+        }
+    }
 
 }

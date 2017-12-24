@@ -4,21 +4,35 @@ import com.squareup.otto.Subscribe;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import info.nightscout.androidaps.MainApp;
 import info.nightscout.androidaps.R;
+import info.nightscout.androidaps.events.EventRefreshOverview;
 import info.nightscout.androidaps.interfaces.PluginBase;
 import info.nightscout.androidaps.plugins.Overview.events.EventDismissNotification;
 import info.nightscout.androidaps.plugins.Overview.events.EventNewNotification;
+import info.nightscout.androidaps.plugins.Overview.notifications.NotificationStore;
 import info.nightscout.utils.SP;
 
 /**
  * Created by mike on 05.08.2016.
  */
 public class OverviewPlugin implements PluginBase {
+    private static Logger log = LoggerFactory.getLogger(OverviewPlugin.class);
 
-    public static Double bgTargetLow = 80d;
-    public static Double bgTargetHigh = 180d;
+    private static OverviewPlugin overviewPlugin = new OverviewPlugin();
+
+    public static OverviewPlugin getPlugin() {
+
+        if (overviewPlugin == null)
+            overviewPlugin = new OverviewPlugin();
+        return overviewPlugin;
+    }
+
+    public static double bgTargetLow = 80d;
+    public static double bgTargetHigh = 180d;
 
     public QuickWizard quickWizard = new QuickWizard();
 
@@ -29,7 +43,7 @@ public class OverviewPlugin implements PluginBase {
         try {
             quickWizard.setData(new JSONArray(storedData));
         } catch (JSONException e) {
-            e.printStackTrace();
+            log.error("Unhandled exception", e);
         }
         MainApp.bus().register(this);
     }
@@ -47,7 +61,7 @@ public class OverviewPlugin implements PluginBase {
     @Override
     public String getNameShort() {
         String name = MainApp.sResources.getString(R.string.overview_shortname);
-        if (!name.trim().isEmpty()){
+        if (!name.trim().isEmpty()) {
             //only if translation exists
             return name;
         }
@@ -91,6 +105,11 @@ public class OverviewPlugin implements PluginBase {
     }
 
     @Override
+    public int getPreferencesId() {
+        return -1;
+    }
+
+    @Override
     public int getType() {
         return PluginBase.GENERAL;
     }
@@ -99,11 +118,13 @@ public class OverviewPlugin implements PluginBase {
     @Subscribe
     public void onStatusEvent(final EventNewNotification n) {
         notificationStore.add(n.notification);
+        MainApp.bus().post(new EventRefreshOverview("EventNewNotification"));
     }
 
     @Subscribe
     public void onStatusEvent(final EventDismissNotification n) {
-        notificationStore.remove(n.id);
+        if (notificationStore.remove(n.id))
+            MainApp.bus().post(new EventRefreshOverview("EventDismissNotification"));
     }
 
 }

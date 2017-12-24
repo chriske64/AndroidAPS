@@ -4,17 +4,26 @@ import info.nightscout.androidaps.MainApp;
 import info.nightscout.androidaps.R;
 import info.nightscout.androidaps.interfaces.BgSourceInterface;
 import info.nightscout.androidaps.interfaces.PluginBase;
-import info.nightscout.androidaps.plugins.SourceMM640g.SourceMM640gFragment;
+import info.nightscout.androidaps.plugins.SourceDexcomG5.BGSourceFragment;
 
 /**
  * Created by mike on 05.08.2016.
  */
 public class SourceGlimpPlugin implements PluginBase, BgSourceInterface {
-    boolean fragmentEnabled = false;
+    private boolean fragmentEnabled = false;
+    private boolean fragmentVisible = false;
+
+    private static SourceGlimpPlugin plugin = null;
+
+    public static SourceGlimpPlugin getPlugin() {
+        if (plugin == null)
+            plugin = new SourceGlimpPlugin();
+        return plugin;
+    }
 
     @Override
     public String getFragmentClass() {
-        return SourceGlimpFragment.class.getName();
+        return BGSourceFragment.class.getName();
     }
 
     @Override
@@ -40,7 +49,7 @@ public class SourceGlimpPlugin implements PluginBase, BgSourceInterface {
 
     @Override
     public boolean isVisibleInTabs(int type) {
-        return false;
+        return type == BGSOURCE && fragmentVisible;
     }
 
     @Override
@@ -50,7 +59,7 @@ public class SourceGlimpPlugin implements PluginBase, BgSourceInterface {
 
     @Override
     public boolean hasFragment() {
-        return false;
+        return true;
     }
 
     @Override
@@ -65,7 +74,12 @@ public class SourceGlimpPlugin implements PluginBase, BgSourceInterface {
 
     @Override
     public void setFragmentVisible(int type, boolean fragmentVisible) {
+        if (type == BGSOURCE) this.fragmentVisible = fragmentVisible;
+    }
 
+    @Override
+    public int getPreferencesId() {
+        return -1;
     }
 
 

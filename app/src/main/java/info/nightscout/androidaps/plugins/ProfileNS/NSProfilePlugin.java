@@ -1,8 +1,6 @@
 package info.nightscout.androidaps.plugins.ProfileNS;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 
 import com.squareup.otto.Subscribe;
@@ -13,14 +11,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import info.nightscout.androidaps.Config;
+import info.nightscout.androidaps.Constants;
 import info.nightscout.androidaps.MainApp;
 import info.nightscout.androidaps.R;
 import info.nightscout.androidaps.Services.Intents;
-import info.nightscout.androidaps.events.EventNewBasalProfile;
+import info.nightscout.androidaps.data.ProfileStore;
 import info.nightscout.androidaps.interfaces.PluginBase;
 import info.nightscout.androidaps.interfaces.ProfileInterface;
-import info.nightscout.androidaps.plugins.NSClientInternal.data.NSProfile;
+import info.nightscout.androidaps.plugins.ConfigBuilder.ConfigBuilderPlugin;
 import info.nightscout.androidaps.plugins.ProfileNS.events.EventNSProfileUpdateGUI;
+import info.nightscout.androidaps.plugins.SmsCommunicator.SmsCommunicatorPlugin;
+import info.nightscout.androidaps.queue.Callback;
 import info.nightscout.utils.SP;
 
 /**
@@ -29,17 +30,25 @@ import info.nightscout.utils.SP;
 public class NSProfilePlugin implements PluginBase, ProfileInterface {
     private static Logger log = LoggerFactory.getLogger(NSProfilePlugin.class);
 
+    private static NSProfilePlugin nsProfilePlugin;
+
+    public static NSProfilePlugin getPlugin() {
+        if (nsProfilePlugin == null)
+            nsProfilePlugin = new NSProfilePlugin();
+        return nsProfilePlugin;
+    }
+
     @Override
     public String getFragmentClass() {
         return NSProfileFragment.class.getName();
     }
 
-    static boolean fragmentEnabled = true;
-    static boolean fragmentVisible = true;
+    private boolean fragmentEnabled = true;
+    private boolean fragmentVisible = true;
 
-    static NSProfile profile = null;
+    private static ProfileStore profile = null;
 
-    public NSProfilePlugin() {
+    private NSProfilePlugin() {
         MainApp.bus().register(this);
         loadNSProfile();
 
@@ -53,7 +62,7 @@ public class NSProfilePlugin implements PluginBase, ProfileInterface {
     @Override
     public String getNameShort() {
         String name = MainApp.sResources.getString(R.string.profileviewer_shortname);
-        if (!name.trim().isEmpty()){
+        if (!name.trim().isEmpty()) {
             //only if translation exists
             return name;
         }
@@ -63,12 +72,12 @@ public class NSProfilePlugin implements PluginBase, ProfileInterface {
 
     @Override
     public boolean isEnabled(int type) {
-        return type == PROFILE && fragmentEnabled;
+        return type == PROFILE && (Config.NSCLIENT || Config.G5UPLOADER|| fragmentEnabled);
     }
 
     @Override
     public boolean isVisibleInTabs(int type) {
-        return type == PROFILE && fragmentVisible;
+        return type == PROFILE && (Config.NSCLIENT || Config.G5UPLOADER|| fragmentVisible);
     }
 
     @Override
@@ -83,7 +92,7 @@ public class NSProfilePlugin implements PluginBase, ProfileInterface {
 
     @Override
     public boolean showInList(int type) {
-        return true;
+        return !Config.NSCLIENT && !Config.G5UPLOADER;
     }
 
     @Override
@@ -97,23 +106,35 @@ public class NSProfilePlugin implements PluginBase, ProfileInterface {
     }
 
     @Override
+    public int getPreferencesId() {
+        return -1;
+    }
+
+    @Override
     public int getType() {
         return PluginBase.PROFILE;
     }
 
     @Subscribe
-    public void onStatusEvent(final EventNewBasalProfile ev) {
-        profile = new NSProfile(ev.newNSProfile.getData(), ev.newNSProfile.getActiveProfile());
+    public static void storeNewProfile(ProfileStore newProfile) {
+        profile = new ProfileStore(newProfile.getData());
         storeNSProfile();
         MainApp.bus().post(new EventNSProfileUpdateGUI());
+        ConfigBuilderPlugin.getCommandQueue().setProfile(MainApp.getConfigBuilder().getProfile(), new Callback() {
+            @Override
+            public void run() {
+                if (result.enacted) {
+                    SmsCommunicatorPlugin smsCommunicatorPlugin = MainApp.getSpecificPlugin(SmsCommunicatorPlugin.class);
+                    if (smsCommunicatorPlugin != null && smsCommunicatorPlugin.isEnabled(PluginBase.GENERAL)) {
+                        smsCommunicatorPlugin.sendNotificationToAllNumbers(MainApp.sResources.getString(R.string.profile_set_ok));
+                    }
+                }
+            }
+        });
     }
 
-    private void storeNSProfile() {
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MainApp.instance().getApplicationContext());
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString("profile", profile.getData().toString());
-        editor.putString("activeProfile", profile.getActiveProfile());
-        editor.apply();
+    private static void storeNSProfile() {
+        SP.putString("profile", profile.getData().toString());
         if (Config.logPrefsChange)
             log.debug("Storing profile");
     }
@@ -121,16 +142,14 @@ public class NSProfilePlugin implements PluginBase, ProfileInterface {
     private void loadNSProfile() {
         if (Config.logPrefsChange)
             log.debug("Loading stored profile");
-        String activeProfile = SP.getString("activeProfile", null);
         String profileString = SP.getString("profile", null);
         if (profileString != null) {
             if (Config.logPrefsChange) {
                 log.debug("Loaded profile: " + profileString);
-                log.debug("Loaded active profile: " + activeProfile);
                 try {
-                    profile = new NSProfile(new JSONObject(profileString), activeProfile);
+                    profile = new ProfileStore(new JSONObject(profileString));
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    log.error("Unhandled exception", e);
                     profile = null;
                 }
             }
@@ -146,7 +165,17 @@ public class NSProfilePlugin implements PluginBase, ProfileInterface {
 
     @Nullable
     @Override
-    public NSProfile getProfile() {
+    public ProfileStore getProfile() {
         return profile;
+    }
+
+    @Override
+    public String getUnits() {
+        return profile != null ? profile.getUnits() : Constants.MGDL;
+    }
+
+    @Override
+    public String getProfileName() {
+        return profile.getDefaultProfileName();
     }
 }

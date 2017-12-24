@@ -9,14 +9,20 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.text.DecimalFormat;
+
 import info.nightscout.androidaps.Config;
 import info.nightscout.androidaps.Constants;
 import info.nightscout.androidaps.MainApp;
 import info.nightscout.androidaps.R;
+import info.nightscout.androidaps.data.Profile;
+import info.nightscout.androidaps.data.ProfileStore;
 import info.nightscout.androidaps.interfaces.PluginBase;
 import info.nightscout.androidaps.interfaces.ProfileInterface;
-import info.nightscout.androidaps.plugins.NSClientInternal.data.NSProfile;
+import info.nightscout.androidaps.plugins.Careportal.Dialogs.NewNSTreatmentDialog;
+import info.nightscout.androidaps.plugins.ProfileLocal.LocalProfilePlugin;
 import info.nightscout.utils.DecimalFormatter;
+import info.nightscout.utils.NSUpload;
 import info.nightscout.utils.SP;
 import info.nightscout.utils.SafeParse;
 import info.nightscout.utils.ToastUtils;
@@ -29,10 +35,11 @@ public class CircadianPercentageProfilePlugin implements PluginBase, ProfileInte
     public static final String SETTINGS_PREFIX = "CircadianPercentageProfile";
     private static Logger log = LoggerFactory.getLogger(CircadianPercentageProfilePlugin.class);
 
-    private static boolean fragmentEnabled = false;
-    private static boolean fragmentVisible = true;
+    private boolean fragmentEnabled = false;
+    private boolean fragmentVisible = false;
 
-    private static NSProfile convertedProfile = null;
+    private static ProfileStore convertedProfile = null;
+    private static String convertedProfileName = null;
 
     boolean mgdl;
     boolean mmol;
@@ -110,6 +117,11 @@ public class CircadianPercentageProfilePlugin implements PluginBase, ProfileInte
         if (type == PROFILE) this.fragmentVisible = fragmentVisible;
     }
 
+    @Override
+    public int getPreferencesId() {
+        return -1;
+    }
+
     void storeSettings() {
         if (Config.logPrefsChange)
             log.debug("Storing settings");
@@ -155,6 +167,136 @@ public class CircadianPercentageProfilePlugin implements PluginBase, ProfileInte
         createConvertedProfile();
     }
 
+    public String externallySetParameters(int timeshift, int percentage) {
+
+        String msg = "";
+
+        if (!fragmentEnabled) {
+            msg += "NO CPP!" + "\n";
+        }
+
+        //check for validity
+        if (percentage < Constants.CPP_MIN_PERCENTAGE || percentage > Constants.CPP_MAX_PERCENTAGE) {
+            msg += String.format(MainApp.sResources.getString(R.string.openapsma_valueoutofrange), "Profile-Percentage") + "\n";
+        }
+        if (timeshift < 0 || timeshift > 23) {
+            msg += String.format(MainApp.sResources.getString(R.string.openapsma_valueoutofrange), "Profile-Timeshift") + "\n";
+        }
+        final Profile profile = MainApp.getConfigBuilder().getProfile();
+
+        if (profile == null || profile.getBasal() == null) {
+            msg += MainApp.sResources.getString(R.string.cpp_notloadedplugins) + "\n";
+        }
+        if (!"".equals(msg)) {
+            msg += MainApp.sResources.getString(R.string.cpp_valuesnotstored);
+            return msg;
+        }
+
+        //store profile
+        this.timeshift = timeshift;
+        this.percentage = percentage;
+        storeSettings();
+
+
+        //send profile to pumpe
+        new NewNSTreatmentDialog(); //init
+        NewNSTreatmentDialog.doProfileSwitch(this.getProfile(), this.getProfileName(), 0, percentage, timeshift);
+
+        //return formatted string
+        /*msg += "%: " + this.percentage + " h: +" + this.timeshift;
+        msg += "\n";
+        msg += "\nBasal:\n" + basalString() + "\n";
+        msg += "\nISF:\n" + isfString() + "\n";
+        msg += "\nIC:\n" + isfString() + "\n";*/
+
+        return msg;
+    }
+
+    public static void migrateToLP() {
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MainApp.instance().getApplicationContext());
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean("LocalProfile" + "mmol", SP.getBoolean(SETTINGS_PREFIX + "mmol", false));
+        editor.putBoolean("LocalProfile" + "mgdl", SP.getBoolean(SETTINGS_PREFIX + "mgdl", true));
+        editor.putString("LocalProfile" + "dia", "" + SP.getDouble(SETTINGS_PREFIX + "dia", Constants.defaultDIA));
+        editor.putString("LocalProfile" + "ic", getLPic());
+        editor.putString("LocalProfile" + "isf", getLPisf());
+        editor.putString("LocalProfile" + "basal", getLPbasal());
+        try {
+            JSONArray targetLow = new JSONArray().put(new JSONObject().put("time", "00:00").put("timeAsSeconds", 0).put("value", SP.getDouble(SETTINGS_PREFIX + "targetlow", 120d)));
+            JSONArray targetHigh = new JSONArray().put(new JSONObject().put("time", "00:00").put("timeAsSeconds", 0).put("value", SP.getDouble(SETTINGS_PREFIX + "targethigh", 120d)));
+            editor.putString("LocalProfile" + "targetlow", targetLow.toString());
+            editor.putString("LocalProfile" + "targethigh", targetHigh.toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        editor.commit();
+        LocalProfilePlugin lp = MainApp.getSpecificPlugin(LocalProfilePlugin.class);
+        lp.loadSettings();
+
+        /* TODO: remove Settings and switch to LP later on
+         * For now only nag the user every time (s)he opens the CPP fragment and offer to migrate.
+         * Keep settings for now in order to allow the user to check that the migration went well.
+         */
+        //removeSettings();
+
+    }
+
+    public static String getLPisf() {
+        return getLPConversion("baseisf", 35d);
+    }
+
+    public static String getLPic() {
+        return getLPConversion("baseic", 4);
+    }
+
+    public static String getLPbasal() {
+        return getLPConversion("basebasal", 1);
+    }
+
+    public static String getLPConversion(String type, double defaultValue) {
+        try {
+            JSONArray jsonArray = new JSONArray();
+            double last = -1d;
+
+            for (int i = 0; i < 24; i++) {
+                double value = SP.getDouble(SETTINGS_PREFIX + type + i, defaultValue);
+                String time;
+                DecimalFormat df = new DecimalFormat("00");
+                time = df.format(i) + ":00";
+                if (last != value) {
+                    jsonArray.put(new JSONObject().put("time", time).put("timeAsSeconds", i * 60 * 60).put("value", value));
+                }
+                last = value;
+            }
+            return jsonArray.toString();
+        } catch (JSONException e) {
+            log.error("Unhandled exception", e);
+        }
+        return LocalProfilePlugin.DEFAULTARRAY;
+    }
+
+    static void removeSettings() {
+        if (Config.logPrefsChange)
+            log.debug("Removing settings");
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MainApp.instance().getApplicationContext());
+        SharedPreferences.Editor editor = settings.edit();
+        editor.remove(SETTINGS_PREFIX + "mmol");
+        editor.remove(SETTINGS_PREFIX + "mgdl");
+        editor.remove(SETTINGS_PREFIX + "dia");
+        editor.remove(SETTINGS_PREFIX + "targetlow");
+        editor.remove(SETTINGS_PREFIX + "targethigh");
+        editor.remove(SETTINGS_PREFIX + "timeshift");
+        editor.remove(SETTINGS_PREFIX + "percentage");
+
+
+        for (int i = 0; i < 24; i++) {
+            editor.remove(SETTINGS_PREFIX + "basebasal");
+            editor.remove(SETTINGS_PREFIX + "baseisf" + i);
+            editor.remove(SETTINGS_PREFIX + "baseic" + i);
+        }
+        editor.commit();
+    }
+
     private void createConvertedProfile() {
         JSONObject json = new JSONObject();
         JSONObject store = new JSONObject();
@@ -177,47 +319,54 @@ public class CircadianPercentageProfilePlugin implements PluginBase, ProfileInte
             int offset = -(timeshift % 24) + 24;
 
             JSONArray icArray = new JSONArray();
-            for (int i = 0; i < 24; i++) {
-                icArray.put(new JSONObject().put("timeAsSeconds", i * 60 * 60).put("value", baseic[(offset + i) % 24] * 100d / percentage));
-            }
-            profile.put("carbratio", icArray);
-
             JSONArray isfArray = new JSONArray();
-            for (int i = 0; i < 24; i++) {
-                isfArray.put(new JSONObject().put("timeAsSeconds", i * 60 * 60).put("value", baseisf[(offset + i) % 24] * 100d / percentage));
-            }
-            profile.put("sens", isfArray);
-
             JSONArray basalArray = new JSONArray();
             for (int i = 0; i < 24; i++) {
-                basalArray.put(new JSONObject().put("timeAsSeconds", i * 60 * 60).put("value", basebasal[(offset + i) % 24] * percentage / 100d));
+                String time;
+                DecimalFormat df = new DecimalFormat("00");
+                time = df.format(i) + ":00";
+                icArray.put(new JSONObject().put("time", time).put("timeAsSeconds", i * 60 * 60).put("value", baseic[(offset + i) % 24] * 100d / percentage));
+                isfArray.put(new JSONObject().put("time", time).put("timeAsSeconds", i * 60 * 60).put("value", baseisf[(offset + i) % 24] * 100d / percentage));
+                basalArray.put(new JSONObject().put("time", time).put("timeAsSeconds", i * 60 * 60).put("value", basebasal[(offset + i) % 24] * percentage / 100d));
             }
+            profile.put("carbratio", icArray);
+            profile.put("sens", isfArray);
             profile.put("basal", basalArray);
 
 
-            profile.put("target_low", new JSONArray().put(new JSONObject().put("timeAsSeconds", 0).put("value", targetLow)));
-            profile.put("target_high", new JSONArray().put(new JSONObject().put("timeAsSeconds", 0).put("value", targetHigh)));
+            profile.put("target_low", new JSONArray().put(new JSONObject().put("time", "00:00").put("timeAsSeconds", 0).put("value", targetLow)));
+            profile.put("target_high", new JSONArray().put(new JSONObject().put("time", "00:00").put("timeAsSeconds", 0).put("value", targetHigh)));
             profile.put("units", mgdl ? Constants.MGDL : Constants.MMOL);
             store.put(profileName, profile);
         } catch (JSONException e) {
-            e.printStackTrace();
+            log.error("Unhandled exception", e);
         }
-        convertedProfile = new NSProfile(json, profileName);
+        convertedProfile = new ProfileStore(json);
+        convertedProfileName = profileName;
     }
 
     @Override
-    public NSProfile getProfile() {
-
+    public ProfileStore getProfile() {
         performLimitCheck();
-
         return convertedProfile;
+    }
+
+    @Override
+    public String getUnits() {
+        return mgdl ? Constants.MGDL : Constants.MMOL;
+    }
+
+    @Override
+    public String getProfileName() {
+        performLimitCheck();
+        return convertedProfileName;
     }
 
     private void performLimitCheck() {
         if (percentage < Constants.CPP_MIN_PERCENTAGE || percentage > Constants.CPP_MAX_PERCENTAGE) {
             String msg = String.format(MainApp.sResources.getString(R.string.openapsma_valueoutofrange), "Profile-Percentage");
             log.error(msg);
-            MainApp.getConfigBuilder().uploadError(msg);
+            NSUpload.uploadError(msg);
             ToastUtils.showToastInUiThread(MainApp.instance().getApplicationContext(), msg, R.raw.error);
             percentage = Math.max(percentage, Constants.CPP_MIN_PERCENTAGE);
             percentage = Math.min(percentage, Constants.CPP_MAX_PERCENTAGE);
@@ -293,4 +442,11 @@ public class CircadianPercentageProfilePlugin implements PluginBase, ProfileInte
         return sb.toString();
     }
 
+    public int getPercentage() {
+        return percentage;
+    }
+
+    public int getTimeshift() {
+        return timeshift;
+    }
 }

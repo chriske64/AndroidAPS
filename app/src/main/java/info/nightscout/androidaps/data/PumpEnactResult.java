@@ -5,14 +5,17 @@ import android.text.Spanned;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import info.nightscout.androidaps.MainApp;
 import info.nightscout.androidaps.R;
-import info.nightscout.androidaps.plugins.NSClientInternal.data.NSProfile;
 import info.nightscout.utils.DecimalFormatter;
 import info.nightscout.utils.Round;
 
 public class PumpEnactResult extends Object {
+    private static Logger log = LoggerFactory.getLogger(PumpEnactResult.class);
+
     public boolean success = false;    // request was processed successfully (but possible no change was needed)
     public boolean enacted = false;    // request was processed successfully and change has been made
     public String comment = "";
@@ -25,9 +28,64 @@ public class PumpEnactResult extends Object {
     public boolean isTempCancel = false; // if true we are caceling temp basal
     // Result of treatment delivery
     public Double bolusDelivered = 0d; // real value of delivered insulin
-    public Integer carbsDelivered = 0; // real value of delivered carbs
+    public Double carbsDelivered = 0d; // real value of delivered carbs
 
     public boolean queued = false;
+
+    public PumpEnactResult success(boolean success) {
+       this.success = success;
+        return this;
+    }
+
+    public PumpEnactResult enacted(boolean enacted) {
+        this.enacted = enacted;
+        return this;
+    }
+
+    public PumpEnactResult comment(String comment) {
+        this.comment = comment;
+        return this;
+    }
+
+    public PumpEnactResult duration(Integer duration) {
+        this.duration = duration;
+        return this;
+    }
+
+    public PumpEnactResult absolute(Double absolute) {
+        this.absolute = absolute;
+        return this;
+    }
+
+    public PumpEnactResult percent(Integer percent) {
+        this.percent = percent;
+        return this;
+    }
+
+    public PumpEnactResult isPercent(boolean isPercent) {
+        this.isPercent = isPercent;
+        return this;
+    }
+
+    public PumpEnactResult isTempCancel(boolean isTempCancel) {
+        this.isTempCancel = isTempCancel;
+        return this;
+    }
+
+    public PumpEnactResult bolusDelivered(Double bolusDelivered) {
+        this.bolusDelivered = bolusDelivered;
+        return this;
+    }
+
+    public PumpEnactResult carbsDelivered(Double carbsDelivered) {
+        this.carbsDelivered = carbsDelivered;
+        return this;
+    }
+
+    public PumpEnactResult queued(boolean queued) {
+        this.queued = queued;
+        return this;
+    }
 
      public String log() {
         return "Success: " + success + " Enacted: " + enacted + " Comment: " + comment + " Duration: " + duration + " Absolute: " + absolute + " Percent: " + percent + " IsPercent: " + isPercent + " Queued: " + queued;
@@ -94,7 +152,7 @@ public class PumpEnactResult extends Object {
                 result.put("duration", 0);
             } else if (isPercent) {
                 // Nightscout is expecting absolute value
-                Double abs = Round.roundTo(MainApp.getConfigBuilder().getActiveProfile().getProfile().getBasal(NSProfile.secondsFromMidnight()) * percent / 100, 0.01);
+                Double abs = Round.roundTo(MainApp.getConfigBuilder().getProfile().getBasal() * percent / 100, 0.01);
                 result.put("rate", abs);
                 result.put("duration", duration);
             } else {
@@ -102,7 +160,7 @@ public class PumpEnactResult extends Object {
                 result.put("duration", duration);
             }
         } catch (JSONException e) {
-            e.printStackTrace();
+            log.error("Unhandled exception", e);
         }
         return result;
     }

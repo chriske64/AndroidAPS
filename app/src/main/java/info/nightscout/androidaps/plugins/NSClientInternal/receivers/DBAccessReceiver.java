@@ -11,14 +11,14 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Date;
-
 import info.nightscout.androidaps.MainApp;
 import info.nightscout.androidaps.R;
+import info.nightscout.androidaps.db.DbRequest;
 import info.nightscout.androidaps.interfaces.PluginBase;
 import info.nightscout.androidaps.plugins.NSClientInternal.NSClientInternalPlugin;
 import info.nightscout.androidaps.plugins.NSClientInternal.UploadQueue;
-import info.nightscout.androidaps.db.DbRequest;
+import info.nightscout.androidaps.plugins.NSClientInternal.broadcasts.BroadcastTreatment;
+import info.nightscout.utils.DateUtil;
 import info.nightscout.utils.SP;
 
 public class DBAccessReceiver extends BroadcastReceiver {
@@ -29,8 +29,8 @@ public class DBAccessReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
-                "sendQueue");
-        NSClientInternalPlugin nsClientInternalPlugin = (NSClientInternalPlugin) MainApp.getSpecificPlugin(NSClientInternalPlugin.class);
+                DBAccessReceiver.class.getSimpleName());
+        NSClientInternalPlugin nsClientInternalPlugin = MainApp.getSpecificPlugin(NSClientInternalPlugin.class);
         if (!nsClientInternalPlugin.isEnabled(PluginBase.GENERAL)) {
             return;
         }
@@ -48,9 +48,18 @@ public class DBAccessReceiver extends BroadcastReceiver {
             String _id = null;
             JSONObject data = null;
             String action = bundles.getString("action");
-            try { collection = bundles.getString("collection"); } catch (Exception e) {}
-            try { _id = bundles.getString("_id"); } catch (Exception e) {}
-            try { data = new JSONObject(bundles.getString("data")); } catch (Exception e) {}
+            try {
+                collection = bundles.getString("collection");
+            } catch (Exception e) {
+            }
+            try {
+                _id = bundles.getString("_id");
+            } catch (Exception e) {
+            }
+            try {
+                data = new JSONObject(bundles.getString("data"));
+            } catch (Exception e) {
+            }
 
             if (data == null && !action.equals("dbRemove") || _id == null && action.equals("dbRemove")) {
                 log.debug("DBACCESS no data inside record");
@@ -61,11 +70,11 @@ public class DBAccessReceiver extends BroadcastReceiver {
                 data = new JSONObject();
             }
             // mark by id
-            Long nsclientid = new Date().getTime();
+            Long nsclientid = System.currentTimeMillis();
             try {
                 data.put("NSCLIENT_ID", nsclientid);
             } catch (JSONException e) {
-                e.printStackTrace();
+                log.error("Unhandled exception", e);
             }
 
             if (!isAllowedCollection(collection)) {
@@ -78,13 +87,31 @@ public class DBAccessReceiver extends BroadcastReceiver {
                 UploadQueue.add(dbr);
             } else {
                 DbRequest dbr = new DbRequest(action, collection, nsclientid.toString(), data);
+                // this is not used as mongo _id but only for searching in UploadQueue database
+                // if record has to be removed from queue before upload
+                dbr._id = nsclientid.toString();
                 UploadQueue.add(dbr);
+                if (collection.equals("treatments"))
+                    genereateTreatmentOfflineBroadcast(dbr);
             }
 
         } finally {
             wakeLock.release();
         }
 
+    }
+
+    public void genereateTreatmentOfflineBroadcast(DbRequest request) {
+        if (request.action.equals("dbAdd")) {
+            try {
+                JSONObject data = new JSONObject(request.data);
+                data.put("mills", DateUtil.fromISODateString(data.getString("created_at")).getTime());
+                data.put("_id", data.get("NSCLIENT_ID")); // this is only fake id
+                BroadcastTreatment.handleNewTreatment(data, false);
+            } catch (Exception e) {
+                log.error("Unhadled exception", e);
+            }
+        }
     }
 
     private boolean isAllowedCollection(String collection) {

@@ -4,9 +4,7 @@
     <string name="it_lang">Italiano</string>
     <string name="MM640g">MM640g</string>
     <string name="absolute">assoluto</string>
-    <string name="app_name"></string>
     <string name="actions">azioni</string>
-    <string name="actions_shortname"></string>
     <string name="activity">attivita\'</string>
     <string name="adult">adulto</string>
     <string name="advancedsettings_title">settaggi avanzati</string>
@@ -49,7 +47,6 @@
     <string name="careportal_newnstreatment_glucosetype">Tipo di glucosio</string>
     <string name="careportal_newnstreatment_insulin_label">Insulina</string>
     <string name="careportal_newnstreatment_meter">Glucometro</string>
-    <string name="careportal_newnstreatment_minutes">Minimo</string>
     <string name="careportal_newnstreatment_notes_label">Note</string>
     <string name="careportal_newnstreatment_other">Altro</string>
     <string name="careportal_newnstreatment_percent_label">Percentuale</string>
@@ -81,7 +78,6 @@
     <string name="configbuilder_insulin">Insulina</string>
     <string name="configbuilder_loop">Loop</string>
     <string name="configbuilder_nightscoutversion_label">Versione Nightscout</string>
-    <string name="configbuilder_nsclientversion_label">Versione NSClient</string>
     <string name="configbuilder_profile">Profilo</string>
     <string name="configbuilder_pump">Microinfusore</string>
     <string name="configbuilder_shortname">Configurazione</string>
@@ -119,7 +115,7 @@
     <string name="danar_historyreload">Ricaricare</string>
     <string name="danar_invalidinput">Data Errata</string>
     <string name="danar_iob_label">IOB Microinfusore</string>
-    <string name="danar_lastbolus">Ultimo Bolo</string>
+    <string name="pump_lastbolus_label">Ultimo Bolo</string>
     <string name="danar_password_title">Password Microinfusore</string>
     <string name="danar_pump_settings">Setting Micro</string>
     <string name="danar_refill">ricarica</string>
@@ -160,7 +156,7 @@
     <string name="edit_base_ic">Modifica Base-IC:</string>
     <string name="edit_base_isf">Modifica Base-ISF:</string>
     <string name="el_lang">Greco</string>
-    <string name="en_lang">Inglese</string>
+    <string name="en_lang">English</string>
     <string name="enabled">Abilitare</string>
     <string name="enableloop">Abilitare Loop</string>
 
@@ -268,12 +264,9 @@
     <string name="openapsma">OpenAPS MA</string>
     <string name="openapsma_disabled">Plugin e\' disabilitato</string>
     <string name="openapsma_glucosestatus_label">Stato glucosio</string>
-    <string name="openapsma_high_summary">Valore massimo di Bg nel range</string>
     <string name="openapsma_inputparameters_label">Entrata parametro</string>
-    <string name="openapsma_low_summary">Valore minimo di Bg nel range</string>
     <string name="openapsma_maxbasal_summary">Il valore e\' chiamati basale in OpenAPS</string>
     <string name="openapsma_maxiob_title">Basale Massima in IOB OpenAPS</string>
-    <string name="openapsma_minbg_label">Obbietivo minimo</string>
     <string name="openapsma_iobdata_label">IOB dati</string>
     <string name="openapsma_lastenact_label">Ultimo attuato</string>
     <string name="openapsma_lastrun_label">Ultimo corsa</string>
@@ -299,7 +292,7 @@
     <string name="dont_show_again">Non mostrarlo più</string>
     <string name="enablesuperbolus_summary">Abilita funzionalità superbolus nella procedura guidata. Non abilitare fino a quando non impari quello che realmente fa. PUÒ CAUSARE L\'INVERTIMENTO INSULINO SE USATO BLINDLY!</string>
     <string name="openapsma_request_label">Richiesta</string>
-    <string name="openapsma_result_label">Esito</string>
+    <string name="result">Esito</string>
     <string name="openapsma_run">Avvia ora</string>
     <string name="openloop">Apertura Loop</string>
     <string name="othersettings_title">Altro</string>
@@ -313,7 +306,7 @@
     <string name="overview_editquickwizard_valid">Valido:</string>
     <string name="overview_editquickwizardlistactivity_add">Aggiungere</string>
     <string name="overview_extendedbolus_button">Bolo Esteso</string>
-    <string name="overview_newtempbasal_basal_label">Valore Basale</string>
+    <string name="overview_newtempbasal_basalpercent">Valore Basale [%]</string>
     <string name="overview_quickwizard_item_edit_button">Uscire</string>
     <string name="overview_quickwizard_item_remove_button">Eliminare</string>
     <string name="overview_shortname">HOME</string>
@@ -330,8 +323,6 @@
     <string name="pumpshutdown">Arresto Micro</string>
     <string name="pumpsuspended">Sospensione Micro</string>
     <string name="pumpsuspendedclicktorefresh">Micro sospeso. Clicca per aggiornare</string>
-    <string name="refreshtemptargetsfromnightscout">Vuoi aggiornare i target di tempo da Nightscout</string>
-    <string name="refreshtreatmentsfromnightscout">Vuoi aggiornare i trattamenti da Nightscout</string>
     <string name="reloadprofile">Aggiorna Profilo</string>
     <string name="removerecord">Eliminare campo:</string>
     <string name="restart">Riavvio</string>
@@ -339,7 +330,6 @@
     <string name="save">Salva</string>
     <string name="send">Esci</string>
     <string name="setbasalquestion">Accettare il nuovo basale temp</string>
-    <string name="send_to_pump">INVIARE ALLA POMPA</string>
     <string name="setextendedbolusquestion">Impostare il nuovo bollo esteso</string>
     <string name="setting_imported">Impostazioni importate</string>
     <string name="settingextendedbolus">Impostazioni aggiuntive bolus</string>
@@ -350,7 +340,6 @@
     <string name="objectives_0_objective">Impostazione di visualizzazione, monitoraggio e analisi basali e rapporti</string>
     <string name="objectives_1_gate">Eseguire in modalità Open Loop per alcuni giorni e impostare manualmente la basale tempor</string>
     <string name="openapsma_scriptdebugdata_label">Script debug</string>
-    <string name="openapsma_target_bg">Target per calcolare</string>
     <string name="smscommunicator">Comunicazioni SMS</string>
     <string name="smscommunicator_allowednumbers">Numero di telefono acettato</string>
     <string name="smscommunicator_bolusfailed">Bolo fallito</string>
@@ -383,10 +372,8 @@
     <string name="suspendloopfor1h">Sospendi loop per 1h</string>
     <string name="suspendloopfor2h">Sospendi loop per 2h</string>
     <string name="suspendloopfor3h">Sospendi loop per 3h</string>
-    <string name="syncprofiletopump_title">Sincronizza profilo sul micro</string>
     <string name="target_range">Target range:</string>
     <string name="teenage">Adolescente</string>
-    <string name="tempbasals">Basale temporanea</string>
     <string name="tempbasals_iob_label_string">IOB:</string>
     <string name="tempbasals_iobtotal_label_string">Totale IOB:</string>
     <string name="tempbasals_netinsulin_label_string">Ins:</string>
@@ -412,8 +399,6 @@
     <string name="openapsma_mealdata_label">Data Pranzo</string>
     <string name="overview_bolusprogress_stoped">Stoppato</string>
     <string name="tempbasals_netratio_label_string">rapporto:</string>
-    <string name="temptargetrange">Target temp</string>
-    <string name="temptargetrange_refreshfromnightscout">Aggiornare i target di temp da NS</string>
     <string name="treatmentdeliveryerror">Errore di erogazione del bolo</string>
     <string name="treatments_activity_string">attività</string>
     <string name="treatments_carbs_label_string">Carboidrati:</string>
@@ -427,7 +412,7 @@
     <string name="objectives_6_objective">Abilitazione di funzioni aggiuntive per l\'uso quotidiano, ad esempio assistenza avanzata del pasto</string>
     <string name="objectives_manualenacts"></string>
     <string name="virtualpump_sqlerror">Errore SQL</string>
-    <string name="virtualpump_tempbasal_label">Basale temporale</string>
+    <string name="pump_tempbasal_label">Basale temporale</string>
     <string name="visible">Visibile</string>
     <string name="vitualpump_label">Pompa Virtuale</string>
     <string name="waitingforpump">In attesa del micro</string>
@@ -435,7 +420,6 @@
     <string name="waitingforpumpclicktorefresh">Attesa Micro. Clicca per rinnovare</string>
     <string name="wear_showbgi_title">Visualizza BGI</string>
     <string name="wrongpassword">Password Errata</string>
-    <string name="wrongpumpdriverselected">Driver Micro Errato</string>
     <string name="wrongpumppassword">Password Micro Errata</string>
     <string name="xdrip">Xdrip</string>
     <string name="xdripnotinstalled">xDrip non installato</string>
@@ -453,12 +437,12 @@
     <string name="virtualpump_shortname">VPUMP</string>
     <string name="virtualpump_settings">Impostazioni del Micro virtuale</string>
     <string name="virtualpump_resultok">ok</string>
-    <string name="virtualpump_reservoir_label">Serbatoio</string>
-    <string name="virtualpump_lastconnection_label">Ultima conessione</string>
+    <string name="pump_reservoir_label">Serbatoio</string>
+    <string name="pump_lastconnection_label">Ultima conessione</string>
     <string name="virtualpump_firmware_label">Firmware</string>
     <string name="virtualpump_extendedbolus_label">Bolo Esteso</string>
-    <string name="virtualpump_battery_label">Batteria</string>
-    <string name="virtualpump_basebasalrate_label">Base basale</string>
+    <string name="pump_battery_label">Batteria</string>
+    <string name="pump_basebasalrate_label">Base basale</string>
     <string name="virtualpump">Micro Virtuale</string>
     <string name="uploading">UpLoading</string>
     <string name="updatingbasalrates">Aggiornamento basale</string>
@@ -489,7 +473,7 @@
     <string name="tempbasals_realduration_label_string">DUR:</string>
     <string name="tempbasaldeliveryerror">Errore di somministrazione basale temporale</string>
     <string name="smscommunicator_tempbasalset" formatted="false">Basale temporanea %.2fU/h for %d min avviata con successo</string>
-    <string name="smscommunicator_suspendreplywithcode" formatted="false">Sospendi il loop per %d minuti riprendi</string>
+    <string name="smscommunicator_suspendreplywithcode" formatted="false">Sospendi il loop per %d minuti riprendi %s</string>
     <string name="smscommunicator_calibrationsent">La calibrazione è stata inviata. La ricezione deve essere abilitata in xDrip.</string>
     <string name="smscommunicator_basalstopreplywithcode" formatted="false">Per interrompere la risposta basale della temperatura con il codice %s</string>
     <string name="smscommunicator_allowednumbers_summary">+XXXXXXXXXX;+YYYYYYYYYY</string>
@@ -505,5 +489,6 @@
     <string name="profileviewer">Profilo NS</string>
     <string name="profile_set_ok">Profilo Basale aggiornato nel Micro</string>
     <string name="profile_set_failed">Impostazione Profilo Basale fallito</string>
+    <string name="app_name">AndroidAPS</string>
 </resources>
 

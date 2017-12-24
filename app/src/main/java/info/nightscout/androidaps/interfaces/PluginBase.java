@@ -8,7 +8,7 @@ import java.util.Date;
 public interface PluginBase {
     int GENERAL = 1;
     int TREATMENT = 2;
-    int TEMPBASAL = 3;
+    int SENSITIVITY = 3;
     int PROFILE = 4;
     int APS = 5;
     int PUMP = 6;
@@ -30,4 +30,5 @@ public interface PluginBase {
     boolean showInList(int type);
     void setFragmentEnabled(int type, boolean fragmentEnabled);
     void setFragmentVisible(int type, boolean fragmentVisible);
+    int getPreferencesId();
 }
