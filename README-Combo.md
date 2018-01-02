@@ -55,16 +55,20 @@ Setup:
   - Set low cartridge alarm to your liking
   - Enable keylock (can also be set on the pump directly, see usage section on reasoning)
 - Get Android Studio 3 https://developer.android.com/studio/index.html
-- Clone ruffy from https://github.com/jotomo/ruffy (branch `combo-scripter-v2`)
-- Pair the pump, if it doesn't work after multiple attempts, switch to the `pairing` branch, pair,
+- Follow the link http://ruffy.AndroidAPS.org and clone via git (branch `combo-scripter-v2`)
+- Pair the pump using ruffy, if it doesn't work after multiple attempts, switch to the `pairing` branch, pair,
   then switch back the original branch. If the pump is already paired and
   can be controlled via ruffy, installing the above version is sufficient.
   If AAPS is already installed, switch to the MDI plugin to avoid the Combo
   plugin from interfering with ruffy during the pairing process.
-  Note that the pairing processing is somewhat fragile and may need a few attempts;
+  Note that the pairing processing is somewhat fragile (but only has to be done once)
+  and may need a few attempts;
   quickly acknowledge prompts and when starting over, remove the pump device
   from the bluetooth settings beforehand.
-- Clone AndroidAPS from https://github.com/jotomo/AndroidAPS (Branch `combo-scripter-v2`)
+  When AAPS is using ruffy, the ruffy app can't be used. The easiest way is to just
+  reboot the phone after the pairing process and let AAPS start ruffy in the background.
+- Clone AndroidAPS from https://github.com/jotomo/AndroidAPS (branch `combo-scripter-v2`)
+  and build AAPS using the instructions in the wiki http://wiki.AndroidAPS.org
 - Before enabling the Combo plugin in AAPS make sure your profile is set up
   correctly and your basal profile is up to date as AAPS will sync the basal profile
   to the pump.
@@ -85,6 +89,8 @@ Usage:
 - The integration of the Combo with AndroidAPS is designed with the assumption that all inputs are
   made via AndroidAPS. Boluses entered on the pump will NOT be detected by AAPS and may therefore
   result in too much insulin being delivered.
+- The pump's first basal rate profile is read on app start and is updated by AAPS. Manually changing
+  the pump's basal rate profile will lead to wrong basals being delivered and is NOT supported.
 - It's recommended to enable key lock on the pump to prevent bolusing from the pump, esp. when the
   pump was used before and quick bolusing was a habit.
   Also, with keylock enabled, accidentally pressing a key will NOT interrupt a running command
@@ -132,6 +138,9 @@ Known issues:
 - Overall the integration seems rather robust, but there are limits to the way the
   pump is controlled and how stable BT is, so there will be minor issues like the above
   from time to time, though they're small compared to what works well.
+- AAPS might be unresponsive for 10-30s or so when starting and calculating sensitivity.
+  AAPS might also be unresponsive when doing background work, e.g. after receiving a new
+  glucose reading.
 
 Reporting bugs:
 - Note the precise time the problem occurred and describe the circumstances and steps that caused
