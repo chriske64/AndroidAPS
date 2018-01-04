@@ -243,6 +243,7 @@ public class WatchUpdaterService extends WearableListenerService implements
 
         DataMap dataMap = new DataMap();
         dataMap.putString("sgvString", lastBG.valueToUnitsToString(units));
+        dataMap.putString("glucoseUnits", units);
         dataMap.putLong("timestamp", lastBG.date);
         if (glucoseStatus == null) {
             dataMap.putString("slopeArrow", "");
@@ -253,7 +254,6 @@ public class WatchUpdaterService extends WearableListenerService implements
             dataMap.putString("delta", deltastring(glucoseStatus.delta, glucoseStatus.delta * Constants.MGDL_TO_MMOLL, units));
             dataMap.putString("avgDelta", deltastring(glucoseStatus.avgdelta, glucoseStatus.avgdelta * Constants.MGDL_TO_MMOLL, units));
         }
-
         dataMap.putLong("sgvLevel", sgvLevel);
         dataMap.putDouble("sgvDouble", lastBG.value);
         dataMap.putDouble("high", highLine);
@@ -316,7 +316,7 @@ public class WatchUpdaterService extends WearableListenerService implements
         if (last_bg == null) return;
 
         List<BgReading> graph_bgs = MainApp.getDbHelper().getBgreadingsDataFromTime(startTime, true);
-        GlucoseStatus glucoseStatus = GlucoseStatus.getGlucoseStatusData();
+        GlucoseStatus glucoseStatus = GlucoseStatus.getGlucoseStatusData(true);
 
         if (!graph_bgs.isEmpty()) {
             DataMap entries = dataMapSingleBG(last_bg, glucoseStatus);
