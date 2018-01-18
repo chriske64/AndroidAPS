@@ -35,8 +35,6 @@ public class ComboFragment extends SubscriberFragment implements View.OnClickLis
     private Button alertsButton;
     private Button tddsButton;
     private Button fullHistoryButton;
-    private TextView queueView;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,7 +47,6 @@ public class ComboFragment extends SubscriberFragment implements View.OnClickLis
         reservoirView = (TextView) view.findViewById(R.id.combo_insulinstate);
         lastConnectionView = (TextView) view.findViewById(R.id.combo_lastconnection);
         tempBasalText = (TextView) view.findViewById(R.id.combo_temp_basal);
-        queueView = (TextView) view.findViewById(R.id.combo_queue);
 
         refreshButton = (Button) view.findViewById(R.id.combo_refresh_button);
         refreshButton.setOnClickListener(this);
@@ -172,16 +169,17 @@ public class ComboFragment extends SubscriberFragment implements View.OnClickLis
                     }
 
                     // reservoir
-                    int reservoirLevel = plugin.getPump().reservoirLevel;
-                    reservoirView.setText(reservoirLevel == -1 ? "" : "" + reservoirLevel + " U");
                     if (ps.insulinState == PumpState.LOW) {
                         reservoirView.setTextColor(Color.YELLOW);
+                        reservoirView.setText(R.string.combo_reservoir_low);
                         reservoirView.setTypeface(null, Typeface.BOLD);
                     } else if (ps.insulinState == PumpState.EMPTY) {
                         reservoirView.setTextColor(Color.RED);
+                        reservoirView.setText(R.string.combo_reservoir_empty);
                         reservoirView.setTypeface(null, Typeface.BOLD);
                     } else {
                         reservoirView.setTextColor(Color.WHITE);
+                        reservoirView.setText(R.string.combo_reservoir_normal);
                         reservoirView.setTypeface(null, Typeface.NORMAL);
                     }
 
@@ -209,16 +207,6 @@ public class ComboFragment extends SubscriberFragment implements View.OnClickLis
                         }
                     }
                     tempBasalText.setText(tbrStr);
-
-                    // TODO clean up & i18n or remove
-                    // Queued activities
-                    Spanned status = ConfigBuilderPlugin.getCommandQueue().spannedStatus();
-                    if (status.toString().equals("")) {
-                        queueView.setVisibility(View.GONE);
-                    } else {
-                        queueView.setVisibility(View.VISIBLE);
-                        queueView.setText("Queued activities:\n" + status);
-                    }
                 }
             });
     }
