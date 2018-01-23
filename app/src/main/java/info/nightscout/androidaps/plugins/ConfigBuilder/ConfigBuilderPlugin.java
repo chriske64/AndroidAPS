@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import info.nightscout.androidaps.Config;
+import info.nightscout.androidaps.Constants;
 import info.nightscout.androidaps.MainApp;
 import info.nightscout.androidaps.R;
 import info.nightscout.androidaps.data.DetailedBolusInfo;
@@ -421,23 +422,6 @@ public class ConfigBuilderPlugin implements PluginBase, ConstraintsInterface, Tr
     }
 
 
-/*
-    @Override
-    public PumpDescription getPumpDescription() {
-        if (activePump != null)
-            return activePump.getPumpDescription();
-        else {
-            PumpDescription emptyDescription = new PumpDescription();
-            emptyDescription.isBolusCapable = false;
-            emptyDescription.isExtendedBolusCapable = false;
-            emptyDescription.isSetBasalProfileCapable = false;
-            emptyDescription.isTempBasalCapable = true; // needs to be true before real driver is selected
-            emptyDescription.isRefillingCapable = false;
-            return emptyDescription;
-        }
-    }
-*/
-
     /**
      * Constraints interface
      **/
@@ -775,14 +759,17 @@ public class ConfigBuilderPlugin implements PluginBase, ConstraintsInterface, Tr
         return "Default";
     }
 
+    @Nullable
     public Profile getProfile() {
         return getProfile(System.currentTimeMillis());
     }
 
     public String getProfileUnits() {
-        return getProfile().getUnits();
+        Profile profile = getProfile();
+        return profile != null ? profile.getUnits() : Constants.MGDL;
     }
 
+    @Nullable
     public Profile getProfile(long time) {
         if (activeTreatments == null)
             return null; //app not initialized
