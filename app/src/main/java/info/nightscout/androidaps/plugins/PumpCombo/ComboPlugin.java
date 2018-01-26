@@ -3,6 +3,9 @@ package info.nightscout.androidaps.plugins.PumpCombo;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
 
+import com.crashlytics.android.answers.Answers;
+import com.crashlytics.android.answers.CustomEvent;
+
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -344,6 +347,8 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
     }
 
     private synchronized void initializePump() {
+        Answers.getInstance().logCustom(new CustomEvent("ComboInit")
+                        .putCustomAttribute("buildversion", BuildConfig.BUILDVERSION));
         long maxWait = System.currentTimeMillis() + 15 * 1000;
         while (!ruffyScripter.isPumpAvailable()) {
             log.debug("Waiting for ruffy service to come up ...");
@@ -369,7 +374,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         }
 
         // read basal profile into cache (KeepAlive will trigger a profile update if needed)
-        CommandResult readBasalResult = runCommand("Reading basal profile", 2, ruffyScripter::readBasalProfile);
+        CommandResult readBasalResult = runCommand(MainApp.gs(R.string.combo_actvity_reading_basal_profile), 2, ruffyScripter::readBasalProfile);
         if (!readBasalResult.success) {
             return;
         }
@@ -1002,7 +1007,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         }
 */
 
-        CommandResult basalResult = runCommand("Reading basal profile", 2, ruffyScripter::readBasalProfile);
+        CommandResult basalResult = runCommand(MainApp.gs(R.string.combo_actvity_reading_basal_profile), 2, ruffyScripter::readBasalProfile);
         if (!basalResult.success) {
             return;
         }
