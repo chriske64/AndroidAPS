@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
@@ -27,14 +27,12 @@ import info.nightscout.androidaps.data.Profile;
 import info.nightscout.androidaps.data.ProfileIntervals;
 import info.nightscout.androidaps.db.ProfileSwitch;
 import info.nightscout.androidaps.db.Source;
-import info.nightscout.androidaps.db.TempTarget;
 import info.nightscout.androidaps.events.EventProfileSwitchChange;
-import info.nightscout.androidaps.events.EventTempTargetChange;
 import info.nightscout.androidaps.plugins.Common.SubscriberFragment;
+import info.nightscout.androidaps.plugins.NSClientInternal.UploadQueue;
 import info.nightscout.utils.DateUtil;
 import info.nightscout.utils.DecimalFormatter;
 import info.nightscout.utils.NSUpload;
-import info.nightscout.utils.OKDialog;
 import info.nightscout.utils.SP;
 
 /**
@@ -60,8 +58,7 @@ public class TreatmentsProfileSwitchFragment extends SubscriberFragment implemen
         @Override
         public ProfileSwitchViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
             View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.treatments_profileswitch_item, viewGroup, false);
-            ProfileSwitchViewHolder ProfileSwitchViewHolder = new ProfileSwitchViewHolder(v);
-            return ProfileSwitchViewHolder;
+            return new ProfileSwitchViewHolder(v);
         }
 
         @Override
@@ -70,7 +67,7 @@ public class TreatmentsProfileSwitchFragment extends SubscriberFragment implemen
             if (profile == null) return;
             ProfileSwitch profileSwitch = profileSwitchList.getReversed(position);
             holder.ph.setVisibility(profileSwitch.source == Source.PUMP ? View.VISIBLE : View.GONE);
-            holder.ns.setVisibility(profileSwitch._id != null ? View.VISIBLE : View.GONE);
+            holder.ns.setVisibility(NSUpload.isIdValid(profileSwitch._id) ? View.VISIBLE : View.GONE);
 
             holder.date.setText(DateUtil.dateAndTimeString(profileSwitch.date));
             if (!profileSwitch.isEndingEvent()) {
@@ -78,12 +75,16 @@ public class TreatmentsProfileSwitchFragment extends SubscriberFragment implemen
             } else {
                 holder.duration.setText("");
             }
-            holder.name.setText(profileSwitch.profileName);
+            holder.name.setText(profileSwitch.getCustomizedName());
             if (profileSwitch.isInProgress())
                 holder.date.setTextColor(ContextCompat.getColor(MainApp.instance(), R.color.colorActive));
             else
                 holder.date.setTextColor(holder.duration.getCurrentTextColor());
             holder.remove.setTag(profileSwitch);
+            holder.name.setTag(profileSwitch);
+            holder.date.setTag(profileSwitch);
+            holder.invalid.setVisibility(profileSwitch.isValid() ? View.GONE : View.VISIBLE);
+
         }
 
         @Override
@@ -104,6 +105,7 @@ public class TreatmentsProfileSwitchFragment extends SubscriberFragment implemen
             TextView remove;
             TextView ph;
             TextView ns;
+            TextView invalid;
 
             ProfileSwitchViewHolder(View itemView) {
                 super(itemView);
@@ -113,9 +115,13 @@ public class TreatmentsProfileSwitchFragment extends SubscriberFragment implemen
                 name = (TextView) itemView.findViewById(R.id.profileswitch_name);
                 ph = (TextView) itemView.findViewById(R.id.pump_sign);
                 ns = (TextView) itemView.findViewById(R.id.ns_sign);
+                invalid = (TextView) itemView.findViewById(R.id.invalid_sign);
                 remove = (TextView) itemView.findViewById(R.id.profileswitch_remove);
                 remove.setOnClickListener(this);
                 remove.setPaintFlags(remove.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+                name.setOnClickListener(this);
+                date.setOnClickListener(this);
+
             }
 
             @Override
@@ -123,16 +129,29 @@ public class TreatmentsProfileSwitchFragment extends SubscriberFragment implemen
                 final ProfileSwitch profileSwitch = (ProfileSwitch) v.getTag();
                 switch (v.getId()) {
                     case R.id.profileswitch_remove:
-                        OKDialog.show(getActivity(), MainApp.sResources.getString(R.string.confirmation), MainApp.sResources.getString(R.string.removerecord) + "\n" + DateUtil.dateAndTimeString(profileSwitch.date), new Runnable() {
-                            @Override
-                            public void run() {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                        builder.setTitle(MainApp.sResources.getString(R.string.confirmation));
+                        builder.setMessage(MainApp.sResources.getString(R.string.removerecord) + "\n" + DateUtil.dateAndTimeString(profileSwitch.date));
+                        builder.setPositiveButton(MainApp.sResources.getString(R.string.ok), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
                                 final String _id = profileSwitch._id;
-                                if (_id != null && !_id.equals("")) {
+                                if (NSUpload.isIdValid(_id)) {
                                     NSUpload.removeCareportalEntryFromNS(_id);
+                                } else {
+                                    UploadQueue.removeID("dbAdd", _id);
                                 }
                                 MainApp.getDbHelper().delete(profileSwitch);
                             }
                         });
+                        builder.setNegativeButton(MainApp.sResources.getString(R.string.cancel), null);
+                        builder.show();
+                        break;
+                    case R.id.profileswitch_date:
+                    case R.id.profileswitch_name:
+                        long time = ((ProfileSwitch)v.getTag()).date;
+                        ProfileViewerDialog pvd = ProfileViewerDialog.newInstance(time);
+                        FragmentManager manager = getFragmentManager();
+                        pvd.show(manager, "ProfileViewDialog");
                         break;
                 }
             }
@@ -169,14 +188,18 @@ public class TreatmentsProfileSwitchFragment extends SubscriberFragment implemen
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.profileswitch_refreshfromnightscout:
-                OKDialog.show(getActivity(), MainApp.sResources.getString(R.string.confirmation), MainApp.sResources.getString(R.string.refresheventsfromnightscout) + "?", new Runnable() {
-                    @Override
-                    public void run() {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
+                builder.setTitle(this.getContext().getString(R.string.confirmation));
+                builder.setMessage(this.getContext().getString(R.string.refresheventsfromnightscout) + "?");
+                builder.setPositiveButton(this.getContext().getString(R.string.ok), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
                         MainApp.getDbHelper().resetProfileSwitch();
                         Intent restartNSClient = new Intent(Intents.ACTION_RESTART);
                         MainApp.instance().getApplicationContext().sendBroadcast(restartNSClient);
                     }
                 });
+                builder.setNegativeButton(this.getContext().getString(R.string.cancel), null);
+                builder.show();
                 break;
         }
     }

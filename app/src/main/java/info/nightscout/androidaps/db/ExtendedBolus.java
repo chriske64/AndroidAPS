@@ -147,6 +147,11 @@ public class ExtendedBolus implements Interval, DataPointWithLabelInterface {
         return durationInMinutes == 0;
     }
 
+    @Override
+    public boolean isValid() {
+        return true;
+    }
+
     // -------- Interval interface end ---------
 
     public String log() {
@@ -187,7 +192,7 @@ public class ExtendedBolus implements Interval, DataPointWithLabelInterface {
                 if (calcdate > dia_ago && calcdate <= time) {
                     double tempBolusSize = absoluteRate() * spacing / 60d;
 
-                    Treatment tempBolusPart = new Treatment(insulinInterface, dia);
+                    Treatment tempBolusPart = new Treatment();
                     tempBolusPart.insulin = tempBolusSize;
                     tempBolusPart.date = calcdate;
 

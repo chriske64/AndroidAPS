@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
@@ -25,19 +24,19 @@ import com.squareup.otto.Subscribe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Date;
 import java.util.List;
 
 import info.nightscout.androidaps.MainApp;
 import info.nightscout.androidaps.R;
 import info.nightscout.androidaps.Services.Intents;
 import info.nightscout.androidaps.data.Iob;
+import info.nightscout.androidaps.data.Profile;
 import info.nightscout.androidaps.db.Source;
 import info.nightscout.androidaps.db.Treatment;
 import info.nightscout.androidaps.events.EventNewBG;
 import info.nightscout.androidaps.events.EventTreatmentChange;
-import info.nightscout.androidaps.data.Profile;
 import info.nightscout.androidaps.plugins.Common.SubscriberFragment;
+import info.nightscout.androidaps.plugins.NSClientInternal.UploadQueue;
 import info.nightscout.androidaps.plugins.Treatments.TreatmentsPlugin;
 import info.nightscout.utils.DateUtil;
 import info.nightscout.utils.DecimalFormatter;
@@ -84,7 +83,8 @@ public class TreatmentsBolusFragment extends SubscriberFragment implements View.
             holder.activity.setText(DecimalFormatter.to3Decimal(iob.activityContrib) + " U");
             holder.mealOrCorrection.setText(t.mealBolus ? MainApp.sResources.getString(R.string.mealbolus) : MainApp.sResources.getString(R.string.correctionbous));
             holder.ph.setVisibility(t.source == Source.PUMP ? View.VISIBLE : View.GONE);
-            holder.ns.setVisibility(t._id != null ? View.VISIBLE : View.GONE);
+            holder.ns.setVisibility(NSUpload.isIdValid(t._id) ? View.VISIBLE : View.GONE);
+            holder.invalid.setVisibility(t.isValid ? View.GONE : View.VISIBLE);
             if (iob.iobContrib != 0)
                 holder.iob.setTextColor(ContextCompat.getColor(MainApp.instance(), R.color.colorActive));
             else
@@ -113,6 +113,7 @@ public class TreatmentsBolusFragment extends SubscriberFragment implements View.
             TextView remove;
             TextView ph;
             TextView ns;
+            TextView invalid;
 
             TreatmentsViewHolder(View itemView) {
                 super(itemView);
@@ -125,6 +126,7 @@ public class TreatmentsBolusFragment extends SubscriberFragment implements View.
                 mealOrCorrection = (TextView) itemView.findViewById(R.id.treatments_mealorcorrection);
                 ph = (TextView) itemView.findViewById(R.id.pump_sign);
                 ns = (TextView) itemView.findViewById(R.id.ns_sign);
+                invalid = (TextView) itemView.findViewById(R.id.invalid_sign);
                 remove = (TextView) itemView.findViewById(R.id.treatments_remove);
                 remove.setOnClickListener(this);
                 remove.setPaintFlags(remove.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -141,10 +143,17 @@ public class TreatmentsBolusFragment extends SubscriberFragment implements View.
                         builder.setPositiveButton(MainApp.sResources.getString(R.string.ok), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 final String _id = treatment._id;
-                                if (_id != null && !_id.equals("")) {
-                                    NSUpload.removeCareportalEntryFromNS(_id);
+                                if (treatment.source == Source.PUMP) {
+                                    treatment.isValid = false;
+                                    MainApp.getDbHelper().update(treatment);
+                                } else {
+                                    if (NSUpload.isIdValid(_id)) {
+                                        NSUpload.removeCareportalEntryFromNS(_id);
+                                    } else {
+                                        UploadQueue.removeID("dbAdd", _id);
+                                    }
+                                    MainApp.getDbHelper().delete(treatment);
                                 }
-                                MainApp.getDbHelper().delete(treatment);
                                 updateGUI();
                                 Answers.getInstance().logCustom(new CustomEvent("RemoveTreatment"));
                             }
@@ -224,10 +233,10 @@ public class TreatmentsBolusFragment extends SubscriberFragment implements View.
                 @Override
                 public void run() {
                     recyclerView.swapAdapter(new RecyclerViewAdapter(TreatmentsPlugin.treatments), false);
-                    if (TreatmentsPlugin.lastTreatmentCalculation != null)
-                        iobTotal.setText(DecimalFormatter.to2Decimal(TreatmentsPlugin.lastTreatmentCalculation.iob) + " U");
-                    if (TreatmentsPlugin.lastTreatmentCalculation != null)
-                        activityTotal.setText(DecimalFormatter.to3Decimal(TreatmentsPlugin.lastTreatmentCalculation.activity) + " U");
+                    if (TreatmentsPlugin.getPlugin().getLastCalculationTreatments() != null) {
+                        iobTotal.setText(DecimalFormatter.to2Decimal(TreatmentsPlugin.getPlugin().getLastCalculationTreatments().iob) + " U");
+                        activityTotal.setText(DecimalFormatter.to3Decimal(TreatmentsPlugin.getPlugin().getLastCalculationTreatments().activity) + " U");
+                    }
                 }
             });
     }

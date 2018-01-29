@@ -182,6 +182,11 @@ public class TemporaryBasal implements Interval {
         return durationInMinutes == 0;
     }
 
+    @Override
+    public boolean isValid() {
+        return true;
+    }
+
     // -------- Interval interface end ---------
 
     public IobTotal iobCalc(long time) {
@@ -223,7 +228,7 @@ public class TemporaryBasal implements Interval {
                     double tempBolusSize = netBasalRate * tempBolusSpacing / 60d;
                     netBasalAmount += tempBolusSize;
 
-                    Treatment tempBolusPart = new Treatment(insulinInterface, dia);
+                    Treatment tempBolusPart = new Treatment();
                     tempBolusPart.insulin = tempBolusSize;
                     tempBolusPart.date = calcdate;
 

@@ -3,14 +3,17 @@ package info.nightscout.androidaps.plugins.ConstraintsSafety;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Objects;
+
 import info.nightscout.androidaps.BuildConfig;
 import info.nightscout.androidaps.Config;
 import info.nightscout.androidaps.Constants;
 import info.nightscout.androidaps.MainApp;
 import info.nightscout.androidaps.R;
+import info.nightscout.androidaps.data.Profile;
 import info.nightscout.androidaps.interfaces.ConstraintsInterface;
 import info.nightscout.androidaps.interfaces.PluginBase;
-import info.nightscout.androidaps.data.Profile;
+import info.nightscout.androidaps.plugins.ConfigBuilder.ConfigBuilderPlugin;
 import info.nightscout.utils.HardLimits;
 import info.nightscout.utils.Round;
 import info.nightscout.utils.SP;
@@ -85,8 +88,13 @@ public class SafetyPlugin implements PluginBase, ConstraintsInterface {
     }
 
     @Override
+    public int getPreferencesId() {
+        return R.xml.pref_safety;
+    }
+
+    @Override
     public boolean isLoopEnabled() {
-        return MainApp.getConfigBuilder().getPumpDescription().isTempBasalCapable;
+        return ConfigBuilderPlugin.getActivePump().getPumpDescription().isTempBasalCapable;
     }
 
     /**
@@ -105,6 +113,11 @@ public class SafetyPlugin implements PluginBase, ConstraintsInterface {
 
     @Override
     public boolean isAMAModeEnabled() {
+        return true;
+    }
+
+    @Override
+    public boolean isSMBModeEnabled() {
         return true;
     }
 
@@ -161,17 +174,17 @@ public class SafetyPlugin implements PluginBase, ConstraintsInterface {
         Double origRate = absoluteRate;
         if (absoluteRate > maxBasal) {
             absoluteRate = maxBasal;
-            if (Config.logConstraintsChanges && origPercentRate != Constants.basalPercentOnlyForCheckLimit)
+            if (Config.logConstraintsChanges && !Objects.equals(origPercentRate, Constants.basalPercentOnlyForCheckLimit))
                 log.debug("Limiting rate " + origRate + " by maxBasal preference to " + absoluteRate + "U/h");
         }
         if (absoluteRate > maxBasalMult * profile.getBasal()) {
             absoluteRate = Math.floor(maxBasalMult * profile.getBasal() * 100) / 100;
-            if (Config.logConstraintsChanges && origPercentRate != Constants.basalPercentOnlyForCheckLimit)
+            if (Config.logConstraintsChanges && !Objects.equals(origPercentRate, Constants.basalPercentOnlyForCheckLimit))
                 log.debug("Limiting rate " + origRate + " by maxBasalMult to " + absoluteRate + "U/h");
         }
         if (absoluteRate > profile.getMaxDailyBasal() * maxBasalFromDaily) {
             absoluteRate = profile.getMaxDailyBasal() * maxBasalFromDaily;
-            if (Config.logConstraintsChanges && origPercentRate != Constants.basalPercentOnlyForCheckLimit)
+            if (Config.logConstraintsChanges && !Objects.equals(origPercentRate, Constants.basalPercentOnlyForCheckLimit))
                 log.debug("Limiting rate " + origRate + " by 3 * maxDailyBasal to " + absoluteRate + "U/h");
         }
 
@@ -180,7 +193,7 @@ public class SafetyPlugin implements PluginBase, ConstraintsInterface {
             percentRateAfterConst = Round.ceilTo((double) percentRateAfterConst, 10d).intValue();
         else percentRateAfterConst = Round.floorTo((double) percentRateAfterConst, 10d).intValue();
 
-        if (Config.logConstraintsChanges && origPercentRate != Constants.basalPercentOnlyForCheckLimit)
+        if (Config.logConstraintsChanges && !Objects.equals(origPercentRate, Constants.basalPercentOnlyForCheckLimit))
             log.debug("Recalculated percent rate " + percentRate + "% to " + percentRateAfterConst + "%");
         return percentRateAfterConst;
     }

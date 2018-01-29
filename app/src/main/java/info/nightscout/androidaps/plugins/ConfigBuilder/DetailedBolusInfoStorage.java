@@ -20,7 +20,7 @@ public class DetailedBolusInfoStorage {
     private static List<DetailedBolusInfo> store = new ArrayList<>();
 
     public static void add(DetailedBolusInfo detailedBolusInfo) {
-        log.debug("Bolus info stored: " + new Date(detailedBolusInfo.date).toLocaleString());
+        log.debug("Stored bolus info: " + detailedBolusInfo);
         store.add(detailedBolusInfo);
     }
 
@@ -28,14 +28,24 @@ public class DetailedBolusInfoStorage {
     public static DetailedBolusInfo findDetailedBolusInfo(long bolustime) {
         DetailedBolusInfo found = null;
         for (int i = 0; i < store.size(); i++) {
-            long infoTime = store.get(0).date;
-            log.debug("Existing info: " + new Date(infoTime).toLocaleString());
+            long infoTime = store.get(i).date;
+            log.debug("Existing bolus info: " + store.get(i));
             if (bolustime > infoTime - 60 * 1000 && bolustime < infoTime + 60 * 1000) {
                 found = store.get(i);
-                store.remove(i);
                 break;
             }
         }
         return found;
+    }
+
+    public static void remove(long bolustime) {
+        for (int i = 0; i < store.size(); i++) {
+            long infoTime = store.get(i).date;
+            if (bolustime > infoTime - 60 * 1000 && bolustime < infoTime + 60 * 1000) {
+                log.debug("Removing bolus info: " + store.get(i));
+                store.remove(i);
+                break;
+            }
+        }
     }
 }

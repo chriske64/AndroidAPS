@@ -21,6 +21,7 @@ import info.nightscout.androidaps.data.ProfileStore;
 import info.nightscout.androidaps.interfaces.PluginBase;
 import info.nightscout.androidaps.data.Profile;
 import info.nightscout.androidaps.interfaces.ProfileInterface;
+import info.nightscout.androidaps.plugins.ConfigBuilder.ConfigBuilderPlugin;
 import info.nightscout.androidaps.plugins.PumpDanaR.DanaRPlugin;
 import info.nightscout.androidaps.plugins.PumpDanaR.DanaRPump;
 import info.nightscout.androidaps.plugins.PumpDanaRKorean.DanaRKoreanPlugin;
@@ -33,31 +34,24 @@ import info.nightscout.utils.DecimalFormatter;
 public class ProfileViewDialog extends DialogFragment {
     private static Logger log = LoggerFactory.getLogger(ProfileViewDialog.class);
 
-    private static TextView noProfile;
-    private static TextView units;
-    private static TextView dia;
-    private static TextView activeProfile;
-    private static TextView ic;
-    private static TextView isf;
-    private static TextView basal;
-    private static TextView target;
+    private  TextView noProfile;
+    private  TextView units;
+    private  TextView dia;
+    private  TextView activeProfile;
+    private  TextView ic;
+    private  TextView isf;
+    private  TextView basal;
+    private  TextView target;
 
-    private static Button refreshButton;
-
-    Handler mHandler;
-    static HandlerThread mHandlerThread;
+    private  Button refreshButton;
 
     public ProfileViewDialog() {
-        mHandlerThread = new HandlerThread(ProfileViewDialog.class.getSimpleName());
-        mHandlerThread.start();
-
-        mHandler = new Handler(mHandlerThread.getLooper());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.nsprofileviewer_fragment, container, false);
+        View layout = inflater.inflate(R.layout.profileviewer_fragment, container, false);
 
         noProfile = (TextView) layout.findViewById(R.id.profileview_noprofile);
         units = (TextView) layout.findViewById(R.id.profileview_units);
@@ -72,18 +66,7 @@ public class ProfileViewDialog extends DialogFragment {
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        DanaRPump.getInstance().lastSettingsRead = new Date(0);
-                        if (MainApp.getSpecificPlugin(DanaRPlugin.class).isEnabled(PluginBase.PUMP))
-                            DanaRPlugin.doConnect("ProfileViewDialog");
-                        if (MainApp.getSpecificPlugin(DanaRKoreanPlugin.class).isEnabled(PluginBase.PUMP))
-                            DanaRKoreanPlugin.doConnect("ProfileViewDialog");
-                        if (MainApp.getSpecificPlugin(DanaRv2Plugin.class).isEnabled(PluginBase.PUMP))
-                            DanaRv2Plugin.doConnect("ProfileViewDialog");
-                    }
-                });
+                ConfigBuilderPlugin.getCommandQueue().readStatus("ProfileViewDialog", null);
                 dismiss();
             }
         });
