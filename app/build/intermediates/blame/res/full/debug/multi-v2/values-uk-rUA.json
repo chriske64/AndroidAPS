@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/app/build/intermediates/incremental/mergeFullDebugResources/merged.dir/values-uk-rUA/values-uk-rUA.xml",
+            "map": [
+                {
+                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/android.joda-2.9.9.1.aar/aa8eb9e088a9a78b7f5537dd40b946e6/res/values-uk-rUA/values-uk-rUA.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        }
+    ]
+}

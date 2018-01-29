@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="info.nightscout.androidaps"
+    android:versionCode="1500"
+    android:versionName="1.57-combo-csv2-test" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_MMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.SEND_MMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.permission.PROVIDE_BACKGROUND" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission-sdk-23 android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- To receive data from xdrip. -->
+    <uses-permission android:name="com.eveningoutpost.dexdrip.permissions.RECEIVE_BG_ESTIMATE" />
+
+    <application
+        android:name="info.nightscout.androidaps.MainApp"
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@mipmap/blueowl"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="info.nightscout.androidaps.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="info.nightscout.androidaps.PreferencesActivity" />
+        <activity
+            android:name="info.nightscout.androidaps.plugins.Overview.Dialogs.BolusProgressHelperActivity"
+            android:theme="@style/Theme.AppCompat.Translucent" />
+        <activity
+            android:name="info.nightscout.androidaps.plugins.Overview.Dialogs.ErrorHelperActivity"
+            android:theme="@style/Theme.AppCompat.Translucent" />
+        <activity android:name="info.nightscout.androidaps.AgreementActivity" />
+        <activity android:name="info.nightscout.androidaps.plugins.PumpDanaR.activities.DanaRHistoryActivity" />
+        <activity android:name="info.nightscout.androidaps.plugins.PumpDanaR.activities.DanaRStatsActivity" />
+        <activity android:name="info.nightscout.androidaps.plugins.Overview.activities.QuickWizardListActivity" >
+            <intent-filter>
+                <action android:name="info.nightscout.androidaps.plugins.Overview.activities.QuickWizardListActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="info.nightscout.androidaps.plugins.PumpDanaRS.activities.BLEScanActivity" >
+            <intent-filter>
+                <action android:name="info.nightscout.androidaps.plugins.PumpDanaRS.activities.BLEScanActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="info.nightscout.androidaps.plugins.PumpDanaRS.activities.PairingHelperActivity" />
+
+        <receiver
+            android:name="info.nightscout.androidaps.receivers.DataReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+
+                <!-- Receive new SMS messages -->
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <!-- Receiver from xDrip -->
+                <action android:name="com.eveningoutpost.dexdrip.BgEstimate" />
+                <!-- Receiver from 640g uploader -->
+                <action android:name="com.eveningoutpost.dexdrip.NS_EMULATOR" />
+                <!-- Receiver from glimp -->
+                <action android:name="it.ct.glicemia.ACTION_GLUCOSE_MEASURED" />
+                <!-- Receiver from DexcomG5 -->
+                <action android:name="com.dexcom.cgm.DATA" />
+            </intent-filter>
+        </receiver>
+        <!-- Receiver keepalive, scheduled every 30 min -->
+        <receiver android:name="info.nightscout.androidaps.receivers.KeepAliveReceiver" />
+
+        <!-- Auto start -->
+        <receiver
+            android:name="info.nightscout.androidaps.plugins.NSClientInternal.receivers.AutoStartReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- NSClient -->
+        <receiver
+            android:name="info.nightscout.androidaps.plugins.NSClientInternal.receivers.RestartReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="info.nightscout.client.RESTART" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="info.nightscout.androidaps.plugins.NSClientInternal.receivers.DBAccessReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="info.nightscout.client.DBACCESS" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Service processing incomming data -->
+        <service
+            android:name="info.nightscout.androidaps.Services.DataService"
+            android:exported="false" />
+        <service
+            android:name="info.nightscout.androidaps.plugins.PumpDanaR.services.DanaRExecutionService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="info.nightscout.androidaps.plugins.PumpDanaRKorean.services.DanaRKoreanExecutionService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="info.nightscout.androidaps.plugins.PumpDanaRv2.services.DanaRv2ExecutionService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="info.nightscout.androidaps.plugins.PumpDanaRS.services.DanaRSService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="info.nightscout.androidaps.plugins.Wear.wearintegration.WatchUpdaterService"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="info.nightscout.androidaps.plugins.NSClientInternal.services.NSClientService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="info.nightscout.androidaps.Services.AlarmSoundService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="info.nightscout.androidaps.plugins.Overview.notifications.DismissNotificationService"
+            android:exported="false" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="59d462666c664c57b29e1d79ea123e01f8057cfa" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="info.nightscout.androidaps"
+      android:versionCode="1500"
+      android:versionName="1.57-combo-csv2-test"
+      split="lib_slice_5_apk">
+</manifest>
