@@ -4,7 +4,36 @@
             "outputFile": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/app/build/intermediates/incremental/mergeFullDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/materialdatetimepicker-2.3.0.aar/05408efa5089a264cb50916812688639/res/values-v16/values-v16.xml",
+                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/1785dd4703598b3efcff3104ac1653ec/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f9733f7c410d520fc6f796cc003fdd92/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "219",
+                        "endLines": "7",
+                        "endColumns": "12",
+                        "endOffsets": "387"
+                    }
+                },
+                {
+                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/materialdatetimepicker-2.3.0.aar/a422cbd357e41612b9f34e65b87c6aae/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "4,7,10,13",
                         "startColumns": "4,4,4,4",
@@ -14,12 +43,12 @@
                         "endOffsets": "307,598,717,834"
                     },
                     "to": {
-                        "startLines": "2,3,6,9",
+                        "startLines": "3,8,11,14",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "55,153,286,405",
-                        "endLines": "2,5,8,11",
+                        "startOffsets": "121,392,525,644",
+                        "endLines": "3,10,13,16",
                         "endColumns": "97,12,12,12",
-                        "endOffsets": "148,281,400,517"
+                        "endOffsets": "214,520,639,756"
                     }
                 }
             ]

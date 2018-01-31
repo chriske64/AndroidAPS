@@ -4,7 +4,41 @@
             "outputFile": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/app/build/intermediates/incremental/mergeFullDebugResources/merged.dir/values-az/values-az.xml",
             "map": [
                 {
-                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/android.joda-2.9.9.1.aar/aa8eb9e088a9a78b7f5537dd40b946e6/res/values-az/values-az.xml",
+                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f9733f7c410d520fc6f796cc003fdd92/res/values-az/values-az.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,213,312,424,512,619,733,814,893,978,1085,1192,1292,1401,1505,1615,1773,1875",
+                        "endColumns": "107,98,111,87,106,113,80,78,84,106,106,99,108,103,109,157,101,82",
+                        "endOffsets": "208,307,419,507,614,728,809,888,973,1080,1187,1287,1396,1500,1610,1768,1870,1953"
+                    },
+                    "to": {
+                        "startLines": "78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,98",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4965,5073,5172,5284,5372,5479,5593,5674,5753,5838,5945,6052,6152,6261,6365,6475,6633,7151",
+                        "endColumns": "107,98,111,87,106,113,80,78,84,106,106,99,108,103,109,157,101,82",
+                        "endOffsets": "5068,5167,5279,5367,5474,5588,5669,5748,5833,5940,6047,6147,6256,6360,6470,6628,6730,7229"
+                    }
+                },
+                {
+                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/1785dd4703598b3efcff3104ac1653ec/res/values-az/values-az.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "99",
+                        "startColumns": "4",
+                        "startOffsets": "7234",
+                        "endColumns": "100",
+                        "endOffsets": "7330"
+                    }
+                },
+                {
+                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/android.joda-2.9.9.1.aar/e5fdb55052f4f8f9ed82034aa1d02c03/res/values-az/values-az.xml",
                     "from": {
                         "startLines": "2,6,10,14,18,22,26,30,34,38,42,46,50,54,58,62,66,70,74,78,79,80",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -12,6 +46,14 @@
                         "endLines": "5,9,13,17,21,25,29,33,37,41,45,49,53,57,61,65,69,73,77,78,79,80",
                         "endColumns": "14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,134,129,150",
                         "endOffsets": "347,605,866,1131,1384,1646,1913,2178,2422,2672,2922,3169,3412,3675,3938,4183,4438,4699,4960,5095,5225,5376"
+                    },
+                    "to": {
+                        "startLines": "2,6,10,14,18,22,26,30,34,38,42,46,50,54,58,62,66,70,74,95,96,97",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,352,610,871,1136,1389,1651,1918,2183,2427,2677,2927,3174,3417,3680,3943,4188,4443,4704,6735,6870,7000",
+                        "endLines": "5,9,13,17,21,25,29,33,37,41,45,49,53,57,61,65,69,73,77,95,96,97",
+                        "endColumns": "14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,134,129,150",
+                        "endOffsets": "347,605,866,1131,1384,1646,1913,2178,2422,2672,2922,3169,3412,3675,3938,4183,4438,4699,4960,6865,6995,7146"
                     }
                 }
             ]

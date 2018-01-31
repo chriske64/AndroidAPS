@@ -170,7 +170,7 @@ public class ComboFragment extends SubscriberFragment implements View.OnClickLis
                     }
 
                     // reservoir
-                    int reservoirLebel = plugin.getPump().reservoirLevel;
+                    int reservoirLevel = plugin.getPump().reservoirLevel;
                     reservoirView.setText(reservoirLevel == -1 ? "" : "" + reservoirLevel + ""
                         + MainApp.sResources.getString(R.string.treatments_wizard_unit_label));
                     if (ps.insulinState == PumpState.LOW) {

@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <plurals name="joda_time_android_abbrev_in_num_days">
+        <item msgid="2178576254385739855" quantity="one">"завтра"</item>
+        <item msgid="2973062968038355991" quantity="other">"через <ns1:g id="COUNT">%d</ns1:g> дн."</item>
+    </plurals>
+    <plurals name="joda_time_android_abbrev_in_num_hours">
+        <item msgid="3274708118124045246" quantity="one">"через 1 час"</item>
+        <item msgid="3705373766798013406" quantity="other">"через <ns1:g id="COUNT">%d</ns1:g> ч."</item>
+    </plurals>
+    <plurals name="joda_time_android_abbrev_in_num_minutes">
+        <item msgid="562786149928284878" quantity="one">"через 1 мин."</item>
+        <item msgid="4216113292706568726" quantity="other">"через <ns1:g id="COUNT">%d</ns1:g> мин."</item>
+    </plurals>
+    <plurals name="joda_time_android_abbrev_in_num_seconds">
+        <item msgid="5842225370795066299" quantity="one">"через 1 с."</item>
+        <item msgid="5495880108825805108" quantity="other">"через <ns1:g id="COUNT">%d</ns1:g> с."</item>
+    </plurals>
+    <plurals name="joda_time_android_abbrev_num_days_ago">
+        <item msgid="8463161711492680309" quantity="one">"вчера"</item>
+        <item msgid="3453342639616481191" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> дн. назад"</item>
+    </plurals>
+    <plurals name="joda_time_android_abbrev_num_hours_ago">
+        <item msgid="4796212039724722116" quantity="one">"1 час назад"</item>
+        <item msgid="6889970745748538901" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> ч. назад"</item>
+    </plurals>
+    <plurals name="joda_time_android_abbrev_num_minutes_ago">
+        <item msgid="6361490147113871545" quantity="one">"1 мин. назад"</item>
+        <item msgid="851164968597150710" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> мин. назад"</item>
+    </plurals>
+    <plurals name="joda_time_android_abbrev_num_seconds_ago">
+        <item msgid="1849036840200069118" quantity="one">"1 сек. назад"</item>
+        <item msgid="3699169366650930415" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> сек. назад"</item>
+    </plurals>
+    <plurals name="joda_time_android_duration_hours">
+        <item msgid="8917467491248809972" quantity="one">"1 ч."</item>
+        <item msgid="3863962854246773930" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> ч."</item>
+    </plurals>
+    <plurals name="joda_time_android_duration_minutes">
+        <item msgid="4915414002546085617" quantity="one">"1 мин."</item>
+        <item msgid="3165187169224908775" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> мин."</item>
+    </plurals>
+    <plurals name="joda_time_android_duration_seconds">
+        <item msgid="6962015528372969481" quantity="one">"1 сек."</item>
+        <item msgid="1886107766577166786" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> сек."</item>
+    </plurals>
+    <plurals name="joda_time_android_in_num_days">
+        <item msgid="5413088743009839518" quantity="one">"завтра"</item>
+        <item msgid="5109449375100953247" quantity="other">"через <ns1:g id="COUNT">%d</ns1:g> дн."</item>
+    </plurals>
+    <plurals name="joda_time_android_in_num_hours">
+        <item msgid="7164353342477769999" quantity="one">"через 1 час"</item>
+        <item msgid="547290677353727389" quantity="other">"через <ns1:g id="COUNT">%d</ns1:g> ч."</item>
+    </plurals>
+    <plurals name="joda_time_android_in_num_minutes">
+        <item msgid="8793095251325200395" quantity="one">"через 1 минуту"</item>
+        <item msgid="3330713936399448749" quantity="other">"через <ns1:g id="COUNT">%d</ns1:g> мин."</item>
+    </plurals>
+    <plurals name="joda_time_android_in_num_seconds">
+        <item msgid="2729745560954905102" quantity="one">"через 1 секунду"</item>
+        <item msgid="1241926116443974687" quantity="other">"через <ns1:g id="COUNT">%d</ns1:g> с."</item>
+    </plurals>
+    <plurals name="joda_time_android_num_days_ago">
+        <item msgid="861358534398115820" quantity="one">"вчера"</item>
+        <item msgid="2479586466153314633" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> дн. назад"</item>
+    </plurals>
+    <plurals name="joda_time_android_num_hours_ago">
+        <item msgid="9150797944610821849" quantity="one">"1 час назад"</item>
+        <item msgid="2467273239587587569" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> ч. назад"</item>
+    </plurals>
+    <plurals name="joda_time_android_num_minutes_ago">
+        <item msgid="3306787433088810191" quantity="one">"1 минуту назад"</item>
+        <item msgid="2176942008915455116" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> мин. назад"</item>
+    </plurals>
+    <plurals name="joda_time_android_num_seconds_ago">
+        <item msgid="4869870056547896011" quantity="one">"1 секунду назад"</item>
+        <item msgid="3903706804349556379" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> с. назад"</item>
+    </plurals>
+    <string name="Glimp">Glimp</string>
+    <string name="MM640g">MM640g</string>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Перейти на главный экран"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Перейти вверх"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Другие параметры"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Готово"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Показать все"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Выбрать приложение"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"ОТКЛ."</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"ВКЛ."</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"Поиск"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Удалить запрос"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Поисковый запрос"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Поиск"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Отправить запрос"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Голосовой поиск"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Открыть доступ"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"Открыть доступ приложению \"<ns1:g id="APPLICATION_NAME">%s</ns1:g>\""</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Свернуть"</string>
+    <string name="absolute">абсолют</string>
+    <string name="absorption_maxtime_summary">Ожидаемое время усваивания всех углеводов пищи в часах</string>
+    <string name="absorption_maxtime_title">Максимальное время усваимости пищи</string>
+    <string name="absorptionsettings_title">Настройки усваиваемости</string>
+    <string name="actions">действия</string>
+    <string name="actions_shortname">ДЕЙСТВ</string>
+    <string name="activate_profile">АКТИВИРОВАТЬ ПРОФИЛЬ</string>
+    <string name="activity">активность</string>
+    <string name="adult">взрослый</string>
+    <string name="advancedsettings_title">расширенные настройки</string>
+    <string name="alert_dialog_storage_permission_text">пожалуйста перезагрузите телефон или перезапустите AndroidAPS из системных настроек иначе AndroidAPS не будет вести лог (что важно для отслеживания и проверки алгоритмов)</string>
+    <string name="always_use_shortavg">всегда используйте укороченное среднее приращение вместо простого</string>
+    <string name="always_use_shortavg_summary">полезно когда данные из нефильтруемых источников вроде Xdrip зашумляются</string>
+    <string name="androidaps_start">AndroidAPS запущен</string>
+    <string name="app_name">AndroidAPS</string>
+    <string name="approachingdailylimit">приближается суточный лимит инсулина</string>
+    <string name="apsmode_title">режим APS</string>
+    <string formatted="false" name="array_of_elements">массив %d элементов. актуальная величина:</string>
+    <string name="avgdelta">среднее изменение</string>
+    <string name="basal">базал</string>
+    <string name="basal_rate">скорость усвоения базала:</string>
+    <string name="basal_short">БАЗ</string>
+    <string name="basal_step">шаг базала</string>
+    <string name="basalmissing">Базал отсутствует в профиле. Применяются данные по умолчанию</string>
+    <string name="basalshortlabel">БАЗ</string>
+    <string name="basalvaluebelowminimum">значение базала ниже минимума. профиль не создан!</string>
+    <string name="base_profile_label">профиль базала</string>
+    <string name="batterydischarged">батарея помпы разряжена</string>
+    <string name="batteryoptimalizationerror">по-видимому устройство не поддерживается белым списком оптимизации батареи</string>
+    <string name="bg_lang">болгарский</string>
+    <string name="bolus">болюс</string>
+    <string name="bolus_step">шаг болюса</string>
+    <string name="bolusconstraintapplied">применено ограничение болюса</string>
+    <string formatted="false" name="bolusdelivered">болюс %.2fU дан успешно</string>
+    <string formatted="false" name="bolusdelivering">подается болюс %.2fU</string>
+    <string formatted="false" name="bolusrequested">начинается подача болюса %.2fU</string>
+    <string name="button1">кнопка 1</string>
+    <string name="button2">кнопка 2</string>
+    <string name="button3">кнопка 3</string>
+    <string name="calibrationsent">калибровка передается на xdrip</string>
+    <string name="cancel">отмена</string>
+    <string name="canceltemp">отмена врем базала</string>
+    <string name="carbs">углеводы</string>
+    <string name="carbsconstraintapplied">применено ограничение углеводов</string>
+    <string name="careportal">портал назначений</string>
+    <string name="careportal_activity_label">АКТИВНОСТЬ</string>
+    <string name="careportal_announcement">оповещение</string>
+    <string name="careportal_bgcheck">проверка СК</string>
+    <string name="careportal_canulaage_label">канюля проработала</string>
+    <string name="careportal_canulaage_label_short">ВозрКан</string>
+    <string name="careportal_carbsandbolus_label">УГЛЕВОДЫ ; БОЛЮС</string>
+    <string name="careportal_carbscorrection">корректировка углеводов</string>
+    <string name="careportal_cgm_label">МОНИТОРИНГ; OPENAPS</string>
+    <string name="careportal_cgmsensorinsert">замена сенсора мониторинга глюкозы</string>
+    <string name="careportal_cgmsensorstart">старт сенсора</string>
+    <string name="careportal_combobolus">комбинированный болюс</string>
+    <string name="careportal_correctionbolus">болюс на коррекцию</string>
+    <string name="careportal_exercise">нагрузка</string>
+    <string name="careportal_insulinage_label">Инсулин проработал</string>
+    <string name="careportal_insulinage_label_short">ВозрИнс</string>
+    <string name="careportal_insulincartridgechange">замена картриджа инсулина</string>
+    <string name="careportal_mealbolus">болюс на еду</string>
+    <string name="careportal_newnstreatment_absolute_label">абсолют</string>
+    <string name="careportal_newnstreatment_carbs_label">углеводы</string>
+    <string name="careportal_newnstreatment_carbtime_label">действие углеводов</string>
+    <string name="careportal_newnstreatment_duration_label">Длительность действия</string>
+    <string name="careportal_newnstreatment_duration_min_label">Длительность (мин)</string>
+    <string name="careportal_newnstreatment_enteredby_title">кем введено</string>
+    <string name="careportal_newnstreatment_eventtime_label">время события</string>
+    <string name="careportal_newnstreatment_eventtype">тип события</string>
+    <string name="careportal_newnstreatment_glucosetype">тип глюкозы</string>
+    <string name="careportal_newnstreatment_insulin_label">инсулин</string>
+    <string name="careportal_newnstreatment_meter">глюкометр</string>
+    <string name="careportal_newnstreatment_notes_label">заметки</string>
+    <string name="careportal_newnstreatment_other">другое</string>
+    <string name="careportal_newnstreatment_percent_label">процент</string>
+    <string name="careportal_newnstreatment_profile_label">профиль</string>
+    <string name="careportal_newnstreatment_sensor">сенсор</string>
+    <string name="careportal_newnstreatment_split_label">разбивка</string>
+    <string name="careportal_note">заметка</string>
+    <string name="careportal_openapsoffline">OpenAPS оффлайн</string>
+    <string name="careportal_pbage_label">Батарея помпы работает</string>
+    <string name="careportal_pbage_label_short">ВозрБат</string>
+    <string name="careportal_profileswitch">смена профиля</string>
+    <string name="careportal_pump_label">ПОМПА</string>
+    <string name="careportal_pumpbatterychange">замена батареи помпы</string>
+    <string name="careportal_pumpsitechange">смена места катетера помпы</string>
+    <string name="careportal_question">вопрос</string>
+    <string name="careportal_sensorage_label">сенсор пропаботал</string>
+    <string name="careportal_sensorage_label_short">ВОЗРСенс</string>
+    <string name="careportal_shortname">ПОРТНаз</string>
+    <string name="careportal_snackbolus">болюс на перекус</string>
+    <string name="careportal_tempbasalend">оконч действия врем базала</string>
+    <string name="careportal_tempbasalstart">начало действия врем базала</string>
+    <string name="careportal_temporarytarget">временное целевое значение</string>
+    <string name="careportal_temporarytargetcancel">отмена времнной цели</string>
+    <string name="changeyourinput">измените введенные данные</string>
+    <string name="child">ребенок</string>
+    <string name="circadian_percentage_profile">суточный процентный профиль</string>
+    <string name="circadian_percentage_profile_shortname">СПП</string>
+    <string name="clear_queue">очистка очереди</string>
+    <string name="clearlog">очистка лога</string>
+    <string name="closedloop">замкнутый цикл</string>
+    <string name="cob">акт углев</string>
+    <string name="comment">комментарий</string>
+    <string msgid="6428604800157361567" name="common_android_wear_notification_needs_update_text">"Чтобы продолжить работу с приложением \"<ns1:g id="APP_NAME">%1$s</ns1:g>\", обновите Android Wear"</string>
+    <string msgid="2453027084525739603" name="common_android_wear_update_text">"Чтобы запустить приложение \"<ns1:g id="APP_NAME">%1$s</ns1:g>\", обновите Android Wear."</string>
+    <string msgid="1366439133145190222" name="common_android_wear_update_title">"Обновить Android Wear"</string>
+    <string msgid="6534628256897874213" name="common_google_play_services_api_unavailable_text">"Сервисы Google Play, необходимые для работы с приложением \"<ns1:g id="APP_NAME">%1$s</ns1:g>\", недоступны. Свяжитесь с его разработчиком."</string>
+    <string msgid="4181637455539816337" name="common_google_play_services_enable_button">"Включить"</string>
+    <string msgid="4896236883690196080" name="common_google_play_services_enable_text">"Чтобы запустить приложение \"<ns1:g id="APP_NAME">%1$s</ns1:g>\", включите сервисы Google Play."</string>
+    <string msgid="529078775174559253" name="common_google_play_services_enable_title">"Включите Сервисы Google Play"</string>
+    <string msgid="2443362625939284971" name="common_google_play_services_error_notification_requested_by_msg">"Источник запроса: <ns1:g id="APP_NAME">%1$s</ns1:g>"</string>
+    <string msgid="8515591849428043265" name="common_google_play_services_install_button">"Установить"</string>
+    <string msgid="8836325110837822534" name="common_google_play_services_install_text_phone">"Для работы с приложением \"<ns1:g id="APP_NAME">%1$s</ns1:g>\" требуются сервисы Google Play, не установленные на вашем телефоне."</string>
+    <string msgid="542176290824754127" name="common_google_play_services_install_text_tablet">"Для работы с приложением \"<ns1:g id="APP_NAME">%1$s</ns1:g>\" требуются сервисы Google Play, не установленные на вашем планшете."</string>
+    <string msgid="26645092511305524" name="common_google_play_services_install_title">"Установите Сервисы Google Play"</string>
+    <string msgid="4983316348021735578" name="common_google_play_services_invalid_account_text">"Этого аккаунта нет на устройстве. Выберите другой."</string>
+    <string msgid="1066672360770936753" name="common_google_play_services_invalid_account_title">"Недействительный аккаунт"</string>
+    <string msgid="2583358409598976717" name="common_google_play_services_needs_enabling_title">"Для работы приложения требуется включить сервисы Google Play"</string>
+    <string msgid="9038847255613537209" name="common_google_play_services_network_error_text">"Для работы с Google Play требуется подключение к сети."</string>
+    <string msgid="3827284619958211114" name="common_google_play_services_network_error_title">"Ошибка сети"</string>
+    <string msgid="1388129345631079938" name="common_google_play_services_notification_needs_update_title">"Для работы приложения требуется обновить сервисы Google Play"</string>
+    <string msgid="1852570676146674985" name="common_google_play_services_notification_ticker">"Ошибка сервисов Google Play"</string>
+    <string msgid="5194079840165204725" name="common_google_play_services_sign_in_failed_text">"При входе в указанный аккаунт произошла ошибка. Выберите другой аккаунт."</string>
+    <string msgid="8164948898147532159" name="common_google_play_services_sign_in_failed_title">"Ошибка входа"</string>
+    <string msgid="4762332809710093730" name="common_google_play_services_unknown_issue">"Неизвестная ошибка с Сервисами Google Play."</string>
+    <string msgid="7682982632307307938" name="common_google_play_services_unsupported_text">"Сервисы Google Play, необходимые для работы с приложением \"<ns1:g id="APP_NAME">%1$s</ns1:g>\", не поддерживаются на вашем устройстве. Обратитесь к его производителю."</string>
+    <string msgid="6334768798839376943" name="common_google_play_services_unsupported_title">"Сервисы Google Play"</string>
+    <string msgid="8932944190611227642" name="common_google_play_services_update_button">"Обновить"</string>
+    <string msgid="5709479369299147668" name="common_google_play_services_update_text">"Чтобы запустить приложение \"<ns1:g id="APP_NAME">%1$s</ns1:g>\", обновите сервисы Google Play."</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">"Обновите Сервисы Google Play"</string>
+    <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"Сервисы Google Play, необходимые для работы с приложением \"<ns1:g id="APP_NAME">%1$s</ns1:g>\", в настоящий момент обновляются."</string>
+    <string msgid="815008177440683245" name="common_google_play_services_updating_title">"Обновление сервисов Google Play…"</string>
+    <string msgid="411506735369601515" name="common_open_on_phone">"Открыть на телефоне"</string>
+    <string msgid="9071884888741449141" name="common_signin_button_text">"Войти"</string>
+    <string msgid="2429381841831957106" name="common_signin_button_text_long">"Войти в аккаунт Google"</string>
+    <string name="configbuilder">конфигуратор</string>
+    <string name="configbuilder_aps">APS</string>
+    <string name="configbuilder_bgsource">источник СК</string>
+    <string name="configbuilder_constraints">ограничения</string>
+    <string name="configbuilder_general">общее</string>
+    <string name="configbuilder_insulin">инсулин</string>
+    <string name="configbuilder_loop">замкнутый цикл</string>
+    <string name="configbuilder_nightscoutversion_label">версия Nightscout:</string>
+    <string name="configbuilder_profile">профиль</string>
+    <string name="configbuilder_pump">помпа</string>
+    <string name="configbuilder_sensitivity">определение чувствительности</string>
+    <string name="configbuilder_shortname">КОНФ</string>
+    <string name="configbuilder_tempbasals">временный базал</string>
+    <string name="configbuilder_treatments">назначения</string>
+    <string name="confirmation">подтверждение</string>
+    <string name="connected">соединение установлено</string>
+    <string name="connecting">соединение устанавливается</string>
+    <string name="connectionerror">ошибка соединения</string>
+    <string name="constraintapllied">применено ограничение!</string>
+    <string name="constraints_violation">ограничение нарушено</string>
+    <string name="copied_to_clipboard">скопировано в буфер обмена</string>
+    <string name="copy_to_clipboard">копировать в буфер обмена</string>
+    <string name="correctionbous">коррекция</string>
+    <string name="cpp_notloadedplugins">не все профили загружены!</string>
+    <string name="cpp_sync_setting_missing">требует активации для отправки данных на помпу!</string>
+    <string name="cpp_valuesnotstored">Данные не сохранены!</string>
+    <string name="cs_lang">чешский</string>
+    <string name="danar_alarm">внимание!</string>
+    <string name="danar_basalhour">почасовой базал</string>
+    <string name="danar_bluetooth_status">статус блутус</string>
+    <string name="danar_bt_name_title">устройство блутус danaR</string>
+    <string name="danar_carbohydrate">углеводы</string>
+    <string name="danar_dailyunits">суточные единицы</string>
+    <string name="danar_debolus">болюс DE</string>
+    <string name="danar_disableeasymode">отключить режим EasyUI в помпе</string>
+    <string name="danar_dsbolus">болюс DS</string>
+    <string name="danar_ebolus">болюс E</string>
+    <string name="danar_enableextendedbolus">активировать увеличенные болюсы на помпе</string>
+    <string name="danar_error">ошибка</string>
+    <string name="danar_glucose">гликемия</string>
+    <string name="danar_history">история</string>
+    <string name="danar_history_alarm">оповещения об опасности</string>
+    <string name="danar_history_basalhours">почасовые базалы</string>
+    <string name="danar_history_bolus">болюсы</string>
+    <string name="danar_history_carbohydrates">углеводы</string>
+    <string formatted="false" name="danar_history_connectingfor">связь установлена за %d сек.</string>
+    <string name="danar_history_dailyinsulin">суточный инсулин</string>
+    <string name="danar_history_errors">ошибки</string>
+    <string name="danar_history_glucose">гликемия</string>
+    <string name="danar_history_refill">дозаправка</string>
+    <string name="danar_history_syspend">приостановка</string>
+    <string name="danar_historyreload">замена</string>
+    <string name="danar_invalidinput">введенные данные неверны</string>
+    <string name="danar_iob_label">активный инсулин на помпе</string>
+    <string formatted="false" name="danar_model">модель: %02X протокол: %02X код: %02X</string>
+    <string name="danar_password_title">пароль помпы</string>
+    <string name="danar_pump_settings">настройки помпы DanaR</string>
+    <string name="danar_refill">дозаправка</string>
+    <string name="danar_sbolus">болюс S</string>
+    <string name="danar_stats">статистика DanaR</string>
+    <string name="danar_stats_amount_days">количество дней</string>
+    <string name="danar_stats_basalrate">базал</string>
+    <string name="danar_stats_bolus">болюс</string>
+    <string name="danar_stats_cumulative_tdd">накопительные TDD</string>
+    <string name="danar_stats_date">дата</string>
+    <string name="danar_stats_expweight">экспоненциально взвешенные TDD</string>
+    <string name="danar_stats_olddata_Message">старые данные. нажмите \"перезагрузка\"</string>
+    <string name="danar_stats_ratio">коэффициент</string>
+    <string name="danar_stats_tbb">общий базал</string>
+    <string name="danar_stats_tbb2">общий базал*2</string>
+    <string name="danar_stats_tdd">общая суточная доза</string>
+    <string name="danar_stats_warning_Message">возможны неточности если болюсы использовались для заполнения</string>
+    <string name="danar_stats_weight">вес</string>
+    <string name="danar_switchtouhmode">замена режима с U/d на U/h на помпе</string>
+    <string formatted="false" name="danar_totaluploaded">всего передано %d записей</string>
+    <string name="danar_useextended_title">для величин >200% пользуйтесь увеличенным болюсом</string>
+    <string name="danar_valuenotsetproperly">величина не задана должным образом</string>
+    <string name="danar_viewprofile">просмотр профиля</string>
+    <string name="danar_visualizeextendedaspercentage_title">Просмотреть расширенный болюс %</string>
+    <string name="danarkoreanpump">DanaR Корея</string>
+    <string name="danarprofile">настройки профиля DanaR</string>
+    <string name="danarprofile_dia">время действия инсулина (ч.):</string>
+    <string name="danarprofile_dia_summary">продолжительность инсулиновой активности</string>
+    <string name="danarpump">DanaR</string>
+    <string name="danarpump_shortname">ДАНА</string>
+    <string name="danarv2pump">DanaRv2</string>
+    <string name="date">дата</string>
+    <string name="days">дней</string>
+    <string name="de_lang">Немецкий</string>
+    <string name="deliver_now">дать сейчас</string>
+    <string name="delta">изменение</string>
+    <string name="dev">DEV</string>
+    <string name="device">устройство</string>
+    <string name="devicenotfound">выбранное устройство не найдено</string>
+    <string name="dia">время действия инсулина:</string>
+    <string formatted="false" name="dia_too_short">pначение длительности работы инс %s слишком мало - применено %s</string>
+    <string name="disabledloop">цикличность неактивирована</string>
+    <string name="disableloop">деактивировать циклы</string>
+    <string name="disconnected">отсоединено</string>
+    <string name="disconnecting">разъединение</string>
+    <string name="disconnectpumpfor10h">отсоединить помпу на 10 час</string>
+    <string name="disconnectpumpfor1h">отсоединить помпу на 1 час</string>
+    <string name="disconnectpumpfor2h">отсоединить помпу на 2 часа</string>
+    <string name="disconnectpumpfor30m">отсоединить помпу на 30 мин</string>
+    <string name="disconnectpumpfor3h">отсоединить помпу на 3 часа</string>
+    <string name="dismiss">отклонить</string>
+    <string name="do_not_track_profile_switch">не отслеживать смены профиля</string>
+    <string name="do_not_track_profile_switch_summary">все смены профиля игнорируются; используется только активный профиль</string>
+    <string name="dont_show_again">не показывать снова</string>
+    <string name="duration">продолжительность</string>
+    <string name="eatingsoon">наступает время еды</string>
+    <string name="edit_base_basal">редактировать значение базала:</string>
+    <string name="edit_base_ic">редактировать инсулин/ВХ:</string>
+    <string name="edit_base_isf">редактировать чувствительность к инсулину:</string>
+    <string name="el_lang">греческий</string>
+    <string name="en_lang">English</string>
+    <string name="enabled">активировано</string>
+    <string name="enableloop">активировать цикличность</string>
+    <string name="enablesuperbolus">активировать суперболюс</string>
+    <string name="enablesuperbolus_summary">активировать возможность суперболюса в мастере. не активируйте если не знаете что это. МОЖЕТ ВЫЗВАТЬ ПЕРЕДОЗИРОВКУ ИНСУЛИНА ЕСЛИ ИСПОЛЬЗУЕТСЯ ВСЛЕПУЮ</string>
+    <string name="enacted">выполнено</string>
+    <string name="end_user_license_agreement">лицензионное соглашение с пользователем</string>
+    <string name="end_user_license_agreement_i_understand">я понимаю и принимаю</string>
+    <string name="end_user_license_agreement_text">"НЕ ДОЛЖНО ИСПОЛЬЗОВАТЬСЯ ДЛЯ ПРИНЯТИЯ МЕДИЦИНСКИХ РЕШЕНИЙ. ПРОГРАММА НЕ ДАЕТ ГАРАНТИЙ В РАМКАХ СУЩЕСТВУЮЩЕГО ЗАКОНОДАТЕЛЬСТВА. ПРЕДОСТАВЛЯЕТСЯ \"КАК ЕСТЬ\" БЕЗ ЯВНЫХ ИЛИ СКРЫТЫХ ГАРАНТИЙ ВКЛЮЧАЯ НО НЕ ОГРАНИЧИВАЯСЬ ВОЗМОЖНОСТЬЮ КОММЕРЧЕСКОГО ИСПОЛЬЗОВАНИ ИЛИ СООТВЕТСТВИЯ КАКИМ-ЛИБО ЦЕЛЯМ. ВСЕ РИСКИ ЛОЖАТСЯ НА ВАС. В СЛУЧАЕ НЕРАБОТОСПОСОБНОСТИ ПРОГРАММЫ ВЫ НЕСЕТЕ ВСЕ РАСХОДЫ СВЯЗАННЫЕ С ОБСЛУЖИВАНИЕМ РЕМОНТОМ ИЛИ КОРРЕКТИРОВКОЙ.  "</string>
+    <string name="entertreatmentquestion">введите новое назначение</string>
+    <string name="error_creditcard_number_not_valid">Номер кредитной карты введён некорректно</string>
+    <string name="error_date_not_valid">Неправильный формат ввода</string>
+    <string name="error_domain_not_valid">Доменное имя некорректно</string>
+    <string name="error_email_address_not_valid">Email введён некорректно</string>
+    <string name="error_field_must_not_be_empty">поле не может быть пустым</string>
+    <string name="error_ip_not_valid">IP-адрес введён некорректо</string>
+    <string name="error_notvalid_personfullname">Некорректный ввод имени.</string>
+    <string name="error_notvalid_personname">Некорректный ввод имени или фамилии.</string>
+    <string name="error_only_numeric_digits_allowed">разрешены только цифровые значения</string>
+    <string formatted="false" name="error_only_numeric_digits_range_allowed">разрешены только цифровые значения в диапазоне %1$s - %2$s</string>
+    <string name="error_only_standard_letters_are_allowed">Допускается только стандартный текст</string>
+    <string name="error_phone_not_valid">неверный номер телефона</string>
+    <string name="error_this_field_cannot_contain_special_character">Это поле не может содержать специальные символы</string>
+    <string name="error_url_not_valid">Интернет-адрес введён некорректно</string>
+    <string name="es_lang">испанский</string>
+    <string name="executing">выполнение</string>
+    <string name="export_to">экспортировать настройки в</string>
+    <string name="exported">настройки экспортированы</string>
+    <string name="extendedbolus">расширенный болюс</string>
+    <string name="failedupdatebasalprofile">не удалось обновить базальный профиль</string>
+    <string name="fastactinginsulin">быстродействующий инсулин</string>
+    <string name="fastactinginsulincomment">Novorapid, Novolog, Humalog</string>
+    <string name="fastactinginsulinprolonged">пролонгированный инсулин быстрого действия</string>
+    <string name="filenotfound">файл не найден</string>
+    <string name="fillbolus_title">заполнить стандартное количество инсулина</string>
+    <string name="fillwarning">убедитесь что количество соответствует характеристикам вашей инфузионной системы</string>
+    <string name="free_peak_oref">Акуу-Зуфл Щкуа</string>
+    <string name="gettingpumpstatus">получение статуса помпы</string>
+    <string name="glucose">гликемия</string>
+    <string name="glucosetype_finger">палец</string>
+    <string name="glucosetype_sensor">сенсор</string>
+    <string name="high_mark">ВЕРХНЯЯ отметка</string>
+    <string name="hours">час</string>
+    <string name="hoursago">час. назад</string>
+    <string name="icmissing">соотношение инс-углев отсутствует в профиле. применено соотн. по умолчанию</string>
+    <string name="import_from">импортировать настройки из</string>
+    <string name="initializing">инициализация...</string>
+    <string name="insulin_oref_peak">Время пика действующего инс IOB</string>
+    <string name="insulin_peak_time">время пика (в мин.)</string>
+    <string name="insulin_shortname">ИНС</string>
+    <string name="invalid">НЕВЕРНО</string>
+    <string name="invalidprofile">Неверный профиль !!!</string>
+    <string name="iob">IOB акт инс</string>
+    <string name="isfmissing">фактор чувствительности к инс. отутствует в профиле. Применен фактор по умолчанию</string>
+    <string name="it_lang">итальянский</string>
+    <string name="joda_time_android_date_time">%2$s, %1$s</string>
+    <string msgid="9093949757757445117" name="joda_time_android_preposition_for_date">"<ns1:g id="DATE">%s</ns1:g>"</string>
+    <string msgid="5506831244263083793" name="joda_time_android_preposition_for_time">"в <ns1:g id="TIME">%s</ns1:g>"</string>
+    <string msgid="1818557177829411417" name="joda_time_android_relative_time">"<ns1:g id="DATE">%1$s</ns1:g>, <ns1:g id="TIME">%2$s</ns1:g>"</string>
+    <string name="ko_lang">корейский</string>
+    <string name="language">язык</string>
+    <string name="localprofile">локальный профиль</string>
+    <string name="localprofile_shortname">ЛП</string>
+    <string name="lock_screen">блокировка экрана</string>
+    <string name="lock_screen_short">блок</string>
+    <string name="long_avgdelta">долгосрочное усредненное изменение</string>
+    <string name="loop">замкнутый цикл</string>
+    <string name="loop_aps_label">APS</string>
+    <string name="loop_constraintsprocessed_label">после наложенных ограничений</string>
+    <string name="loop_setbypump_label">задано помпой</string>
+    <string name="loop_shortname">ЗЦ</string>
+    <string name="loopdisabled">ЗЦ ОТМЕНЕН ОГРАНИЧЕНИЯМИ</string>
+    <string name="loopmenu">меню ЗЦ</string>
+    <string formatted="false" name="loopsuperbolusfor">суперболюс(%d m)</string>
+    <string name="loopsuspended">ЗЦ остановлен</string>
+    <string formatted="false" name="loopsuspendedfor">остановлен на(%d m)</string>
+    <string name="low_mark">отметка НИЗКИЙ</string>
+    <string name="lowbattery">низкий заряд батареи</string>
+    <string name="manual">вручную</string>
+    <string name="mdi">MDI</string>
+    <string name="mdtp_cancel">отмена</string>
+    <string name="mdtp_date_v1_monthyear">LLLL yyyy</string>
+    <string msgid="3968620852217927702" name="mdtp_day_picker_description">"Окно выбора даты"</string>
+    <string msgid="6908431551612331381" name="mdtp_deleted_key">"Цифра <ns1:g id="KEY">%1$s</ns1:g> удалена"</string>
+    <string msgid="7007948707597430919" name="mdtp_done_label">"Готово"</string>
+    <string msgid="7586639618712934060" name="mdtp_hour_picker_description">"Выбор часов на циферблате"</string>
+    <string msgid="2674929164900463786" name="mdtp_item_is_selected">"Выбран элемент <ns1:g id="ITEM">%1$s</ns1:g>"</string>
+    <string msgid="6024811202872705251" name="mdtp_minute_picker_description">"Выбор минут на циферблате"</string>
+    <string name="mdtp_ok">OK</string>
+    <string msgid="3973338219107019769" name="mdtp_select_day">"Выберите месяц и день"</string>
+    <string msgid="7651068754188418859" name="mdtp_select_hours">"Выберите часы"</string>
+    <string msgid="8327182090226828481" name="mdtp_select_minutes">"Выберите минуты"</string>
+    <string msgid="2603330600102539372" name="mdtp_select_year">"Выберите год"</string>
+    <string msgid="6963340404644587098" name="mdtp_year_picker_description">"Меню выбора года"</string>
+    <string name="mealbolus">болюс на еду</string>
+    <string name="mgdl">mg/dl</string>
+    <string formatted="false" name="minago">%d м. назад</string>
+    <string name="missing">отсутствует</string>
+    <string name="mmol">mmol/l</string>
+    <string name="nav_about">о приложении</string>
+    <string name="nav_backup">сохранение</string>
+    <string name="nav_exit">выход</string>
+    <string name="nav_export">экспорт настроек</string>
+    <string name="nav_import">импорт настроек</string>
+    <string name="nav_preferences">опции</string>
+    <string name="nav_refreshtreatments">синхронисировать назначения с NS</string>
+    <string name="nav_resetdb">обнулить базы</string>
+    <string name="nav_show_logcat">показать лог</string>
+    <string name="nav_test_alert">проверка сигнала тревоги</string>
+    <string formatted="false" name="needwhitelisting">%s необходимо включить в белый список для корректной работы</string>
+    <string name="nightscout">Nightscout</string>
+    <string name="nl_lang">Голландский</string>
+    <string name="noapsselected">APS не выбрана или не выдала результат</string>
+    <string name="nobtadapter">адаптер блутус не найден</string>
+    <string name="nochangerequested">изменения не запрошены</string>
+    <string name="noprofile">профиль еще не загружен из NS</string>
+    <string name="noprofileselected">профиль не выбран</string>
+    <string name="noprofileset">ПРОФИЛЬ НЕ ЗАДАН</string>
+    <string name="nosuccess">неудача - проверьте телефон</string>
+    <string name="notavailable">недоступно</string>
+    <string name="nowritepermission">NS не имеет разрешения внести изменения. неверный API secret?</string>
+    <string name="ns_alarmoptions">опции оповещения</string>
+    <string name="ns_localbroadcasts">Активировать передачу на другие приложения (напр. xDrip)</string>
+    <string name="ns_localbroadcasts_title">Активировать локальную передачу</string>
+    <string name="ns_logappstartedevent">начать работу с NS</string>
+    <string name="ns_noupload">данные не передаются в NS</string>
+    <string name="ns_noupload_summary">данные передаваемые в NS не доходят. AAPS соединяется с NS но изменения туда не вносятся</string>
+    <string name="ns_sync_use_absolute_title">только абсолютные величины для базала</string>
+    <string name="ns_upload_only">только передача в NS (синхронизация отсутствует)</string>
+    <string name="ns_upload_only_summary">только передача в NS. работает в SGV только если выбран местный источник вроде xdrip. не работает в профилях при действующем профиле NS</string>
+    <string name="nsalarm_high">Высокий</string>
+    <string name="nsalarm_low">Низкий</string>
+    <string name="nsalarm_staledata">Нет данных</string>
+    <string name="nsalarm_staledatavalue_label">Порог устаревших данных (мин)</string>
+    <string name="nsalarm_summary">сейчас установлен на %f</string>
+    <string name="nsalarm_urgent_staledatavalue_label">Порог тревоги из-за устаревших данных (мин)</string>
+    <string name="nsalarm_urgenthigh">Тревога выс</string>
+    <string name="nsalarm_urgentlow">Тревога низкий</string>
+    <string name="nsalarm_urgentstaledata">Тревога нет данных</string>
+    <string name="nsclient">NSClient</string>
+    <string name="nsclientinternal">внутренний клиент NS</string>
+    <string name="nsclientinternal_autoscroll">автоскроллинг</string>
+    <string name="nsclientinternal_devicename_dialogmessage">будет использоваться в поле \"кем введено\"</string>
+    <string name="nsclientinternal_devicename_dialogtitle">введите название устройства</string>
+    <string name="nsclientinternal_devicename_title">имя устройства</string>
+    <string name="nsclientinternal_secret_dialogmessage">введите API secret для NS (мин 12 знаков)</string>
+    <string name="nsclientinternal_secret_dialogtitle">API secret для NS</string>
+    <string name="nsclientinternal_secret_title">NS API secret</string>
+    <string name="nsclientinternal_shortname">клиентNS</string>
+    <string name="nsclientinternal_title">клиент NS</string>
+    <string name="nsclientinternal_url">URL:</string>
+    <string name="nsclientinternal_url_dialogmessage">введите URL адрес Nightscout</string>
+    <string name="nsclientinternal_url_title">Nightscout URL</string>
+    <string name="nsclientnotinstalled">отключите \"только передача в NS\" чтобы активировать эту опцию</string>
+    <string name="nsprofileview_activeprofile_label">активный профиль</string>
+    <string name="nsprofileview_basal_label">базал</string>
+    <string name="nsprofileview_dia_label">DIA (время действия инсулина)</string>
+    <string name="nsprofileview_ic_label">IC (инсулин/углеводы):</string>
+    <string name="nsprofileview_isf_label">ISF (чувствительность к инсулину)</string>
+    <string name="nsprofileview_target_label">Целевое значение СК:</string>
+    <string name="nsprofileview_units_label">единицы</string>
+    <string name="oaps_shortname">OAPS</string>
+    <string name="objectives">Цели</string>
+    <string name="objectives_0_gate">убедитесь что СК и данные помпы передаются в NS</string>
+    <string name="objectives_0_objective">настройка визуализации и мониторинга, анализ базала и коэффициентов</string>
+    <string name="objectives_1_gate">работа в режиме незамкнутого цикла и ручной подстройки величины временного базала</string>
+    <string name="objectives_1_objective">старт незамкнутого цикла</string>
+    <string name="objectives_2_gate">на основе полученного опыта определите макс величину базала и введите ее в помпу и настройки</string>
+    <string name="objectives_2_objective">анализ вашего незамкнутого цикла включая рекомендации по врем базалу</string>
+    <string name="objectives_3_gate">работа в замкнутом цикле с макс IOB = 0 несколько дней избегая событий типа Low Suspend</string>
+    <string name="objectives_3_objective">закольцовывание цикла с Low Glucose Suspend (приостановка на низких СК)</string>
+    <string name="objectives_4_gate">работа несколько дней и по кр мере одну ночь без срабатывания оповещений о низком СК</string>
+    <string name="objectives_4_objective">настройка замкнутого цикла с поднятием макс величины IOB выше 0 и постепенным понижением целевых СК</string>
+    <string name="objectives_5_gate">1 неделя успешной дневной работы с регулярным введением углеводов</string>
+    <string name="objectives_5_objective">при необходимости настройка базала и коэффициентов с последующей активацией auto-sens</string>
+    <string name="objectives_6_objective">активация таких доп функций для дневного времени как калькулятор advanced meal assist</string>
+    <string name="objectives_bgavailableinns">гликемия доступна в NS</string>
+    <string name="objectives_button_start">старт</string>
+    <string name="objectives_button_verify">проверка</string>
+    <string name="objectives_gate_label_string">действие</string>
+    <string name="objectives_manualenacts">ввод вручную</string>
+    <string name="objectives_minimalduration">минимальная продолжительность</string>
+    <string name="objectives_objective_label_string">Цель:</string>
+    <string name="objectives_pumpstatusavailableinns">статус помпы доступен в NS</string>
+    <string name="objectives_shortname">ЦЕЛИ</string>
+    <string name="occlusion">закупорка</string>
+    <string name="ok">ок</string>
+    <string name="old_data">старые данные</string>
+    <string name="ongoingnotificaction">текущие уведомления</string>
+    <string name="open_settings_on_wear">открыть настройки для Wear</string>
+    <string name="openaps">OpenAPS</string>
+    <string name="openaps_short">OAPS</string>
+    <string name="openapsama">OpenAPS AMA</string>
+    <string name="openapsama_autosens_adjusttargets_summary">значение по умолчанию : верно. используется чтобы разрешить юстировку целевых СК, а также ISF и базала</string>
+    <string name="openapsama_autosens_max_summary">знач по умолчанию:1,2. Это множитель для autosens (вскоре autotune) с лимитом 20% который определяет насколько высоко autosens может поднять базал, насколько низко опустиь ISF (чувствительность к инс)и целевые СК</string>
+    <string name="openapsama_autosens_min_summary">по умолчанию:0.7 Еще один параметр безопасности autosens, определяющий как низко он может опускать базал и как высоко поднимать ISF (чувств к инс) и целевые СК</string>
+    <string name="openapsama_autosens_period">интервал для autosens (ч)</string>
+    <string name="openapsama_autosens_period_summary">Время в часах в прошлом для определения чувствительности (время усвоения углеводов исключается)</string>
+    <string name="openapsama_bolussnooze_dia_divisor_summary">значение по умолчанию :2 bolus snoose активируется после введения болюса на еду чтобы цикл не взаимодействовал с временными низкими СК сразу после еды. так, трехчасовой DIA при величине 2 означает постыпенное затихание bolus snooze после 1.5 часов (3DIA/2)</string>
+    <string name="openapsama_current_basal_safety_multiplier_summary">значение по умолчанию: 4 . Это вторая половина обеспечения безопасности OpenAPS из дуэта \"максимум 3x ежедневное; 4x текущее\" Означает что ваша база независимо от установок помпы не может быть выше чем это число умноженное на текущее значение базала. Ограничение для того, чтобы предотвратить вторжение в опасную зону из-за высокого уровня установленных значений базы без понимания алгоритма работы приложения. Большинству людей никогда не потребуется изменять это значение, скорее всего нужно поменять другие настройки если вы чувствуете, что вам мешает это ограничение.</string>
+    <string name="openapsama_link_to_preferncejson_doc">http://openaps.readthedocs.io/en/latest/docs/walkthrough/phase-3/beyond-low-glucose-suspend.html</string>
+    <string name="openapsama_link_to_preferncejson_doc_txt">Внимание! Обычно нет необходимости изменять приведенные ниже величины. Нажмите ЗДЕСЬ, ПРОЧТИТЕ и убедитесь что вы ПОНИМАЕТЕ изложенное прежде чем менять какую-либо из этих величин</string>
+    <string name="openapsama_max_daily_safety_multiplier_summary">значение по умолчанию:3 Это ключевой ограничитель безопасности OpenAPS. Он ограничивает величину вашего базала максимум до 3x максимума. Вам вероятно не понадобится менять эту величину но вам следует понимать, что она входит в формулу дуэта \"максимум 3x ежедневное; 4x текущее\"</string>
+    <string name="openapsama_min_5m_carbimpact_summary">значение по умолчанию :3  усвоение углеводов за 5 мин. то есть 3 мг/дл/ 5 мин. Влияет на расчет прогнозируемой гликемии, когда СК падает быстрее или не растет так как ожидается.</string>
+    <string name="openapsama_useautosens">использовать AMA autosens</string>
+    <string name="openapsma">OpenAPS MA</string>
+    <string name="openapsma_autosensdata_label">данные autosens</string>
+    <string name="openapsma_currenttemp_label">текущий врем базал</string>
+    <string name="openapsma_disabled">модуль не активен</string>
+    <string name="openapsma_glucosestatus_label">статус гликемии</string>
+    <string name="openapsma_inputparameters_label">параметры ввода</string>
+    <string name="openapsma_iobdata_label">данные IOB (активн инс)</string>
+    <string name="openapsma_lastenact_label">последнее заданное</string>
+    <string name="openapsma_lastrun_label">последнее выполненное</string>
+    <string name="openapsma_maxbasal_summary">в контексте OpenAPS называется макс базал</string>
+    <string name="openapsma_maxbasal_title">макс разрешенный врем базал Е/ч</string>
+    <string name="openapsma_maxiob_summary">эта величина называется макс IOB (макс активн инс) в OpenAPS. Значение по умолчанию 0. Через несколько дней или недель пользования величину можно юстировать в зависимости от вашего уровня комфорта.</string>
+    <string name="openapsma_maxiob_title">макс базал активн инс подаваемый с OpenAPS (ед)</string>
+    <string name="openapsma_mealdata_label">данные приема пищи</string>
+    <string name="openapsma_noglucosedata">данные гликемии недоступны</string>
+    <string name="openapsma_noprofile">профиль недоступен</string>
+    <string name="openapsma_nopump">помпа недоступна</string>
+    <string name="openapsma_profile_label">профиль</string>
+    <string name="openapsma_request_label">запрос</string>
+    <string name="openapsma_run">выполнить сейчас</string>
+    <string name="openapsma_scriptdebugdata_label">отладка скрипта</string>
+    <string formatted="false" name="openapsma_valuelimitedto">%.2f ограничено до %.2f</string>
+    <string formatted="false" name="openapsma_valueoutofrange">величина %s недопустима</string>
+    <string name="openloop">открытый цикл</string>
+    <string name="openloop_newsuggestion">есть новое предложение</string>
+    <string name="othersettings_title">другое</string>
+    <string name="overview">начало</string>
+    <string name="overview_bolus_label">болюс</string>
+    <string name="overview_bolusprogress_delivered">доставлено</string>
+    <string formatted="false" name="overview_bolusprogress_goingtodeliver">будет доставлено %.2fU е инс</string>
+    <string name="overview_bolusprogress_stop">стоп</string>
+    <string name="overview_bolusprogress_stoped">остановлено</string>
+    <string name="overview_bolusprogress_stoppressed">нажат стоп</string>
+    <string name="overview_calculator_label">калькулятор</string>
+    <string name="overview_calibration">калибровка</string>
+    <string name="overview_calibration_bg_label">калибровка СК</string>
+    <string name="overview_editquickwizard_buttontext">текст на кнопке</string>
+    <string name="overview_editquickwizard_carbs">углеводы:</string>
+    <string name="overview_editquickwizard_valid">использовать до:</string>
+    <string name="overview_editquickwizardlistactivity_add">добавить</string>
+    <string name="overview_extendedbolus_button">расширенный болюс</string>
+    <string name="overview_extendedbolus_cancel_button">отмена расшир болюса</string>
+    <string name="overview_newtempbasal_basalabsolute">значения базала (ед/ч)</string>
+    <string name="overview_newtempbasal_basalpercent">величина базала (%)</string>
+    <string name="overview_newtempbasal_basaltype_label">тип базала</string>
+    <string name="overview_newtempbasal_percent_label">% (100% = current)</string>
+    <string name="overview_quickwizard_item_edit_button">редактировать</string>
+    <string name="overview_quickwizard_item_remove_button">удалить</string>
+    <string name="overview_shortname">НАЧАЛО</string>
+    <string name="overview_tempbasal_button">ВремБазал</string>
+    <string name="patientage">Возраст пациента</string>
+    <string name="patientage_summary">выберите возраст пациента для определения ограничителей безопасности</string>
+    <string name="paused">на паузе</string>
+    <string name="percent">процент</string>
+    <string name="percentagefactor_hint">% на который будет умножен базовый профиль</string>
+    <string name="pleaseallowpermission">предоставьте разрешение</string>
+    <string name="predictionshortlabel">PRE</string>
+    <string name="prefs_delta_title">настройки дельты СК</string>
+    <string name="prefs_range_summary">нижняя и верхняя граница диаграммы в отчетах и Smartwatch (mmol/l)</string>
+    <string name="prefs_range_title">диапазон для визуализации</string>
+    <string name="primefill">прайм/заполнение</string>
+    <string name="profile">профиль</string>
+    <string name="profile_set_failed">настройка базального профиля не состоялась</string>
+    <string name="profile_set_ok">базальный профиль помпы обновлен</string>
+    <string name="profileswitch">смена профиля</string>
+    <string name="profileviewer">профиль NS</string>
+    <string name="profileviewer_shortname">профильNS</string>
+    <string name="pump">помпа</string>
+    <string name="pumpNotInitialized">помпа не инициализирована</string>
+    <string name="pumpNotInitializedProfileNotSet">помпа не инициализирована, профиль не установлен</string>
+    <string name="pump_basebasalrate_label">базовая величина базала</string>
+    <string name="pump_battery_label">батарея</string>
+    <string name="pump_lastbolus_label">предыдущий болюс</string>
+    <string name="pump_lastconnection_label">прошлое соединение</string>
+    <string name="pump_reservoir_label">резервуар</string>
+    <string name="pump_tempbasal_label">врем базал</string>
+    <string name="pumpbusy">помпа занята</string>
+    <string name="pumperror">ошибка помпы</string>
+    <string name="pumpshutdown">помпа выключена</string>
+    <string name="pumpsuspended">работа помпы приостановлена</string>
+    <string name="pumpsuspendedclicktorefresh">работа помпы приостановлена. нажмите для обновления состояния</string>
+    <string name="queue">очередь</string>
+    <string name="quickwizard">БыстрыйБолюс</string>
+    <string name="quickwizardsettings">БыстрыйБолюс настройки</string>
+    <string name="rapid_acting_oref">быстро действующий Oref</string>
+    <string name="rate">значение</string>
+    <string name="ratio_short">СООТН</string>
+    <string name="reason">основание</string>
+    <string name="refresheventsfromnightscout">обновить данные из NS</string>
+    <string name="reloadprofile">обновить профиль</string>
+    <string name="removerecord">удалить запись</string>
+    <string name="resend_all_data">повторить отправку всех данных</string>
+    <string name="reset_db_confirm">вы действительно хотите обнулить базы данных ,</string>
+    <string name="restart">перезапуск</string>
+    <string name="restartingapp">выход из приложения для применения настроек</string>
+    <string name="result">результат</string>
+    <string name="resume">возобновить</string>
+    <string name="ru_lang">heccrbq</string>
+    <string name="safety">безопасность</string>
+    <string name="save">сохранить</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Поиск"</string>
+    <string name="send">ОТПРАВИТЬ</string>
+    <string formatted="false" name="send_calibration">отправить калибровку %.1f на xdrip?</string>
+    <string name="sensitivity_shortname">Xedcnd</string>
+    <string name="sensitivity_warning">Активируя Autosense не забывайте вводить все съеденные углеводы. Иначе отклонения в углеводах будут неверно определены как изменение чувствительности !!</string>
+    <string name="sensitivityaaps">Чувствительность AAPS</string>
+    <string name="sensitivityoref0">Чувствительность Oref0</string>
+    <string name="sensitivityweightedaverage">средневзвешенная чувствительность</string>
+    <string name="setbasalquestion">принять новый врем базал:</string>
+    <string name="setextendedbolusquestion">установить новый расширенн болюс:</string>
+    <string name="setting_imported">настройки импортированы</string>
+    <string name="settingextendedbolus">установка расшир болюса</string>
+    <string name="settings_password">пароль к настройкам</string>
+    <string name="settingtempbasal">установка врем базала</string>
+    <string name="short_avgdelta">краткосрочная средняя дельта</string>
+    <string name="short_tabtitles">сокращенные имена табул</string>
+    <string name="show_queue">показать очередь</string>
+    <string name="simpleprofile">простой профиль</string>
+    <string name="simpleprofile_shortname">ПП</string>
+    <string name="sms_actualbg">гликемия:</string>
+    <string name="sms_basal">"базал: "</string>
+    <string name="sms_bolus">болюс:</string>
+    <string name="sms_delta">дельта:</string>
+    <string name="sms_iob">IOB:</string>
+    <string name="sms_lastbg">прошлый СК:</string>
+    <string formatted="false" name="sms_minago">%d мин назад</string>
+    <string name="smscommunicator">SMS коммуникатор</string>
+    <string name="smscommunicator_allowednumbers">разрешенные телефонные номера</string>
+    <string name="smscommunicator_allowednumbers_summary">+XXXXXXXXXX;+YYYYYYYYYY</string>
+    <string formatted="false" name="smscommunicator_basalreplywithcode">чтобы начать базал %.2fU/h ответьте кодом %s</string>
+    <string formatted="false" name="smscommunicator_basalstopreplywithcode">чтобы прекратить врем базал ответьте кодом %s</string>
+    <string formatted="false" name="smscommunicator_bolusdelivered">болюс %.2fU доставлен успешно</string>
+    <string name="smscommunicator_bolusfailed">доставка болюса не состоялась</string>
+    <string formatted="false" name="smscommunicator_bolusreplywithcode">чтобы доставить болюс %.2fU ответьте кодом %s</string>
+    <string name="smscommunicator_calibrationfailed">xdrip не получает калибровок</string>
+    <string formatted="false" name="smscommunicator_calibrationreplywithcode">чтобы отправить калибровку %.2f ответьте кодом %s</string>
+    <string name="smscommunicator_calibrationsent">калибровка отправлена. в xdrip должен быть активирован прием</string>
+    <string name="smscommunicator_invalidphonennumber">неверный номер телефона для смс</string>
+    <string name="smscommunicator_loophasbeendisabled">зцикл был деактивирован</string>
+    <string name="smscommunicator_loophasbeenenabled">зцикл был активирован</string>
+    <string name="smscommunicator_loopisdisabled">зцикл не работает</string>
+    <string name="smscommunicator_loopisenabled">зцикл работает</string>
+    <string name="smscommunicator_loopresumed">зцикл возобновлен</string>
+    <string name="smscommunicator_loopsuspended">зцикл приостановлен</string>
+    <string name="smscommunicator_missingsmspermission">отсутствует смс подтверждение</string>
+    <string name="smscommunicator_remotebasalnotallowed">удаленная настройка базала не разрешена</string>
+    <string name="smscommunicator_remotebolusnotallowed">удаленный болюс не разрешен</string>
+    <string name="smscommunicator_remotecalibrationnotallowed">удаленная калибровка не разрешена</string>
+    <string name="smscommunicator_remotecommandnotallowed">удаленная команда не разрешена</string>
+    <string name="smscommunicator_remotecommandsallowed">разрешить команды через смс</string>
+    <string name="smscommunicator_shortname">SMS</string>
+    <string formatted="false" name="smscommunicator_suspendreplywithcode">для приостановки цикла на %d мин ответьте кодом %s</string>
+    <string name="smscommunicator_tempbasalcanceled">врем базал отменен</string>
+    <string name="smscommunicator_tempbasalcancelfailed">отмена врем базала не состоялась</string>
+    <string name="smscommunicator_tempbasalfailed">неуспех старта врем базала</string>
+    <string formatted="false" name="smscommunicator_tempbasalset">врем базал %.2fU/h на %d мин начат успешно</string>
+    <string name="smscommunicator_unknowncommand">неизвестная команда или неверный ответ</string>
+    <string name="smscommunicator_wrongduration">неверное значение длительности</string>
+    <string name="status">состояние:</string>
+    <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">">999"</string>
+    <string name="stoppingextendedbolus">остановка расшир болюса</string>
+    <string name="stoppingtempbasal">остановка врем базала</string>
+    <string name="success">успех</string>
+    <string name="superbolus">суперболюс</string>
+    <string name="suspendloopfor10h">приостановить цикл на 10 часов</string>
+    <string name="suspendloopfor1h">приостановить цикл на 1 час</string>
+    <string name="suspendloopfor2h">приостановить цикл на 2 часа</string>
+    <string name="suspendloopfor3h">приостановить цикл на 3 часа</string>
+    <string name="sv_lang">Шведский</string>
+    <string name="target_range">целевой диапазон</string>
+    <string name="targetmissing">Целевое значение отсутствует в профиле. Применено значение по умолчанию</string>
+    <string name="teenage">подросток</string>
+    <string name="tempbasal">ВремБазал</string>
+    <string name="tempbasaldeliveryerror">ошибка доставки врем базала</string>
+    <string name="tempbasals_iob_label_string">IOB:</string>
+    <string name="tempbasals_iobtotal_label_string">общий IOB</string>
+    <string name="tempbasals_netinsulin_label_string">инс:</string>
+    <string name="tempbasals_netratio_label_string">соотношение:</string>
+    <string name="tempbasals_realduration_label_string">длит:</string>
+    <string name="tempbasals_shortname">ВремБаз</string>
+    <string name="temptarget">ВремЦель</string>
+    <string name="temptargetrange_shortname">ВремЦель</string>
+    <string name="timeshift_hint">Время в часах к которому профиль перейдет на след сутки</string>
+    <string name="treatmentdeliveryerror">ошибка доставки болюса</string>
+    <string name="treatments">назначения</string>
+    <string name="treatments_activity_string">нагрузка:</string>
+    <string name="treatments_carbs_label_string">углеводы:</string>
+    <string name="treatments_insulin_label_string">инсулин:</string>
+    <string name="treatments_iob_label_string">IOB:   активн инс</string>
+    <string name="treatments_iobactivitytotal_label_string">общая активность IOB:</string>
+    <string name="treatments_iobtotal_label_string">всего IOB:</string>
+    <string name="treatments_newtreatment_carbsamount_label">кол-во углеводов</string>
+    <string name="treatments_newtreatment_insulinamount_label">кол-во инсулина</string>
+    <string name="treatments_shortname">НАЗНАЧ</string>
+    <string name="treatments_wizard_basaliob_label">базал IOB</string>
+    <string name="treatments_wizard_bg_label">гликемия</string>
+    <string name="treatments_wizard_bgtrend_label">15 мин тренд</string>
+    <string name="treatments_wizard_bolusiob_label">болюс IOB</string>
+    <string name="treatments_wizard_carbs_label">углеводы</string>
+    <string name="treatments_wizard_cob_label">активн углеводы</string>
+    <string name="treatments_wizard_correction_label">коррекция</string>
+    <string name="treatments_wizard_total_label">ВСЕГО</string>
+    <string name="treatments_wizard_unit_label">ед</string>
+    <string name="treatmentssafety_maxbolus_title">макс разрешенный болюс</string>
+    <string name="treatmentssafety_maxcarbs_title">макс разрешенные углеводы (г)</string>
+    <string name="treatmentssafety_title">безопасность назначений</string>
+    <string name="ultrafastactinginsulincomment">Fiasp</string>
+    <string name="ultrarapid_oref">Сверхбыстрый Oref</string>
+    <string name="units">единицы измерения:</string>
+    <string name="unlock_settings">разрешить внести изменения в настройки</string>
+    <string name="unsupportedclientver">неподдерживаемая версия NSClient</string>
+    <string name="unsupportednsversion">Неподдерживаемая версия Nightscout</string>
+    <string name="up">вверх</string>
+    <string name="updatingbasalrates">обновление значений базала</string>
+    <string name="uploader">uploader</string>
+    <string name="uploader_short">UPLD</string>
+    <string name="uploading">передача данных</string>
+    <string name="virtualpump">виртуальная помпа</string>
+    <string name="virtualpump_extendedbolus_label">продленный болюс</string>
+    <string name="virtualpump_extendedbolus_label_short">ПРОДЛ</string>
+    <string name="virtualpump_firmware_label">прошивка</string>
+    <string name="virtualpump_resultok">OK</string>
+    <string name="virtualpump_settings">настройки вирт помпы</string>
+    <string name="virtualpump_shortname">ВиртПомпа</string>
+    <string name="virtualpump_sqlerror">ошибка SQL</string>
+    <string name="virtualpump_uploadstatus_title">статус передачи данных в NS</string>
+    <string name="visible">виден</string>
+    <string name="vitualpump_label">ВИРТУАЛЬНАЯ ПОМПА</string>
+    <string name="waitingforpump">ожидание помпы</string>
+    <string name="waitingforpumpclicktorefresh">ожидание помпы. нажмите чтобы обновить</string>
+    <string name="waitingforpumpresult">ожидание результата от помпы</string>
+    <string name="wear">Wear</string>
+    <string name="wear_detailedIOB_summary">разбивка IOB на болюсный и базальный IOB на циферблате смарт-часов</string>
+    <string name="wear_detailedIOB_title">показать IOB подробно</string>
+    <string name="wear_overviewnotifications">Просмотр уведомлений</string>
+    <string name="wear_overviewnotifications_summary">Пропустить уведомления как потдтвержденные от Wear</string>
+    <string name="wear_settings">настройки смарт-часов Wear</string>
+    <string name="wear_shortname">WEAR</string>
+    <string name="wear_showbgi_summary">добавить BGI в строку состояния</string>
+    <string name="wear_showbgi_title">показать BGI</string>
+    <string name="wrongpassword">неверный пароль</string>
+    <string name="wrongpumppassword">неверный пароль помпы</string>
+    <string name="xdrip">xdrip</string>
+    <string name="xdripnotinstalled">xdrip+ не установлен</string>
+    <string name="xdripstatus">строка состояния xdrip (часы)</string>
+    <string name="xdripstatus_settings">состояние xdrip (часы)</string>
+    <string name="xdripstatus_shortname">xds</string>
+    <string name="youareonallowedlimit">разрешенный предел достигнут</string>
+</resources>

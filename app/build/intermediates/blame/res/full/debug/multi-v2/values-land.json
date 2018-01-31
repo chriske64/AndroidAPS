@@ -4,7 +4,7 @@
             "outputFile": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/app/build/intermediates/incremental/mergeFullDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/materialdatetimepicker-2.3.0.aar/05408efa5089a264cb50916812688639/res/values-land/values-land.xml",
+                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/materialdatetimepicker-2.3.0.aar/a422cbd357e41612b9f34e65b87c6aae/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -13,25 +13,25 @@
                         "endOffsets": "274,344,396,450,501,561,622,682,739"
                     },
                     "to": {
-                        "startLines": "8,9,10,11,12,13,14,15,16",
+                        "startLines": "6,7,8,9,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "462,527,597,649,703,754,814,875,935",
+                        "startOffsets": "328,393,463,515,569,620,680,741,801",
                         "endColumns": "64,69,51,53,50,59,60,59,56",
-                        "endOffsets": "522,592,644,698,749,809,870,930,987"
+                        "endOffsets": "388,458,510,564,615,675,736,796,853"
                     }
                 },
                 {
-                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/1b8e6f146ff52921576f279411b5870c/res/values-land/values-land.xml",
+                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f9733f7c410d520fc6f796cc003fdd92/res/values-land/values-land.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,117,189,259,323,394",
-                        "endColumns": "61,71,69,63,70,67",
-                        "endOffsets": "112,184,254,318,389,457"
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,125,189,260",
+                        "endColumns": "69,63,70,67",
+                        "endOffsets": "120,184,255,323"
                     }
                 },
                 {
-                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/design-23.4.0.aar/c54b6929ea09e88eb3c2a4163de545e5/res/values-land/values-land.xml",
+                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/30c0b5d664be3425edcb0a8312ebbe7f/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -41,12 +41,12 @@
                         "endOffsets": "232"
                     },
                     "to": {
-                        "startLines": "17",
+                        "startLines": "15",
                         "startColumns": "4",
-                        "startOffsets": "992",
-                        "endLines": "20",
+                        "startOffsets": "858",
+                        "endLines": "18",
                         "endColumns": "12",
-                        "endOffsets": "1169"
+                        "endOffsets": "1035"
                     }
                 }
             ]
