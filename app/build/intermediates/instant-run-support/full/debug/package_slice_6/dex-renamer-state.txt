@@ -1,0 +1,4 @@
+#Mon Jan 29 17:41:28 GMT 2018
+base.0=/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/app/build/intermediates/transforms/dexMerger/full/debug/19
+path.0=classes.dex
+renamed.0=classes.dex

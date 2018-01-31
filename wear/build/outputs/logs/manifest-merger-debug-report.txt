@@ -1,0 +1,352 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:2:1-216:12
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:2:1-216:12
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:2:1-216:12
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:2:1-216:12
+MERGED from [me.denley.wearpreferenceactivity:wearpreferenceactivity:0.5.0] /home/chris/.gradle/caches/transforms-1/files-1.1/wearpreferenceactivity-0.5.0.aar/f409d84b888b573be219d7bff3e60ac4/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.android.support:wearable:2.0.1] /home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-wearable:7.3.0] /home/chris/.gradle/caches/transforms-1/files-1.1/play-services-wearable-7.3.0.aar/85fd48b007fbc4fac2896c330c646a97/AndroidManifest.xml:16:1-20:12
+MERGED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:25:1-54:12
+MERGED from [com.google.android.gms:play-services-base:7.3.0] /home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/AndroidManifest.xml:16:1-26:12
+MERGED from [com.android.support:support-v4:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/ee4acfaf7cd3268bc4ce4c1940f007f3/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:percent:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/percent-25.2.0.aar/58b46b5ee66ba552dbe0d07c1f4e58ae/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-fragment:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/29e4657a897adef8116ea6f2e1fde31e/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-media-compat:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/6fbcac7cb9a653cdd6342940717bf8c7/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-utils:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/df2742347f3d47eb79468269850286b7/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:recyclerview-v7:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.2.0.aar/57a8baf2230375f96f5f4cc9f7422538/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/e777fd4566220fe4c5227ad41baca939/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-compat:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/2b260c3e1240aa4fcd5a9818fce2b77d/AndroidManifest.xml:17:1-27:12
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:2:1-216:12
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:2:1-216:12
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:2:1-216:12
+	package
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:3:5-41
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:2:1-216:12
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:2:1-216:12
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:2:11-69
+uses-feature#android.hardware.type.watch
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:5:5-64
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:5:19-61
+uses-permission#com.google.android.permission.PROVIDE_BACKGROUND
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:7:5-88
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:7:22-85
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:8:5-68
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:8:22-65
+application
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:10:5-215:19
+MERGED from [me.denley.wearpreferenceactivity:wearpreferenceactivity:0.5.0] /home/chris/.gradle/caches/transforms-1/files-1.1/wearpreferenceactivity-0.5.0.aar/f409d84b888b573be219d7bff3e60ac4/AndroidManifest.xml:9:5-16:19
+MERGED from [me.denley.wearpreferenceactivity:wearpreferenceactivity:0.5.0] /home/chris/.gradle/caches/transforms-1/files-1.1/wearpreferenceactivity-0.5.0.aar/f409d84b888b573be219d7bff3e60ac4/AndroidManifest.xml:9:5-16:19
+MERGED from [com.google.android.support:wearable:2.0.1] /home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/AndroidManifest.xml:6:3-8:17
+MERGED from [com.google.android.support:wearable:2.0.1] /home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/AndroidManifest.xml:6:3-8:17
+MERGED from [com.google.android.gms:play-services-wearable:7.3.0] /home/chris/.gradle/caches/transforms-1/files-1.1/play-services-wearable-7.3.0.aar/85fd48b007fbc4fac2896c330c646a97/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-wearable:7.3.0] /home/chris/.gradle/caches/transforms-1/files-1.1/play-services-wearable-7.3.0.aar/85fd48b007fbc4fac2896c330c646a97/AndroidManifest.xml:19:5-20
+MERGED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:33:5-52:19
+MERGED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:33:5-52:19
+MERGED from [com.google.android.gms:play-services-base:7.3.0] /home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-base:7.3.0] /home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/ee4acfaf7cd3268bc4ce4c1940f007f3/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/ee4acfaf7cd3268bc4ce4c1940f007f3/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:percent:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/percent-25.2.0.aar/58b46b5ee66ba552dbe0d07c1f4e58ae/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:percent:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/percent-25.2.0.aar/58b46b5ee66ba552dbe0d07c1f4e58ae/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/29e4657a897adef8116ea6f2e1fde31e/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/29e4657a897adef8116ea6f2e1fde31e/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/6fbcac7cb9a653cdd6342940717bf8c7/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/6fbcac7cb9a653cdd6342940717bf8c7/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/df2742347f3d47eb79468269850286b7/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/df2742347f3d47eb79468269850286b7/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/e777fd4566220fe4c5227ad41baca939/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/e777fd4566220fe4c5227ad41baca939/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/2b260c3e1240aa4fcd5a9818fce2b77d/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/2b260c3e1240aa4fcd5a9818fce2b77d/AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:13:9-41
+	android:icon
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:12:9-41
+	android:allowBackup
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:14:9-59
+meta-data#com.google.android.gms.version
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:15:9-17:69
+MERGED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:36:9-38:69
+MERGED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:36:9-38:69
+MERGED from [com.google.android.gms:play-services-base:7.3.0] /home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-base:7.3.0] /home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:17:13-66
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:16:13-58
+service#info.nightscout.androidaps.watchfaces.BIGChart
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:19:9-36:19
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:22:13-58
+	android:permission
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:23:13-67
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:20:13-48
+	android:allowEmbedded
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:21:13-41
+meta-data#android.service.wallpaper
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:24:13-26:54
+	android:resource
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:26:17-51
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:25:17-57
+meta-data#com.google.android.wearable.watchface.preview
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:27:13-29:67
+	android:resource
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:29:17-64
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:28:17-77
+intent-filter#android.service.wallpaper.WallpaperService+com.google.android.wearable.watchface.category.WATCH_FACE
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:31:13-35:29
+action#android.service.wallpaper.WallpaperService
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:32:17-85
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:32:25-82
+category#com.google.android.wearable.watchface.category.WATCH_FACE
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:34:17-102
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:34:27-99
+service#info.nightscout.androidaps.watchfaces.NOChart
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:38:9-55:19
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:41:13-57
+	android:permission
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:42:13-67
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:39:13-47
+	android:allowEmbedded
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:40:13-41
+service#info.nightscout.androidaps.watchfaces.Home
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:57:9-74:19
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:60:13-48
+	android:permission
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:61:13-67
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:58:13-44
+	android:allowEmbedded
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:59:13-41
+service#info.nightscout.androidaps.watchfaces.Home2
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:76:9-93:19
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:79:13-35
+	android:permission
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:80:13-67
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:77:13-45
+	android:allowEmbedded
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:78:13-41
+service#info.nightscout.androidaps.watchfaces.Cockpit
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:95:9-112:19
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:98:13-42
+	android:permission
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:99:13-67
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:96:13-47
+	android:allowEmbedded
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:97:13-41
+service#info.nightscout.androidaps.watchfaces.Steampunk
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:114:9-131:19
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:117:13-44
+	android:permission
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:118:13-67
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:115:13-49
+	android:allowEmbedded
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:116:13-41
+service#info.nightscout.androidaps.watchfaces.LargeHome
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:133:9-150:19
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:136:13-54
+	android:permission
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:137:13-67
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:134:13-49
+	android:allowEmbedded
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:135:13-41
+service#info.nightscout.androidaps.watchfaces.CircleWatchface
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:151:9-168:19
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:154:13-55
+	android:permission
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:155:13-67
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:152:13-55
+	android:allowEmbedded
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:153:13-41
+service#info.nightscout.androidaps.data.ListenerService
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:169:9-173:19
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:169:18-54
+intent-filter#com.google.android.gms.wearable.BIND_LISTENER
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:170:13-172:29
+action#com.google.android.gms.wearable.BIND_LISTENER
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:171:17-88
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:171:25-85
+activity#info.nightscout.androidaps.interaction.menus.MainMenuActivity
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:175:9-182:20
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:177:13-59
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:176:13-63
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:178:13-181:29
+action#android.intent.action.MAIN
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:179:17-69
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:179:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:180:17-77
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:180:27-74
+activity#info.nightscout.androidaps.interaction.AAPSPreferences
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:183:9-186:20
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:185:13-37
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:184:13-56
+activity#info.nightscout.androidaps.interaction.actions.WizardActivity
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:187:9-190:20
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:189:13-35
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:188:13-63
+activity#info.nightscout.androidaps.interaction.menus.FillMenuActivity
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:191:9-194:20
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:193:13-37
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:192:13-63
+activity#info.nightscout.androidaps.interaction.menus.StatusMenuActivity
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:195:9-198:20
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:197:13-35
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:196:13-65
+activity#info.nightscout.androidaps.interaction.actions.BolusActivity
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:199:9-202:20
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:201:13-34
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:200:13-62
+activity#info.nightscout.androidaps.interaction.actions.CPPActivity
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:203:9-206:20
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:205:13-32
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:204:13-60
+activity#info.nightscout.androidaps.interaction.actions.FillActivity
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:207:9-210:20
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:209:13-33
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:208:13-61
+activity#info.nightscout.androidaps.interaction.actions.TempTargetActivity
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:211:9-214:20
+	android:label
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:213:13-39
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml:212:13-67
+uses-sdk
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+MERGED from [me.denley.wearpreferenceactivity:wearpreferenceactivity:0.5.0] /home/chris/.gradle/caches/transforms-1/files-1.1/wearpreferenceactivity-0.5.0.aar/f409d84b888b573be219d7bff3e60ac4/AndroidManifest.xml:5:5-7:41
+MERGED from [me.denley.wearpreferenceactivity:wearpreferenceactivity:0.5.0] /home/chris/.gradle/caches/transforms-1/files-1.1/wearpreferenceactivity-0.5.0.aar/f409d84b888b573be219d7bff3e60ac4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.support:wearable:2.0.1] /home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/AndroidManifest.xml:4:3-70
+MERGED from [com.google.android.support:wearable:2.0.1] /home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/AndroidManifest.xml:4:3-70
+MERGED from [com.google.android.gms:play-services-wearable:7.3.0] /home/chris/.gradle/caches/transforms-1/files-1.1/play-services-wearable-7.3.0.aar/85fd48b007fbc4fac2896c330c646a97/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-wearable:7.3.0] /home/chris/.gradle/caches/transforms-1/files-1.1/play-services-wearable-7.3.0.aar/85fd48b007fbc4fac2896c330c646a97/AndroidManifest.xml:18:5-42
+MERGED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:29:5-31:41
+MERGED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:29:5-31:41
+MERGED from [com.google.android.gms:play-services-base:7.3.0] /home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:7.3.0] /home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/ee4acfaf7cd3268bc4ce4c1940f007f3/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/ee4acfaf7cd3268bc4ce4c1940f007f3/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:percent:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/percent-25.2.0.aar/58b46b5ee66ba552dbe0d07c1f4e58ae/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:percent:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/percent-25.2.0.aar/58b46b5ee66ba552dbe0d07c1f4e58ae/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-fragment:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/29e4657a897adef8116ea6f2e1fde31e/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/29e4657a897adef8116ea6f2e1fde31e/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/6fbcac7cb9a653cdd6342940717bf8c7/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/6fbcac7cb9a653cdd6342940717bf8c7/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/df2742347f3d47eb79468269850286b7/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/df2742347f3d47eb79468269850286b7/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:recyclerview-v7:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.2.0.aar/57a8baf2230375f96f5f4cc9f7422538/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.2.0.aar/57a8baf2230375f96f5f4cc9f7422538/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-core-ui:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/e777fd4566220fe4c5227ad41baca939/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/e777fd4566220fe4c5227ad41baca939/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/2b260c3e1240aa4fcd5a9818fce2b77d/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/2b260c3e1240aa4fcd5a9818fce2b77d/AndroidManifest.xml:21:5-23:58
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:25.2.0] /home/chris/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/ee4acfaf7cd3268bc4ce4c1940f007f3/AndroidManifest.xml:23:9-51
+	android:targetSdkVersion
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/src/main/AndroidManifest.xml
+activity#preference.ListChooserActivity
+ADDED from [me.denley.wearpreferenceactivity:wearpreferenceactivity:0.5.0] /home/chris/.gradle/caches/transforms-1/files-1.1/wearpreferenceactivity-0.5.0.aar/f409d84b888b573be219d7bff3e60ac4/AndroidManifest.xml:10:9-12:66
+	android:theme
+		ADDED from [me.denley.wearpreferenceactivity:wearpreferenceactivity:0.5.0] /home/chris/.gradle/caches/transforms-1/files-1.1/wearpreferenceactivity-0.5.0.aar/f409d84b888b573be219d7bff3e60ac4/AndroidManifest.xml:12:13-63
+	android:name
+		ADDED from [me.denley.wearpreferenceactivity:wearpreferenceactivity:0.5.0] /home/chris/.gradle/caches/transforms-1/files-1.1/wearpreferenceactivity-0.5.0.aar/f409d84b888b573be219d7bff3e60ac4/AndroidManifest.xml:11:13-58
+activity#preference.PreferenceScreenActivity
+ADDED from [me.denley.wearpreferenceactivity:wearpreferenceactivity:0.5.0] /home/chris/.gradle/caches/transforms-1/files-1.1/wearpreferenceactivity-0.5.0.aar/f409d84b888b573be219d7bff3e60ac4/AndroidManifest.xml:13:9-15:66
+	android:theme
+		ADDED from [me.denley.wearpreferenceactivity:wearpreferenceactivity:0.5.0] /home/chris/.gradle/caches/transforms-1/files-1.1/wearpreferenceactivity-0.5.0.aar/f409d84b888b573be219d7bff3e60ac4/AndroidManifest.xml:15:13-63
+	android:name
+		ADDED from [me.denley.wearpreferenceactivity:wearpreferenceactivity:0.5.0] /home/chris/.gradle/caches/transforms-1/files-1.1/wearpreferenceactivity-0.5.0.aar/f409d84b888b573be219d7bff3e60ac4/AndroidManifest.xml:14:13-63
+uses-library#com.google.android.wearable
+ADDED from [com.google.android.support:wearable:2.0.1] /home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/AndroidManifest.xml:7:5-88
+	android:required
+		ADDED from [com.google.android.support:wearable:2.0.1] /home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/AndroidManifest.xml:7:62-86
+	android:name
+		ADDED from [com.google.android.support:wearable:2.0.1] /home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/AndroidManifest.xml:7:19-61
+activity#com.ustwo.clockwise.common.permissions.PermissionRequestActivity
+ADDED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:40:9-44:75
+	android:label
+		ADDED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:43:13-29
+	android:excludeFromRecents
+		ADDED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:42:13-46
+	android:theme
+		ADDED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:44:13-72
+	android:name
+		ADDED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:41:13-92
+activity#com.ustwo.clockwise.wearable.permissions.WearablePermissionEducationActivity
+ADDED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:45:9-48:78
+	android:label
+		ADDED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:47:13-29
+	android:theme
+		ADDED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:48:13-75
+	android:name
+		ADDED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:46:13-104
+activity#android.support.wearable.activity.ConfirmationActivity
+ADDED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:49:9-51:78
+	android:theme
+		ADDED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:51:13-75
+	android:name
+		ADDED from [:ustwo-clockwise-debug:] /home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/AndroidManifest.xml:50:13-82

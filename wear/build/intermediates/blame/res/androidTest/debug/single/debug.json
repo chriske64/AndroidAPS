@@ -1,0 +1,758 @@
+[
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_icon_normal_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_icon_normal_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_ic_plusone_standard_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/ic_plusone_standard_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_text_disabled_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_text_disabled_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_card_frame.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-hdpi-v4/card_frame.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/color_card_text_color.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/color/card_text_color.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_full_open_on_phone.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_full_open_on_phone.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_icon_disabled_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_icon_disabled_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/animator-v21_circular_image_button_anim.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/animator-v21/circular_image_button_anim.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_full_open_on_phone.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_full_open_on_phone.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_ic_plusone_medium_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/ic_plusone_medium_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v23_ic_more_vert_24dp_wht.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v23/ic_more_vert_24dp_wht.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/interpolator-v21_generic_confirmation_animation_interpolator_0.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/interpolator-v21/generic_confirmation_animation_interpolator_0.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_icon_normal_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_icon_normal_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_single_page_nav_drawer_1_item.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout/single_page_nav_drawer_1_item.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_single_page_nav_drawer_4_item.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout/single_page_nav_drawer_4_item.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable_common_signin_btn_text_light.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable/common_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_navigation_drawer_item_view.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout/navigation_drawer_item_view.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_icon_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_icon_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_card_frame.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-xhdpi-v4/card_frame.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_icon_pressed_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_icon_pressed_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_text_disabled_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_text_disabled_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_text_disabled_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_text_disabled_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_text_normal_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_text_normal_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout-v20_watch_card_content.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout-v20/watch_card_content.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_icon_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_icon_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_icon_normal_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_icon_normal_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_preference_list.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearpreferenceactivity-0.5.0.aar/f409d84b888b573be219d7bff3e60ac4/res/layout/preference_list.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_permission_info_rect.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/res/layout/permission_info_rect.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_icon_normal_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_icon_normal_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_icon_disabled_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_icon_disabled_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_ic_plusone_standard_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/ic_plusone_standard_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_ic_plusone_tall_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/ic_plusone_tall_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_text_pressed_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_text_pressed_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4_card_frame_pressed.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-mdpi-v4/card_frame_pressed.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v23_ic_cc_settings_button_bottom.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v23/ic_cc_settings_button_bottom.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_icon_normal_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_icon_normal_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_ic_plusone_standard_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/ic_plusone_standard_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_icon_pressed_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_icon_pressed_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_text_normal_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_text_normal_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_ic_plusone_small_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/ic_plusone_small_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_ic_open_on_phone.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/res/drawable-hdpi-v4/ic_open_on_phone.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_text_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_text_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_educational_companion.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/res/layout/educational_companion.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_ic_full_cancel.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-hdpi-v4/ic_full_cancel.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_text_normal_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_text_normal_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_icon_disabled_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_icon_disabled_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-tvdpi_common_full_open_on_phone.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-tvdpi/common_full_open_on_phone.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable_common_signin_btn_icon_dark.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable/common_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v21_open_on_phone_animation.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v21/open_on_phone_animation.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_icon_normal_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_icon_normal_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_icon_disabled_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_icon_disabled_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_text_disabled_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_text_disabled_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable_card_background.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable/card_background.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_text_disabled_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_text_disabled_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_text_pressed_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_text_pressed_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v21_open_on_phone.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v21/open_on_phone.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v21_ic_expand_more_white_22.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v21/ic_expand_more_white_22.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_ic_plusone_medium_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/ic_plusone_medium_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_icon_disabled_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_icon_disabled_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_text_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_text_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_text_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_text_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_text_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_text_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_full_open_on_phone.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_full_open_on_phone.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable_open_on_phone_bg.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/res/drawable/open_on_phone_bg.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_icon_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_icon_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_alert_dialog_wearable.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout/alert_dialog_wearable.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-tvdpi_ic_plusone_standard_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-tvdpi/ic_plusone_standard_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout-v23_action_drawer_title_view.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout-v23/action_drawer_title_view.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_card_frame_pressed.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-xhdpi-v4/card_frame_pressed.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_text_pressed_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_text_pressed_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/interpolator-v21_generic_confirmation_animation_interpolator_2.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/interpolator-v21/generic_confirmation_animation_interpolator_2.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable_common_signin_btn_text_dark.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable/common_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_icon_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_icon_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v21_accept_deny_dialog_negative_bg.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v21/accept_deny_dialog_negative_bg.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_icon_disabled_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_icon_disabled_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_text_disabled_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_text_disabled_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_ic_plusone_small_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/ic_plusone_small_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/color_card_grey_text_color.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/color/card_grey_text_color.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_ic_full_sad.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-xhdpi-v4/ic_full_sad.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_icon_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_icon_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4_ic_full_sad.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-mdpi-v4/ic_full_sad.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/anim-v21_generic_confirmation_icon_animation.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/anim-v21/generic_confirmation_icon_animation.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_text_disabled_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_text_disabled_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/color-v23_button_icon_color.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/color-v23/button_icon_color.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_text_disabled_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_text_disabled_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_text_disabled_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_text_disabled_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_card_frame_pressed.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-hdpi-v4/card_frame_pressed.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_ic_full_sad.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-hdpi-v4/ic_full_sad.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_ic_full_cancel.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-xhdpi-v4/ic_full_cancel.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_icon_pressed_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_icon_pressed_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_icon_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_icon_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_single_page_nav_drawer_6_item.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout/single_page_nav_drawer_6_item.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_icon_disabled_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_icon_disabled_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_ic_plusone_medium_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/ic_plusone_medium_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v23_action_item_icon_background.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v23/action_item_icon_background.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/color_circular_button.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/color/circular_button.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/color_common_signin_btn_text_light.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/color/common_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_icon_pressed_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_icon_pressed_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_text_normal_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_text_normal_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v21_preference_wrapped_icon.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v21/preference_wrapped_icon.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_icon_disabled_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_icon_disabled_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable_close_button.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable/close_button.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-tvdpi_ic_plusone_medium_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-tvdpi/ic_plusone_medium_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/color-v21_btn_colored_background_material.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/color-v21/btn_colored_background_material.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v21_ic_cc_checkmark.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v21/ic_cc_checkmark.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_permission_info_round.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/res/layout/permission_info_round.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_text_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_text_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/interpolator-v21_open_on_phone_animation_interpolator_0.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/interpolator-v21/open_on_phone_animation_interpolator_0.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_ic_plusone_small_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/ic_plusone_small_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_icon_disabled_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_icon_disabled_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/anim-v21_open_on_phone_arrow_animation.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/anim-v21/open_on_phone_arrow_animation.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_ic_plusone_medium_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/ic_plusone_medium_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_icon_normal_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_icon_normal_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_permission_info.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/ustwo-clockwise-debug.aar/3a88a59761b8f834eb4f3a27b3b34ec5/res/layout/permission_info.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-tvdpi_ic_plusone_tall_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-tvdpi/ic_plusone_tall_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_text_normal_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_text_normal_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_text_normal_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_text_normal_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_text_pressed_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_text_pressed_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v23_ic_cc_settings_button_center.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v23/ic_cc_settings_button_center.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_text_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_text_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/interpolator-v21_generic_confirmation_animation_interpolator_3.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/interpolator-v21/generic_confirmation_animation_interpolator_3.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_icon_disabled_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_icon_disabled_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_text_normal_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_text_normal_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_text_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_text_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_single_page_nav_drawer_3_item.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout/single_page_nav_drawer_3_item.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout-v23_action_drawer_peek_view.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout-v23/action_drawer_peek_view.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_text_pressed_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_text_pressed_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable_common_signin_btn_icon_light.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable/common_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_icon_disabled_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_icon_disabled_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_text_disabled_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_text_disabled_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_icon_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_icon_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v23_action_item_background.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v23/action_item_background.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_text_pressed_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_text_pressed_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout-v21_dismiss_overlay.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout-v21/dismiss_overlay.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_icon_disabled_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_icon_disabled_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/color_common_signin_btn_text_dark.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/color/common_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_icon_pressed_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_icon_pressed_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-tvdpi_ic_plusone_small_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-tvdpi/ic_plusone_small_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_text_disabled_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_text_disabled_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v21_generic_confirmation.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v21/generic_confirmation.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_single_page_nav_drawer_peek_view.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout/single_page_nav_drawer_peek_view.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_single_page_nav_drawer_2_item.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout/single_page_nav_drawer_2_item.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v21_accept_deny_dialog_positive_bg.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v21/accept_deny_dialog_positive_bg.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_preference_item.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearpreferenceactivity-0.5.0.aar/f409d84b888b573be219d7bff3e60ac4/res/layout/preference_item.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_text_disabled_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_text_disabled_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_text_normal_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_text_normal_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout-v21_overlay_confirmation.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout-v21/overlay_confirmation.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_icon_disabled_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_icon_disabled_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_single_page_nav_drawer_5_item.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout/single_page_nav_drawer_5_item.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_text_disabled_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_text_disabled_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_icon_disabled_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_icon_disabled_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_ic_googleplayservices.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_ic_googleplayservices.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v21_generic_confirmation_animation.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v21/generic_confirmation_animation.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4_card_frame.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-mdpi-v4/card_frame.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_text_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_text_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_icon_disabled_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_icon_disabled_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_ic_plusone_tall_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/ic_plusone_tall_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_text_pressed_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_text_pressed_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_full_open_on_phone.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_full_open_on_phone.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_text_pressed_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_text_pressed_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_ic_plusone_small_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/ic_plusone_small_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_text_disabled_focus_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_text_disabled_focus_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/anim-v21_generic_confirmation_generic_confirmation_animation.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/anim-v21/generic_confirmation_generic_confirmation_animation.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v21_ic_cc_clear.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v21/ic_cc_clear.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout-v23_wearable_drawer_view.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout-v23/wearable_drawer_view.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/anim-v21_open_on_phone_path_2_animation.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/anim-v21/open_on_phone_path_2_animation.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v23_ic_cc_settings_button_top.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v23/ic_cc_settings_button_top.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4_ic_full_cancel.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-mdpi-v4/ic_full_cancel.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_ic_plusone_tall_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/ic_plusone_tall_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_single_page_nav_drawer_7_item.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout/single_page_nav_drawer_7_item.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v23_ic_expand_less_white_22.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v23/ic_expand_less_white_22.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v23_ic_cc_settings_button_e.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v23/ic_cc_settings_button_e.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_text_disabled_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_text_disabled_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/interpolator-v21_open_on_phone_animation_interpolator_1.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/interpolator-v21/open_on_phone_animation_interpolator_1.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_icon_pressed_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_icon_pressed_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-v23_ic_more_horiz_24dp_wht.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/drawable-v23/ic_more_horiz_24dp_wht.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_icon_pressed_light.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_icon_pressed_light.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/anim-v21_open_on_phone_path_1_animation.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/anim-v21/open_on_phone_path_1_animation.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_ic_plusone_tall_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/ic_plusone_tall_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout-v21_accept_deny_dialog.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout-v21/accept_deny_dialog.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_common_signin_btn_icon_disabled_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/common_signin_btn_icon_disabled_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/interpolator-v21_generic_confirmation_animation_interpolator_1.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/interpolator-v21/generic_confirmation_animation_interpolator_1.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-hdpi_ic_plusone_standard_off_client.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-hdpi/ic_plusone_standard_off_client.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout_navigation_drawer_view.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout/navigation_drawer_view.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_text_disabled_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_text_disabled_focus_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-mdpi_common_signin_btn_icon_pressed_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-mdpi/common_signin_btn_icon_pressed_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/layout-v23_action_drawer_item_view.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/wearable-2.0.1.aar/12fbb745ebeaef13ff0d01c8f06184a2/res/layout-v23/action_drawer_item_view.xml"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi_common_signin_btn_icon_normal_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xxhdpi/common_signin_btn_icon_normal_dark.9.png"
+    },
+    {
+        "merged": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/wear/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi_common_signin_btn_icon_focus_dark.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/play-services-base-7.3.0.aar/5249bfca824d44269d3f8eb71a1adbf5/res/drawable-xhdpi/common_signin_btn_icon_focus_dark.9.png"
+    }
+]

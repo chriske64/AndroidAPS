@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/app/build/intermediates/incremental/mergeFullDebugAndroidTestResources/merged.dir/values-h330dp-v13/values-h330dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/chris/.gradle/caches/transforms-1/files-1.1/materialdatetimepicker-2.3.0.aar/05408efa5089a264cb50916812688639/res/values-h330dp/values-h330dp.xml",
+                    "from": {
+                        "startLines": "4,5",
+                        "startColumns": "4,4",
+                        "startOffsets": "216,286",
+                        "endColumns": "69,56",
+                        "endOffsets": "281,338"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,125",
+                        "endColumns": "69,56",
+                        "endOffsets": "120,177"
+                    }
+                }
+            ]
+        }
+    ]
+}

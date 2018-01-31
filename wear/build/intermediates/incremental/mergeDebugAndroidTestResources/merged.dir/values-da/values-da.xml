@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <plurals formatted="false" msgid="6044628401320465106" name="time_difference_short_days"><item quantity="one"><ns1:g id="NUMBER_OF_DAYS_1">%d</ns1:g> dag</item>
+<item quantity="other"><ns1:g id="NUMBER_OF_DAYS_1">%d</ns1:g> dage</item>
+</plurals>
+    <plurals formatted="false" msgid="9209554600411186949" name="time_difference_short_hours"><item quantity="one"><ns1:g id="NUMBER_OF_HOURS_1">%d</ns1:g> t.</item>
+<item quantity="other"><ns1:g id="NUMBER_OF_HOURS_1">%d</ns1:g> t.</item>
+</plurals>
+    <plurals formatted="false" msgid="6799968572793078120" name="time_difference_short_minutes"><item quantity="one"><ns1:g id="NUMBER_OF_MINUTES_1">%d</ns1:g> min.</item>
+<item quantity="other"><ns1:g id="NUMBER_OF_MINUTES_1">%d</ns1:g> min.</item>
+</plurals>
+    <plurals formatted="false" msgid="7958173734825557821" name="time_difference_words_days"><item quantity="one"><ns1:g id="NUMBER_OF_DAYS_1">%d</ns1:g> dag</item>
+<item quantity="other"><ns1:g id="NUMBER_OF_DAYS_1">%d</ns1:g> dage</item>
+</plurals>
+    <plurals formatted="false" msgid="6659708596739126724" name="time_difference_words_hours"><item quantity="one"><ns1:g id="NUMBER_OF_HOURS_1">%d</ns1:g> time</item>
+<item quantity="other"><ns1:g id="NUMBER_OF_HOURS_1">%d</ns1:g> timer</item>
+</plurals>
+    <plurals formatted="false" msgid="5776851900234724977" name="time_difference_words_minutes"><item quantity="one"><ns1:g id="NUMBER_OF_MINUTES_1">%d</ns1:g> min.</item>
+<item quantity="other"><ns1:g id="NUMBER_OF_MINUTES_1">%d</ns1:g> min.</item>
+</plurals>
+    <string msgid="2392275098186720450" name="buttons_rect_bottom_center">"Nederst"</string>
+    <string msgid="8019030592199928760" name="buttons_rect_bottom_left">"Nederst til venstre"</string>
+    <string msgid="7032364303033228242" name="buttons_rect_bottom_right">"Nederst til højre"</string>
+    <string msgid="8926393267810862702" name="buttons_rect_left_bottom">"Nederst i venstre side"</string>
+    <string msgid="8454996931469487054" name="buttons_rect_left_center">"Til venstre for midten"</string>
+    <string msgid="4253496812046397202" name="buttons_rect_left_top">"Øverst i venstre side"</string>
+    <string msgid="2953342748755410698" name="buttons_rect_right_bottom">"Nederst i højre side"</string>
+    <string msgid="6444930972483368545" name="buttons_rect_right_center">"Til højre for midten"</string>
+    <string msgid="8233353769931572306" name="buttons_rect_right_top">"Øverst i højre side"</string>
+    <string msgid="701028376099498620" name="buttons_rect_top_center">"Øverst"</string>
+    <string msgid="2793005097226316833" name="buttons_rect_top_left">"Øverst til venstre"</string>
+    <string msgid="5242720590797179216" name="buttons_rect_top_right">"Øverst til højre"</string>
+    <string msgid="1062213636886296984" name="buttons_round_bottom_center">"Nederst"</string>
+    <string msgid="4240105703428240165" name="buttons_round_bottom_left">"Nederst til venstre"</string>
+    <string msgid="2170403244243537583" name="buttons_round_bottom_left_lower">"Nederst til venstre, forneden"</string>
+    <string msgid="4971879160739362911" name="buttons_round_bottom_left_upper">"Nederst til venstre, foroven"</string>
+    <string msgid="3805017532700326567" name="buttons_round_bottom_right">"Nederst til højre"</string>
+    <string msgid="6856386193261962647" name="buttons_round_bottom_right_lower">"Nederst til højre, forneden"</string>
+    <string msgid="3297691901098662241" name="buttons_round_bottom_right_upper">"Nederst til højre, foroven"</string>
+    <string msgid="4180117237132291640" name="buttons_round_center_left">"Til venstre for midten"</string>
+    <string msgid="2372638721705594674" name="buttons_round_center_right">"Til højre for midten"</string>
+    <string msgid="3660790088455649953" name="buttons_round_top_center">"Øverst"</string>
+    <string msgid="1548749953449352214" name="buttons_round_top_left">"Øverst til venstre"</string>
+    <string msgid="2662257990050998307" name="buttons_round_top_left_lower">"Øverst til venstre, forneden"</string>
+    <string msgid="8645976381442398995" name="buttons_round_top_left_upper">"Øverst til venstre, foroven"</string>
+    <string msgid="223683024116278216" name="buttons_round_top_right">"Øverst til højre"</string>
+    <string msgid="5362570598213836713" name="buttons_round_top_right_lower">"Øverst til højre, forneden"</string>
+    <string msgid="8652947447241978294" name="buttons_round_top_right_upper">"Øverst til højre, foroven"</string>
+    <string msgid="473679118463211576" name="common_android_wear_notification_needs_update_text">"En applikation kræver en opdatering af appen Android Wear."</string>
+    <string msgid="3046420540094071256" name="common_android_wear_update_text">"Denne app kan ikke køre, medmindre du opdaterer appen Android Wear."</string>
+    <string msgid="1366439133145190222" name="common_android_wear_update_title">"Opdater Android Wear"</string>
+    <string msgid="4181637455539816337" name="common_google_play_services_enable_button">"Aktivér Google Play-tjenester"</string>
+    <string msgid="7627896071867667758" name="common_google_play_services_enable_text">"Denne app virker ikke, medmindre du aktiverer Google Play-tjenester."</string>
+    <string msgid="529078775174559253" name="common_google_play_services_enable_title">"Aktivér Google Play-tjenester"</string>
+    <string msgid="2443362625939284971" name="common_google_play_services_error_notification_requested_by_msg">"Anmodning fra <ns1:g id="APP_NAME">%1$s</ns1:g>"</string>
+    <string msgid="8515591849428043265" name="common_google_play_services_install_button">"Hent Google Play-tjenester"</string>
+    <string msgid="8685301130651051380" name="common_google_play_services_install_text_phone">"Denne app kan ikke køre uden Google Play-tjenester, som mangler på din telefon."</string>
+    <string msgid="1589957570365247855" name="common_google_play_services_install_text_tablet">"Denne app kan ikke køre uden Google Play-tjenester, som mangler på din tablet."</string>
+    <string msgid="26645092511305524" name="common_google_play_services_install_title">"Hent Google Play-tjenester"</string>
+    <string msgid="4983316348021735578" name="common_google_play_services_invalid_account_text">"Den angivne konto findes ikke på denne enhed. Vælg en anden konto."</string>
+    <string msgid="1066672360770936753" name="common_google_play_services_invalid_account_title">"Ugyldig konto"</string>
+    <string msgid="2583358409598976717" name="common_google_play_services_needs_enabling_title">"En applikation kræver, at Google Play-tjenester aktiveres."</string>
+    <string msgid="9038847255613537209" name="common_google_play_services_network_error_text">"Der kræves en dataforbindelse for at oprette forbindelse til Google Play-tjenester."</string>
+    <string msgid="3827284619958211114" name="common_google_play_services_network_error_title">"Netværksfejl"</string>
+    <string msgid="8120534356798772974" name="common_google_play_services_notification_needs_installation_title">"En applikation kræver, at Google Play-tjenester installeres."</string>
+    <string msgid="1388129345631079938" name="common_google_play_services_notification_needs_update_title">"En applikation kræver, at Google Play-tjenester opdateres."</string>
+    <string msgid="1852570676146674985" name="common_google_play_services_notification_ticker">"Fejl i Google Play-tjenester"</string>
+    <string msgid="5194079840165204725" name="common_google_play_services_sign_in_failed_text">"Der opstod en fejl under login på angivne konto. Vælg en anden konto."</string>
+    <string msgid="8164948898147532159" name="common_google_play_services_sign_in_failed_title">"Login mislykkedes"</string>
+    <string msgid="4762332809710093730" name="common_google_play_services_unknown_issue">"Ukendt problem med Google Play-tjenester."</string>
+    <string msgid="3542578567569488671" name="common_google_play_services_unsupported_text">"Google Play-tjenester, som nogle af dine applikationer er afhængige af, understøttes ikke af din enhed. Kontakt producenten for at få hjælp."</string>
+    <string msgid="6334768798839376943" name="common_google_play_services_unsupported_title">"Google Play-tjenester"</string>
+    <string msgid="8932944190611227642" name="common_google_play_services_update_button">"Opdater"</string>
+    <string msgid="448354684997260580" name="common_google_play_services_update_text">"Denne app kan ikke køre, medmindre du opdaterer Google Play-tjenester."</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">"Opdater Google Play-tjenester"</string>
+    <string msgid="411506735369601515" name="common_open_on_phone">"Åbn på telefonen"</string>
+    <string msgid="9071884888741449141" name="common_signin_button_text">"Log ind"</string>
+    <string msgid="2429381841831957106" name="common_signin_button_text_long">"Log ind med Google"</string>
+    <string msgid="5000919058582214855" name="commono_google_play_services_api_unavailable_text">"Denne app kræver en eller flere Google Play-tjenester, der ikke er tilgængelige i øjeblikket. Kontakt udvikleren for at få hjælp."</string>
+    <string msgid="4431314454967965046" name="dismiss_overlay_button_label">"Afslut"</string>
+    <string msgid="4031765397716487527" name="generic_cancel">"Annuller"</string>
+    <string msgid="9120485112909311969" name="generic_yes">"Ja"</string>
+    <string msgid="4674705273641635102" name="navigation_drawer_content_description">"Sidemenu"</string>
+    <string msgid="4600747107629098989" name="time_difference_now">"nu"</string>
+    <string msgid="3432160628957797741" name="time_difference_short_days_and_hours">"<ns1:g id="SHORT_DAYS">%1$s</ns1:g> <ns1:g id="SHORT_HOURS">%2$s</ns1:g>"</string>
+    <string msgid="4219196550677438545" name="time_difference_short_hours_and_minutes">"<ns1:g id="SHORT_HOURS">%1$s</ns1:g> <ns1:g id="SHORT_MINUTES">%2$s</ns1:g>"</string>
+</resources>

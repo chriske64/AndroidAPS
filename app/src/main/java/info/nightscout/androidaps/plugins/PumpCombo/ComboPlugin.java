@@ -350,8 +350,10 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         if (!pump.initialized) {
             initializePump();
         } else {
+
             // trigger a connect, which will update state and check history
             runCommand(null, 3, ruffyScripter::readPumpState);
+
         }
     }
 
@@ -402,6 +404,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         // ComboFragment updates state fully only after the pump has initialized,
         // so force an update after initialization completed
         updateLocalData(runCommand(null, 1, ruffyScripter::readQuickInfo));
+
     }
 
     /** Updates local cache with state (reservoir level, last bolus ...) returned from the pump */
@@ -412,6 +415,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         if (result.history != null && !result.history.bolusHistory.isEmpty()) {
             pump.lastBolus = result.history.bolusHistory.get(0);
         }
+
         if (result.state.menu != null) {
             pump.state = result.state;
         }
@@ -505,6 +509,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
                     .comment(MainApp.gs(R.string.combo_error_no_connection_no_bolus_delivered));
         }
         if (stateResult.reservoirLevel != -1 && stateResult.reservoirLevel - 0.5 < detailedBolusInfo.insulin) {
+
             return new PumpEnactResult().success(false).enacted(false)
                     .comment(MainApp.gs(R.string.combo_reservoir_level_insufficient_for_bolus));
         }
@@ -518,6 +523,11 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
                 ? stateResult.history.bolusHistory.get(0)
                 : new Bolus(0, 0, false);
 
+        if (stateResult.reservoirLevel < detailedBolusInfo.insulin) {
+             return new PumpEnactResult().success(false).enacted(false)
+                     .comment(MainApp.sResources.getString(R.string.combo_reservoir_level_insufficient_for_bolus));
+         }
+ 
         try {
             pump.activity = MainApp.gs(R.string.combo_pump_action_bolusing, detailedBolusInfo.insulin);
             MainApp.bus().post(new EventComboPumpUpdateGUI());
@@ -1149,7 +1159,6 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         try {
             JSONObject pumpJson = new JSONObject();
             pumpJson.put("clock", DateUtil.toISOString(pump.lastSuccessfulCmdTime));
-
             int level;
             if (pump.reservoirLevel != -1) level = pump.reservoirLevel;
             else if (pump.state.insulinState == PumpState.LOW) level = 8;

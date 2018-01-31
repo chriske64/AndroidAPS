@@ -1,0 +1,45 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:1:1-7:12
+	package
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:3:5-38
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:1:1-7:12
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:1:1-7:12
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.BLUETOOTH
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:5:5-68
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:5:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:6:5-74
+	android:name
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml:6:22-71
+uses-sdk
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+		ADDED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
+		INJECTED from /home/chris/Documents/Uni/cam/arti_panc/androisaps/AndroidAPS/ruffyscripter/src/main/AndroidManifest.xml
