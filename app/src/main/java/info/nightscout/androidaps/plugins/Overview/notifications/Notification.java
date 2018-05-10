@@ -42,10 +42,7 @@ public class Notification {
     public static final int APPROACHING_DAILY_LIMIT = 11;
     public static final int NSCLIENT_NO_WRITE_PERMISSION = 12;
     public static final int MISSING_SMS_PERMISSION = 13;
-    public static final int ISF_MISSING = 14;
-    public static final int IC_MISSING = 15;
-    public static final int BASAL_MISSING = 16;
-    public static final int TARGET_MISSING = 17;
+
     public static final int NSANNOUNCEMENT = 18;
     public static final int NSALARM = 19;
     public static final int NSURGENTALARM = 20;
@@ -61,7 +58,7 @@ public class Notification {
     public static final int BASAL_PROFILE_NOT_ALIGNED_TO_HOURS = 30;
     public static final int ZERO_VALUE_IN_PROFILE = 31;
     public static final int PROFILE_SWITCH_MISSING = 32;
-
+    public static final int NOT_ENG_MODE_OR_RELEASE = 33;
 
     public int id;
     public Date date;

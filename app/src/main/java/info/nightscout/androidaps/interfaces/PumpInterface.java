@@ -35,8 +35,8 @@ public interface PumpInterface {
 
     PumpEnactResult deliverTreatment(DetailedBolusInfo detailedBolusInfo);
     void stopBolusDelivering();
-    PumpEnactResult setTempBasalAbsolute(Double absoluteRate, Integer durationInMinutes, boolean enforceNew);
-    PumpEnactResult setTempBasalPercent(Integer percent, Integer durationInMinutes, boolean enforceNew);
+    PumpEnactResult setTempBasalAbsolute(Double absoluteRate, Integer durationInMinutes, Profile profile, boolean enforceNew);
+    PumpEnactResult setTempBasalPercent(Integer percent, Integer durationInMinutes, Profile profile, boolean enforceNew);
     PumpEnactResult setExtendedBolus(Double insulin, Integer durationInMinutes);
     //some pumps might set a very short temp close to 100% as cancelling a temp can be noisy
     //when the cancel request is requested by the user (forced), the pump should always do a real cancel
@@ -44,7 +44,7 @@ public interface PumpInterface {
     PumpEnactResult cancelExtendedBolus();
 
     // Status to be passed to NS
-    JSONObject getJSONStatus();
+    JSONObject getJSONStatus(Profile profile, String profileName);
     String deviceID();
 
     // Pump capabilities
@@ -54,4 +54,7 @@ public interface PumpInterface {
     String shortStatus(boolean veryShort);
 
     boolean isFakingTempsByExtendedBoluses();
+
+    PumpEnactResult loadTDDs();
+
 }

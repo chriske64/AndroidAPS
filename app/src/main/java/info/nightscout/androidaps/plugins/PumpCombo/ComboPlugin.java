@@ -4,7 +4,6 @@ import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.CustomEvent;
 
 import org.json.JSONObject;
@@ -13,7 +12,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
@@ -25,11 +26,16 @@ import info.nightscout.androidaps.data.Profile;
 import info.nightscout.androidaps.data.PumpEnactResult;
 import info.nightscout.androidaps.db.CareportalEvent;
 import info.nightscout.androidaps.db.Source;
+import info.nightscout.androidaps.db.TDD;
 import info.nightscout.androidaps.db.TemporaryBasal;
+import info.nightscout.androidaps.plugins.Treatments.Treatment;
 import info.nightscout.androidaps.events.EventInitializationChanged;
 import info.nightscout.androidaps.events.EventRefreshOverview;
+import info.nightscout.androidaps.interfaces.Constraint;
 import info.nightscout.androidaps.interfaces.ConstraintsInterface;
 import info.nightscout.androidaps.interfaces.PluginBase;
+import info.nightscout.androidaps.interfaces.PluginDescription;
+import info.nightscout.androidaps.interfaces.PluginType;
 import info.nightscout.androidaps.interfaces.PumpDescription;
 import info.nightscout.androidaps.interfaces.PumpInterface;
 import info.nightscout.androidaps.plugins.ConfigBuilder.ConfigBuilderPlugin;
@@ -49,19 +55,29 @@ import info.nightscout.androidaps.plugins.PumpCombo.ruffyscripter.WarningOrError
 import info.nightscout.androidaps.plugins.PumpCombo.ruffyscripter.history.Bolus;
 import info.nightscout.androidaps.plugins.PumpCombo.ruffyscripter.history.PumpHistory;
 import info.nightscout.androidaps.plugins.PumpCombo.ruffyscripter.history.PumpHistoryRequest;
+import info.nightscout.androidaps.plugins.PumpCombo.ruffyscripter.history.Tdd;
+import info.nightscout.androidaps.plugins.Treatments.TreatmentsPlugin;
 import info.nightscout.androidaps.queue.Callback;
 import info.nightscout.androidaps.queue.CommandQueue;
 import info.nightscout.utils.DateUtil;
+import info.nightscout.utils.FabricPrivacy;
+import info.nightscout.utils.SP;
 
 /**
  * Created by mike on 05.08.2016.
  */
-public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterface {
+public class ComboPlugin extends PluginBase implements PumpInterface, ConstraintsInterface {
     private static final Logger log = LoggerFactory.getLogger(ComboPlugin.class);
+    static final String COMBO_TBRS_SET = "combo_tbrs_set";
+    static final String COMBO_BOLUSES_DELIVERED = "combo_boluses_delivered";
 
     private static ComboPlugin plugin = null;
-    private boolean fragmentEnabled = false;
-    private boolean fragmentVisible = false;
+
+    public static ComboPlugin getPlugin() {
+        if (plugin == null)
+            plugin = new ComboPlugin();
+        return plugin;
+    }
 
     private final static PumpDescription pumpDescription = new PumpDescription();
 
@@ -82,6 +98,8 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         pumpDescription.tempPercentStep = 10;
 
         pumpDescription.tempDurationStep = 15;
+        pumpDescription.tempDurationStep15mAllowed = true;
+        pumpDescription.tempDurationStep30mAllowed = true;
         pumpDescription.tempMaxDuration = 24 * 60;
 
 
@@ -92,6 +110,11 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         pumpDescription.isRefillingCapable = true;
 
         pumpDescription.storesCarbInfo = false;
+
+        pumpDescription.is30minBasalRatesCapable = false;
+
+        pumpDescription.supportsTDDs = true;
+        pumpDescription.needsManualTDDLoad = true;
     }
 
     @NonNull
@@ -100,17 +123,15 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
     @NonNull
     private static final ComboPump pump = new ComboPump();
 
-    /** This is used to determine when to pass a bolus cancel request to the scripter */
+    /**
+     * This is used to determine when to pass a bolus cancel request to the scripter
+     */
     private volatile boolean scripterIsBolusing;
-    /** This is set to true to request a bolus cancellation. {@link #deliverBolus(DetailedBolusInfo)}
-     * will reset this flag. */
+    /**
+     * This is set to true to request a bolus cancellation. {@link #deliverBolus(DetailedBolusInfo)}
+     * will reset this flag.
+     */
     private volatile boolean cancelBolus;
-
-    /** Used to reject boluses with the same amount requested within two minutes.
-     * Used solely by {@link #deliverBolus(DetailedBolusInfo)}. This is independent of the
-     * pump history and is meant as a safety feature to block multiple requests due to an
-     * application bug. Whether the requested bolus was delivered once is not taken into account. */
-    private Bolus lastRequestedBolus;
 
     /**
      * This is set (in {@link #checkHistory()} whenever a connection to the pump is made and
@@ -128,22 +149,24 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
      */
     private volatile boolean pumpHistoryChanged = false;
 
-    /** Cache of the last <=2 boluses on the pump. Used to detect changes in pump history,
-     * requiring reading pump more history. This is read/set in {@link #checkHistory()} when changed
+    /**
+     * Cache of the last <=2 boluses on the pump. Used to detect changes in pump history,
+     * requiring reading more pump history. This is read/set in {@link #checkHistory()} when changed
      * pump history was detected and was read, as well as in {@link #deliverBolus(DetailedBolusInfo)}
-     * after bolus delivery. Newest record is the first one. */
+     * after bolus delivery. Newest record is the first one.
+     */
     private volatile List<Bolus> recentBoluses = new ArrayList<>(0);
-
-    public static ComboPlugin getPlugin() {
-        if (plugin == null)
-            plugin = new ComboPlugin();
-        return plugin;
-    }
 
     private static final PumpEnactResult OPERATION_NOT_SUPPORTED = new PumpEnactResult()
             .success(false).enacted(false).comment(MainApp.gs(R.string.combo_pump_unsupported_operation));
 
     private ComboPlugin() {
+        super(new PluginDescription()
+                .mainType(PluginType.PUMP)
+                .fragmentClass(ComboFragment.class.getName())
+                .pluginName(R.string.combopump)
+                .shortName(R.string.combopump_shortname)
+        );
         ruffyScripter = new RuffyScripter(MainApp.instance().getApplicationContext());
     }
 
@@ -151,89 +174,22 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         return pump;
     }
 
-    @Override
-    public String getFragmentClass() {
-        return ComboFragment.class.getName();
-    }
-
-    @Override
-    public String getName() {
-        return MainApp.gs(R.string.combopump);
-    }
-
-    @Override
-    public String getNameShort() {
-        String name = MainApp.gs(R.string.combopump_shortname);
-        if (!name.trim().isEmpty()) {
-            //only if translation exists
-            return name;
-        }
-        // use long name as fallback
-        return getName();
-    }
-
     String getStateSummary() {
         PumpState ps = pump.state;
-        if (!pump.initialized) {
-            return MainApp.gs(R.string.combo_pump_state_initializing);
-        } else if (!validBasalRateProfileSelectedOnPump) {
-            return MainApp.gs(R.string.loopdisabled);
-        } else if (ps.activeAlert != null) {
+        if (ps.activeAlert != null) {
             return ps.activeAlert.errorCode != null
                     ? "E" + ps.activeAlert.errorCode + ": " + ps.activeAlert.message
                     : "W" + ps.activeAlert.warningCode + ": " + ps.activeAlert.message;
-        } else if (ps.suspended && (ps.batteryState == PumpState.EMPTY || ps.insulinState == PumpState.EMPTY))
+        } else if (ps.suspended && (ps.batteryState == PumpState.EMPTY || ps.insulinState == PumpState.EMPTY)) {
             return MainApp.gs(R.string.combo_pump_state_suspended_due_to_error);
-        else if (ps.suspended)
+        } else if (ps.suspended) {
             return MainApp.gs(R.string.combo_pump_state_suspended_by_user);
+        } else if (!pump.initialized) {
+            return MainApp.gs(R.string.combo_pump_state_initializing);
+        } else if (!validBasalRateProfileSelectedOnPump) {
+            return MainApp.gs(R.string.loopdisabled);
+        }
         return MainApp.gs(R.string.combo_pump_state_running);
-    }
-
-    @Override
-    public boolean isEnabled(int type) {
-        if (type == PluginBase.PUMP) return fragmentEnabled;
-        else if (type == PluginBase.CONSTRAINTS) return fragmentEnabled;
-        return false;
-    }
-
-    @Override
-    public boolean isVisibleInTabs(int type) {
-        return type == PUMP && fragmentVisible;
-    }
-
-    @Override
-    public boolean canBeHidden(int type) {
-        return true;
-    }
-
-    @Override
-    public boolean hasFragment() {
-        return true;
-    }
-
-    @Override
-    public boolean showInList(int type) {
-        return type == PUMP;
-    }
-
-    @Override
-    public void setFragmentEnabled(int type, boolean fragmentEnabled) {
-        if (type == PUMP) this.fragmentEnabled = fragmentEnabled;
-    }
-
-    @Override
-    public void setFragmentVisible(int type, boolean fragmentVisible) {
-        if (type == PUMP) this.fragmentVisible = fragmentVisible;
-    }
-
-    @Override
-    public int getPreferencesId() {
-        return -1;
-    }
-
-    @Override
-    public int getType() {
-        return PluginBase.PUMP;
     }
 
     @Override
@@ -343,12 +299,12 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
     private BasalProfile convertProfileToComboProfile(Profile profile) {
         BasalProfile basalProfile = new BasalProfile();
         for (int i = 0; i < 24; i++) {
-            double rate = profile.getBasal(Integer.valueOf(i * 60 * 60));
+            double rate = profile.getBasalTimeFromMidnight(i * 60 * 60);
 
             /*The Combo pump does hava a different granularity for basal rate:
-            * 0.01 - if below 1U/h
-            * 0.05 - if above 1U/h
-            * */
+             * 0.01 - if below 1U/h
+             * 0.05 - if above 1U/h
+             * */
 
             if (rate < 1) {
                 //round to 0.01 granularity;
@@ -369,7 +325,9 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         return new Date(pump.lastSuccessfulCmdTime);
     }
 
-    /** Runs pump initializing if needed and reads the pump state from the main screen. */
+    /**
+     * Runs pump initialization if needed and reads the pump state from the main screen.
+     */
     @Override
     public synchronized void getPumpStatus() {
         log.debug("getPumpStatus called");
@@ -422,7 +380,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
             return;
         }
         pump.basalProfile = readBasalResult.basalProfile;
-        validBasalRateProfileSelectedOnPump = true;
+        setValidBasalRateProfileSelectedOnPump(true);
 
         pump.initialized = true;
         MainApp.bus().post(new EventInitializationChanged());
@@ -450,7 +408,9 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
 >>>>>>> b435bb3cd5419677634fdaef9d0490cd9615205c
     }
 
-    /** Updates local cache with state (reservoir level, last bolus ...) returned from the pump */
+    /**
+     * Updates local cache with state (reservoir level, last bolus ...) returned from the pump
+     */
     private void updateLocalData(CommandResult result) {
         if (result.reservoirLevel != PumpState.UNKNOWN) {
             pump.reservoirLevel = result.reservoirLevel;
@@ -492,8 +452,6 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
             case STOPPED:
                 event.status = MainApp.gs(R.string.bolusstopped);
                 break;
-            case RECOVERING:
-                event.status = MainApp.gs(R.string.combo_error_bolus_recovery_progress);
         }
         event.percent = percent;
         MainApp.bus().post(event);
@@ -510,21 +468,23 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
                 log.error("deliverTreatment: Invalid input");
                 return new PumpEnactResult().success(false).enacted(false)
                         .bolusDelivered(0d).carbsDelivered(0d)
-                        .comment(MainApp.instance().getString(R.string.danar_invalidinput));
+                        .comment(MainApp.gs(R.string.danar_invalidinput));
             } else if (detailedBolusInfo.insulin > 0) {
                 // bolus needed, ask pump to deliver it
                 return deliverBolus(detailedBolusInfo);
             } else {
                 // no bolus required, carb only treatment
-                MainApp.getConfigBuilder().addToHistoryTreatment(detailedBolusInfo);
+                TreatmentsPlugin.getPlugin().addToHistoryTreatment(detailedBolusInfo);
 
                 EventOverviewBolusProgress bolusingEvent = EventOverviewBolusProgress.getInstance();
+                bolusingEvent.t = new Treatment();
+                bolusingEvent.t.isSMB = detailedBolusInfo.isSMB;
                 bolusingEvent.percent = 100;
                 MainApp.bus().post(bolusingEvent);
 
                 return new PumpEnactResult().success(true).enacted(true)
                         .bolusDelivered(0d).carbsDelivered(detailedBolusInfo.carbs)
-                        .comment(MainApp.instance().getString(R.string.virtualpump_resultok));
+                        .comment(MainApp.gs(R.string.virtualpump_resultok));
             }
         } finally {
             MainApp.bus().post(new EventComboPumpUpdateGUI());
@@ -611,18 +571,6 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
             pump.activity = MainApp.gs(R.string.combo_pump_action_bolusing, detailedBolusInfo.insulin);
             MainApp.bus().post(new EventComboPumpUpdateGUI());
 
-            // Guard against boluses issued multiple times within two minutes.
-            // Two minutes, so that the resulting timestamp and bolus are different with the Combo
-            // history records which only store with minute-precision
-            if (lastRequestedBolus != null
-                    && Math.abs(lastRequestedBolus.amount - detailedBolusInfo.insulin) < 0.01
-                    && lastRequestedBolus.timestamp + 120 * 1000 > System.currentTimeMillis()) {
-                log.error("Bolus request rejected, same bolus requested recently: " + lastRequestedBolus);
-                return new PumpEnactResult().success(false).enacted(false)
-                        .comment(MainApp.gs(R.string.bolus_frequency_exceeded));
-            }
-            lastRequestedBolus = new Bolus(System.currentTimeMillis(), detailedBolusInfo.insulin, true);
-
             // check pump is ready and all pump bolus records are known
             CommandResult stateResult = runCommand(null, 2, () -> ruffyScripter.readQuickInfo(1));
             if (!stateResult.success) {
@@ -642,6 +590,15 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
             Bolus previousBolus = stateResult.history != null && !stateResult.history.bolusHistory.isEmpty()
                     ? stateResult.history.bolusHistory.get(0)
                     : new Bolus(0, 0, false);
+
+            // reject a bolus if one with the exact same size was successfully delivered
+            // within the last 1-2 minutes
+            if (Math.abs(previousBolus.amount - detailedBolusInfo.insulin) < 0.01
+                    && previousBolus.timestamp + 60 * 1000 > System.currentTimeMillis()) {
+                log.debug("Bolu request rejected, same bolus was successfully delivered very recently");
+                return new PumpEnactResult().success(false).enacted(false)
+                        .comment(MainApp.gs(R.string.bolus_frequency_exceeded));
+            }
 
             // if the last bolus was given in the current minute, wait till the pump clock moves
             // to the next minute to ensure timestamps are unique and can be imported
@@ -665,7 +622,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
             }
             if (waitLoops > 0) {
                 long waitDuration = (System.currentTimeMillis() - waitStartTime) / 1000;
-                Answers.getInstance().logCustom(new CustomEvent("ComboBolusTimestampWait")
+                FabricPrivacy.getInstance().logCustom(new CustomEvent("ComboBolusTimestampWait")
                         .putCustomAttribute("buildversion", BuildConfig.BUILDVERSION)
                         .putCustomAttribute("version", BuildConfig.VERSION)
                         .putCustomAttribute("waitTimeSecs", String.valueOf(waitDuration)));
@@ -738,6 +695,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
             }
 
             // full bolus was delivered successfully
+            incrementBolusCount();
             return new PumpEnactResult()
                     .success(true)
                     .enacted(lastPumpBolus.amount > 0)
@@ -748,6 +706,22 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
             MainApp.bus().post(new EventComboPumpUpdateGUI());
             MainApp.bus().post(new EventRefreshOverview("Bolus"));
             cancelBolus = false;
+        }
+    }
+
+    private void incrementTbrCount() {
+        try {
+            SP.putLong(COMBO_TBRS_SET, SP.getLong(COMBO_TBRS_SET, 0L) + 1);
+        } catch (Exception e) {
+            // ignore
+        }
+    }
+
+    private void incrementBolusCount() {
+        try {
+            SP.putLong(COMBO_BOLUSES_DELIVERED, SP.getLong(COMBO_BOLUSES_DELIVERED, 0L) + 1);
+        } catch (Exception e) {
+            // ignore
         }
     }
 
@@ -763,14 +737,14 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         dbi.source = Source.PUMP;
         dbi.insulin = lastPumpBolus.amount;
         try {
-            boolean treatmentCreated = MainApp.getConfigBuilder().addToHistoryTreatment(dbi);
+            boolean treatmentCreated = TreatmentsPlugin.getPlugin().addToHistoryTreatment(dbi);
             if (!treatmentCreated) {
                 log.error("Adding treatment record overrode an existing record: " + dbi);
                 if (dbi.isSMB) {
                     Notification notification = new Notification(Notification.COMBO_PUMP_ALARM, MainApp.gs(R.string.combo_error_updating_treatment_record), Notification.URGENT);
                     MainApp.bus().post(new EventNewNotification(notification));
                 }
-                Answers.getInstance().logCustom(new CustomEvent("ComboBolusToDbError")
+                FabricPrivacy.getInstance().logCustom(new CustomEvent("ComboBolusToDbError")
                         .putCustomAttribute("buildversion", BuildConfig.BUILDVERSION)
                         .putCustomAttribute("version", BuildConfig.VERSION)
                         .putCustomAttribute("bolus", String.valueOf(lastPumpBolus.amount))
@@ -782,7 +756,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
             if (dbi.isSMB) {
                 Notification notification = new Notification(Notification.COMBO_PUMP_ALARM, MainApp.gs(R.string.combo_error_updating_treatment_record), Notification.URGENT);
                 MainApp.bus().post(new EventNewNotification(notification));
-                Answers.getInstance().logCustom(new CustomEvent("ComboBolusToDbError")
+                FabricPrivacy.getInstance().logCustom(new CustomEvent("ComboBolusToDbError")
                         .putCustomAttribute("buildversion", BuildConfig.BUILDVERSION)
                         .putCustomAttribute("version", BuildConfig.VERSION)
                         .putCustomAttribute("bolus", String.valueOf(lastPumpBolus.amount))
@@ -801,7 +775,8 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         cancelBolus = true;
     }
 
-    /** Note: AAPS calls this solely to enact OpenAPS suggestions
+    /**
+     * Note: AAPS calls this solely to enact OpenAPS suggestions
      *
      * @param force the force parameter isn't used currently since we always set the tbr -
      *              there might be room for optimization to first test the currently running tbr
@@ -810,7 +785,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
      *              the new value (and thus still has the old duration of e.g. 1 min) expires?)
      */
     @Override
-    public PumpEnactResult setTempBasalAbsolute(Double absoluteRate, Integer durationInMinutes, boolean force) {
+    public PumpEnactResult setTempBasalAbsolute(Double absoluteRate, Integer durationInMinutes, Profile profile, boolean force) {
         log.debug("setTempBasalAbsolute called with a rate of " + absoluteRate + " for " + durationInMinutes + " min.");
         int unroundedPercentage = Double.valueOf(absoluteRate / getBaseBasalRate() * 100).intValue();
         int roundedPercentage = (int) (Math.round(absoluteRate / getBaseBasalRate() * 10) * 10);
@@ -828,7 +803,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
      *                 is or isn't running at the moment
      */
     @Override
-    public PumpEnactResult setTempBasalPercent(Integer percent, final Integer durationInMinutes, boolean forceNew) {
+    public PumpEnactResult setTempBasalPercent(Integer percent, final Integer durationInMinutes, Profile profile, boolean forceNew) {
         return setTempBasalPercent(percent, durationInMinutes);
     }
 
@@ -868,17 +843,17 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         PumpState state = commandResult.state;
         if (state.tbrActive && state.tbrPercent == adjustedPercent
                 && (state.tbrRemainingDuration == durationInMinutes || state.tbrRemainingDuration == durationInMinutes - 1)) {
-            TemporaryBasal tempStart = new TemporaryBasal();
-            tempStart.date = state.timestamp;
-            tempStart.durationInMinutes = state.tbrRemainingDuration;
-            tempStart.percentRate = state.tbrPercent;
-            tempStart.isAbsolute = false;
-            tempStart.source = Source.USER;
-            MainApp.getConfigBuilder().addToHistoryTempBasal(tempStart);
+            TemporaryBasal tempStart = new TemporaryBasal()
+                    .date(state.timestamp)
+                    .duration(state.tbrRemainingDuration)
+                    .percent(state.tbrPercent)
+                    .source(Source.USER);
+            TreatmentsPlugin.getPlugin().addToHistoryTempBasal(tempStart);
 
             MainApp.bus().post(new EventComboPumpUpdateGUI());
         }
 
+        incrementTbrCount();
         return new PumpEnactResult().success(true).enacted(true).isPercent(true)
                 .percent(state.tbrPercent).duration(state.tbrRemainingDuration);
     }
@@ -888,7 +863,8 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         return OPERATION_NOT_SUPPORTED;
     }
 
-    /** Cancel an active Temp Basal. Mostly sets a fake Temp Basal to avoid a TBR CANCELLED
+    /**
+     * Cancel an active Temp Basal. Mostly sets a fake Temp Basal to avoid a TBR CANCELLED
      * alert. This relies on TemporaryBasal objects to properly reflect the pumps state,
      * which is ensured by {@link #checkAndResolveTbrMismatch(PumpState)}, which runs on each
      * connect. When a hard cancel is requested, the pump is queried for it's TBR state to
@@ -898,7 +874,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
     @Override
     public PumpEnactResult cancelTempBasal(boolean enforceNew) {
         log.debug("cancelTempBasal called");
-        final TemporaryBasal activeTemp = MainApp.getConfigBuilder().getTempBasalFromHistory(System.currentTimeMillis());
+        final TemporaryBasal activeTemp = TreatmentsPlugin.getPlugin().getTempBasalFromHistory(System.currentTimeMillis());
         if (enforceNew) {
             CommandResult stateResult = runCommand(MainApp.gs(R.string.combo_pump_action_refreshing), 2, ruffyScripter::readPumpState);
             if (!stateResult.success) {
@@ -913,11 +889,11 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
                 return new PumpEnactResult().success(false).enacted(false);
             }
             if (!cancelResult.state.tbrActive) {
-                TemporaryBasal tempBasal = new TemporaryBasal();
-                tempBasal.date = cancelResult.state.timestamp;
-                tempBasal.durationInMinutes = 0;
-                tempBasal.source = Source.USER;
-                MainApp.getConfigBuilder().addToHistoryTempBasal(tempBasal);
+                TemporaryBasal tempBasal = new TemporaryBasal()
+                        .date(cancelResult.state.timestamp)
+                        .duration(0)
+                        .source(Source.USER);
+                TreatmentsPlugin.getPlugin().addToHistoryTempBasal(tempBasal);
                 return new PumpEnactResult().isTempCancel(true).success(true).enacted(true);
             } else {
                 return new PumpEnactResult().success(false).enacted(false);
@@ -988,7 +964,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
             if (commandResult.success) {
                 pump.lastSuccessfulCmdTime = System.currentTimeMillis();
                 if (validBasalRateProfileSelectedOnPump && commandResult.state.unsafeUsageDetected == PumpState.UNSUPPORTED_BASAL_RATE_PROFILE) {
-                    validBasalRateProfileSelectedOnPump = false;
+                    setValidBasalRateProfileSelectedOnPump(false);
                     Notification n = new Notification(Notification.COMBO_PUMP_ALARM,
                             MainApp.gs(R.string.combo_force_disabled_notification),
                             Notification.URGENT);
@@ -1008,12 +984,15 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         return commandResult;
     }
 
+    public void setValidBasalRateProfileSelectedOnPump(boolean value) {
+        validBasalRateProfileSelectedOnPump = value;
+    }
+
     /**
      * Returns the command result of running ReadPumpState if it wasn't successful, indicating
      * an error condition. Returns null otherwise.
      */
     private CommandResult runOnConnectChecks() {
-        // connect, get status and check if an alarm is active
         CommandResult preCheckResult = ruffyScripter.readPumpState();
         if (!preCheckResult.success) {
             return preCheckResult;
@@ -1041,13 +1020,27 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
             }
         }
 
-        checkForUnsafeUsage(preCheckResult);
-        checkAndResolveTbrMismatch(preCheckResult.state);
-        checkPumpTime(preCheckResult.state);
-        checkBasalRate(preCheckResult.state);
-        CommandResult historyCheckError = checkHistory();
-        if (historyCheckError != null) {
-            return historyCheckError;
+        if (!preCheckResult.state.suspended) {
+            checkForUnsafeUsage(preCheckResult);
+            checkAndResolveTbrMismatch(preCheckResult.state);
+            checkPumpTime(preCheckResult.state);
+            checkBasalRate(preCheckResult.state);
+            CommandResult historyCheckError = checkHistory();
+            if (historyCheckError != null) {
+                return historyCheckError;
+            }
+        } else {
+            long now = System.currentTimeMillis();
+            TemporaryBasal aapsTbr = TreatmentsPlugin.getPlugin().getTempBasalFromHistory(now);
+            if (aapsTbr == null || aapsTbr.percentRate != 0) {
+                log.debug("Creating 15m zero temp since pump is suspended");
+                TemporaryBasal newTempBasal = new TemporaryBasal()
+                        .date(now)
+                        .percent(0)
+                        .duration(15)
+                        .source(Source.USER);
+                TreatmentsPlugin.getPlugin().addToHistoryTempBasal(newTempBasal);
+            }
         }
 
         return null;
@@ -1092,8 +1085,10 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         }
     }
 
-    /** Check pump time (on the main menu) and raise notification if time is off.
-     * (setting clock is not supported by ruffy) */
+    /**
+     * Check pump time (on the main menu) and raise notification if time is off.
+     * (setting clock is not supported by ruffy)
+     */
     private void checkPumpTime(PumpState state) {
         if (state.pumpTime == 0) {
             // time couldn't be read (e.g. a warning is displayed on the menu , hiding the time field)
@@ -1162,63 +1157,63 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
     private void checkAndResolveTbrMismatch(PumpState state) {
         // compare with: info.nightscout.androidaps.plugins.PumpDanaR.comm.MsgStatusTempBasal.updateTempBasalInDB()
         long now = System.currentTimeMillis();
-        TemporaryBasal aapsTbr = MainApp.getConfigBuilder().getTempBasalFromHistory(now);
+        TemporaryBasal aapsTbr = TreatmentsPlugin.getPlugin().getTempBasalFromHistory(now);
         if (aapsTbr == null && state.tbrActive && state.tbrRemainingDuration > 2) {
             log.debug("Creating temp basal from pump TBR");
-            Answers.getInstance().logCustom(new CustomEvent("ComboTbrMismatch")
+            FabricPrivacy.getInstance().logCustom(new CustomEvent("ComboTbrMismatch")
                     .putCustomAttribute("buildversion", BuildConfig.BUILDVERSION)
                     .putCustomAttribute("version", BuildConfig.VERSION)
                     .putCustomAttribute("type", "new TBR on pump"));
-            TemporaryBasal newTempBasal = new TemporaryBasal();
-            newTempBasal.date = now;
-            newTempBasal.percentRate = state.tbrPercent;
-            newTempBasal.isAbsolute = false;
-            newTempBasal.durationInMinutes = state.tbrRemainingDuration;
-            newTempBasal.source = Source.USER;
-            MainApp.getConfigBuilder().addToHistoryTempBasal(newTempBasal);
+            TemporaryBasal newTempBasal = new TemporaryBasal()
+                    .date(now)
+                    .percent(state.tbrPercent)
+                    .duration(state.tbrRemainingDuration)
+                    .source(Source.USER);
+            TreatmentsPlugin.getPlugin().addToHistoryTempBasal(newTempBasal);
         } else if (aapsTbr != null && aapsTbr.getPlannedRemainingMinutes() > 2 && !state.tbrActive) {
             log.debug("Ending AAPS-TBR since pump has no TBR active");
-            Answers.getInstance().logCustom(new CustomEvent("ComboTbrMismatch")
+            FabricPrivacy.getInstance().logCustom(new CustomEvent("ComboTbrMismatch")
                     .putCustomAttribute("buildversion", BuildConfig.BUILDVERSION)
                     .putCustomAttribute("version", BuildConfig.VERSION)
                     .putCustomAttribute("type", "TBR cancelled on pump"));
-            TemporaryBasal tempStop = new TemporaryBasal();
-            tempStop.date = now;
-            tempStop.durationInMinutes = 0;
-            tempStop.source = Source.USER;
-            MainApp.getConfigBuilder().addToHistoryTempBasal(tempStop);
+            TemporaryBasal tempStop = new TemporaryBasal()
+                    .date(now)
+                    .duration(0)
+                    .source(Source.USER);
+            TreatmentsPlugin.getPlugin().addToHistoryTempBasal(tempStop);
         } else if (aapsTbr != null && state.tbrActive
                 && (aapsTbr.percentRate != state.tbrPercent ||
                 Math.abs(aapsTbr.getPlannedRemainingMinutes() - state.tbrRemainingDuration) > 2)) {
             log.debug("AAPSs and pump-TBR differ; ending AAPS-TBR and creating new TBR based on pump TBR");
-            Answers.getInstance().logCustom(new CustomEvent("ComboTbrMismatch")
+            FabricPrivacy.getInstance().logCustom(new CustomEvent("ComboTbrMismatch")
                     .putCustomAttribute("buildversion", BuildConfig.BUILDVERSION)
                     .putCustomAttribute("version", BuildConfig.VERSION)
                     .putCustomAttribute("type", "TBR on pump differs from AAPS TBR"));
-            TemporaryBasal tempStop = new TemporaryBasal();
-            tempStop.date = now - 1000;
-            tempStop.durationInMinutes = 0;
-            tempStop.source = Source.USER;
-            MainApp.getConfigBuilder().addToHistoryTempBasal(tempStop);
+            TemporaryBasal tempStop = new TemporaryBasal()
+                    .date(now - 1000)
+                    .duration(0)
+                    .source(Source.USER);
+            TreatmentsPlugin.getPlugin().addToHistoryTempBasal(tempStop);
 
-            TemporaryBasal newTempBasal = new TemporaryBasal();
-            newTempBasal.date = now;
-            newTempBasal.percentRate = state.tbrPercent;
-            newTempBasal.isAbsolute = false;
-            newTempBasal.durationInMinutes = state.tbrRemainingDuration;
-            newTempBasal.source = Source.USER;
-            MainApp.getConfigBuilder().addToHistoryTempBasal(newTempBasal);
+            TemporaryBasal newTempBasal = new TemporaryBasal()
+                    .date(now)
+                    .percent(state.tbrPercent)
+                    .duration(state.tbrRemainingDuration)
+                    .source(Source.USER);
+            TreatmentsPlugin.getPlugin().addToHistoryTempBasal(newTempBasal);
         }
     }
 
-    /**Reads the pump's history and updates the DB accordingly. */
+    /**
+     * Reads the pump's history and updates the DB accordingly.
+     */
     private boolean readHistory(@Nullable PumpHistoryRequest request) {
         CommandResult historyResult = runCommand(MainApp.gs(R.string.combo_activity_reading_pump_history), 3, () -> ruffyScripter.readHistory(request));
-        if (!historyResult.success) {
+        PumpHistory history = historyResult.history;
+        if (!historyResult.success || history == null) {
             return false;
         }
 
-        PumpHistory history = historyResult.history;
         updateDbFromPumpHistory(history);
 
         // update local cache
@@ -1241,14 +1236,15 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
             dbi.source = Source.PUMP;
             dbi.insulin = pumpBolus.amount;
             dbi.eventType = CareportalEvent.CORRECTIONBOLUS;
-            if (MainApp.getConfigBuilder().addToHistoryTreatment(dbi)) {
+            if (TreatmentsPlugin.getPlugin().addToHistoryTreatment(dbi)) {
                 updated = true;
             }
         }
         return updated;
     }
 
-    /** Adds the bolus to the timestamp to be able to differentiate multiple boluses in the same
+    /**
+     * Adds the bolus to the timestamp to be able to differentiate multiple boluses in the same
      * minute. Best effort, since this covers only boluses up to 6.0 U and relies on other code
      * to prevent a boluses with the same amount to be delivered within the same minute.
      * Should be good enough, even with command mode, it's a challenge to create that situation
@@ -1258,64 +1254,6 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         double bolus = pumpBolus.amount - 0.1;
         int secondsFromBolus = (int) (bolus * 10 * 1000);
         return pumpBolus.timestamp + Math.min(secondsFromBolus, 59 * 1000);
-    }
-
-    // TODO use queue once ready
-    void readTddData(Callback post) {
-//        ConfigBuilderPlugin.getCommandQueue().custom(new Callback() {
-//            @Override
-//            public void run() {
-                readHistory(new PumpHistoryRequest().tddHistory(PumpHistoryRequest.FULL));
-//            }
-//        }, post);
-        if (post != null) {
-            post.run();
-        }
-        CommandQueue commandQueue = ConfigBuilderPlugin.getCommandQueue();
-        if (commandQueue.performing() == null && commandQueue.size() == 0) {
-            ruffyScripter.disconnect();
-        }
-    }
-
-    // TODO use queue once ready
-    void readAlertData(Callback post) {
-//        ConfigBuilderPlugin.getCommandQueue().custom(new Callback() {
-//            @Override
-//            public void run() {
-                readHistory(new PumpHistoryRequest().pumpErrorHistory(PumpHistoryRequest.FULL));
-//            }
-//        }, post);
-        if (post != null) {
-            post.run();
-        }
-        CommandQueue commandQueue = ConfigBuilderPlugin.getCommandQueue();
-        if (commandQueue.performing() == null && commandQueue.size() == 0) {
-            ruffyScripter.disconnect();
-        }
-    }
-
-    // TODO use queue once ready
-    void readAllPumpData(Callback post) {
-//        ConfigBuilderPlugin.getCommandQueue().custom(new Callback() {
-//            @Override
-//            public void run() {
-                readHistory(new PumpHistoryRequest()
-                        .bolusHistory(PumpHistoryRequest.FULL)
-                        .pumpErrorHistory(PumpHistoryRequest.FULL)
-                        .tddHistory(PumpHistoryRequest.FULL));
-                CommandResult readBasalResult = runCommand(MainApp.gs(R.string.combo_actvity_reading_basal_profile), 2, ruffyScripter::readBasalProfile);
-                if (readBasalResult.success) {
-                    pump.basalProfile = readBasalResult.basalProfile;
-                }
-//            }
-//        }, post);
-        if (post != null) {
-            post.run();
-        }
-        CommandQueue commandQueue = ConfigBuilderPlugin.getCommandQueue();
-        if (commandQueue.performing() == null && commandQueue.size() == 0) {
-            ruffyScripter.disconnect();
-        }
     }
 
     /**
@@ -1366,7 +1304,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         HashSet<Bolus> bolusSet = new HashSet<>(historyResult.history.bolusHistory);
         if (bolusSet.size() != historyResult.history.bolusHistory.size()) {
             log.debug("Bolus with same amount within the same minute imported. Only one will make it to the DB.");
-            Answers.getInstance().logCustom(new CustomEvent("ComboBolusToDbError")
+            FabricPrivacy.getInstance().logCustom(new CustomEvent("ComboBolusToDbError")
                     .putCustomAttribute("buildversion", BuildConfig.BUILDVERSION)
                     .putCustomAttribute("version", BuildConfig.VERSION)
                     .putCustomAttribute("bolus", "")
@@ -1395,7 +1333,7 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
     }
 
     @Override
-    public JSONObject getJSONStatus() {
+    public JSONObject getJSONStatus(Profile profile, String profileName) {
         if (!pump.initialized) {
             return null;
         }
@@ -1464,58 +1402,53 @@ public class ComboPlugin implements PluginBase, PumpInterface, ConstraintsInterf
         return false;
     }
 
+    @Override
+    public PumpEnactResult loadTDDs() {
+        PumpEnactResult result = new PumpEnactResult();
+        result.success = readHistory(new PumpHistoryRequest().tddHistory(PumpHistoryRequest.FULL));
+        if (result.success) {
+            List<Tdd> tdds = pump.tddHistory;
+            if (tdds != null) {
+                HashMap<Long, TDD> map = new HashMap<>();
+                for (int i = 0; i < tdds.size(); i++) {
+                    Tdd currTdd = tdds.get(i);
+                    if (currTdd.total < 1)
+                        continue; //cases where dummy days are introduced (e.g. Battery change with date loss)
+                    if (map.containsKey(currTdd.timestamp)) {
+                        //duplicate days on time changes
+                        TDD existing = map.get(currTdd.timestamp);
+                        existing.total += currTdd.total;
+                    } else {
+                        map.put(currTdd.timestamp, new TDD(currTdd.timestamp, 0d, 0d, currTdd.total));
+                    }
+                }
+
+                Collection<TDD> uniqueColl = map.values();
+
+                for (TDD currTdd : uniqueColl) {
+                    MainApp.getDbHelper().createOrUpdateTDD(currTdd);
+                }
+            }
+        }
+        return result;
+    }
+
     // Constraints interface
     private long lowSuspendOnlyLoopEnforcedUntil = 0;
     private long violationWarningRaisedForBolusAt = 0;
     private boolean validBasalRateProfileSelectedOnPump = true;
 
     @Override
-    public boolean isLoopEnabled() {
-        return validBasalRateProfileSelectedOnPump;
+    public Constraint<Boolean> isLoopInvokationAllowed(Constraint<Boolean> value) {
+        if (!validBasalRateProfileSelectedOnPump)
+            value.set(false, MainApp.gs(R.string.novalidbasalrate), this);
+        return value;
     }
 
     @Override
-    public boolean isClosedModeEnabled() {
-        return true;
-    }
-
-    @Override
-    public boolean isAutosensModeEnabled() {
-        return true;
-    }
-
-    @Override
-    public boolean isAMAModeEnabled() {
-        return true;
-    }
-
-    @Override
-    public boolean isSMBModeEnabled() {
-        return true;
-    }
-
-    @Override
-    public Double applyBasalConstraints(Double absoluteRate) {
-        return absoluteRate;
-    }
-
-    @Override
-    public Integer applyBasalConstraints(Integer percentRate) {
-        return percentRate;
-    }
-
-    @Override
-    public Double applyBolusConstraints(Double insulin) {
-        return insulin;
-    }
-
-    @Override
-    public Integer applyCarbsConstraints(Integer carbs) {
-        return carbs;
-    }
-
-    @Override
-    public Double applyMaxIOBConstraints(Double maxIob) {
-        return lowSuspendOnlyLoopEnforcedUntil < System.currentTimeMillis() ? maxIob : 0;
+    public Constraint<Double> applyMaxIOBConstraints(Constraint<Double> maxIob) {
+        if (lowSuspendOnlyLoopEnforcedUntil > System.currentTimeMillis())
+            maxIob.setIfSmaller(0d, String.format(MainApp.gs(R.string.limitingmaxiob), 0d, MainApp.gs(R.string.unsafeusage)), this);
+        return maxIob;
     }
 }
