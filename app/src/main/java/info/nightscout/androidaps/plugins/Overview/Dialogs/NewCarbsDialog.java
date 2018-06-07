@@ -303,21 +303,21 @@ public class NewCarbsDialog extends DialogFragment implements OnClickListener, C
                 if (currentProfile.getUnits().equals(Constants.MMOL)) {
                     unitLabel = "mmol/l";
                 }
-
-                actions.add(MainApp.gs(R.string.temptargetshort) + ": " + "<font color='" + MainApp.gc(R.color.high) + "'>" + DecimalFormatter.to1Decimal(activityTT) + " " + unitLabel + " (" + activityTTDuration + " min)</font>");
-
+                actions.add(MainApp.gs(R.string.temptargetshort) + ": " + "<font color='" + MainApp.gc(R.color.tempTargetConfirmation) + "'>" + DecimalFormatter.to1Decimal(activityTT) + " " + unitLabel + " (" + activityTTDuration + " min)</font>");
             }
             if (startEatingSoonTTCheckbox.isChecked()) {
                 if (currentProfile.getUnits().equals(Constants.MMOL)) {
-                    actions.add(MainApp.gs(R.string.temptargetshort) + ": " + "<font color='" + MainApp.gc(R.color.high) + "'>" + DecimalFormatter.to1Decimal(eatingSoonTT) + " mmol/l (" + eatingSoonTTDuration + " min)</font>");
-                } else
-                    actions.add(MainApp.gs(R.string.temptargetshort) + ": " + "<font color='" + MainApp.gc(R.color.high) + "'>" + DecimalFormatter.to0Decimal(eatingSoonTT) + " mg/dl (" + eatingSoonTTDuration + " min)</font>");
+                    actions.add(MainApp.gs(R.string.temptargetshort) + ": " + "<font color='" + MainApp.gc(R.color.tempTargetConfirmation) + "'>" + DecimalFormatter.to1Decimal(eatingSoonTT) + " mmol/l (" + eatingSoonTTDuration + " min)</font>");
+                } else {
+                    actions.add(MainApp.gs(R.string.temptargetshort) + ": " + "<font color='" + MainApp.gc(R.color.tempTargetConfirmation) + "'>" + DecimalFormatter.to0Decimal(eatingSoonTT) + " mg/dl (" + eatingSoonTTDuration + " min)</font>");
+                }
             }
             if (startHypoTTCheckbox.isChecked()) {
                 if (currentProfile.getUnits().equals(Constants.MMOL)) {
-                    actions.add(MainApp.gs(R.string.temptargetshort) + ": " + "<font color='" + MainApp.gc(R.color.high) + "'>" + DecimalFormatter.to1Decimal(hypoTT) + " mmol/l (" + hypoTTDuration + " min)</font>");
-                } else
-                    actions.add(MainApp.gs(R.string.temptargetshort) + ": " + "<font color='" + MainApp.gc(R.color.high) + "'>" + DecimalFormatter.to0Decimal(hypoTT) + " mg/dl (" + hypoTTDuration + " min)</font>");
+                    actions.add(MainApp.gs(R.string.temptargetshort) + ": " + "<font color='" + MainApp.gc(R.color.tempTargetConfirmation) + "'>" + DecimalFormatter.to1Decimal(hypoTT) + " mmol/l (" + hypoTTDuration + " min)</font>");
+                } else {
+                    actions.add(MainApp.gs(R.string.temptargetshort) + ": " + "<font color='" + MainApp.gc(R.color.tempTargetConfirmation) + "'>" + DecimalFormatter.to0Decimal(hypoTT) + " mg/dl (" + hypoTTDuration + " min)</font>");
+                }
             }
 
             int timeOffset = editTime.getValue().intValue();
@@ -330,10 +330,10 @@ public class NewCarbsDialog extends DialogFragment implements OnClickListener, C
                 actions.add(MainApp.gs(R.string.duration) + ": " + duration + MainApp.gs(R.string.shorthour));
             }
             if (carbs > 0) {
-                actions.add(MainApp.gs(R.string.carbs) + ": " + "<font color='" + MainApp.gc(R.color.colorCarbsButton) + "'>" + carbsAfterConstraints + "g" + "</font>");
+                actions.add(MainApp.gs(R.string.carbs) + ": " + "<font color='" + MainApp.gc(R.color.carbs) + "'>" + carbsAfterConstraints + "g" + "</font>");
             }
             if (!carbsAfterConstraints.equals(carbs)) {
-                actions.add("<font color='" + MainApp.gc(R.color.low) + "'>" + MainApp.gs(R.string.carbsconstraintapplied) + "</font>");
+                actions.add("<font color='" + MainApp.gc(R.color.warning) + "'>" + MainApp.gs(R.string.carbsconstraintapplied) + "</font>");
             }
             final String notes = notesEdit.getText().toString();
             if (!notes.isEmpty()) {

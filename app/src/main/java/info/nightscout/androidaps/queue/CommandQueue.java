@@ -75,7 +75,7 @@ import info.nightscout.androidaps.queue.commands.CommandTempBasalPercent;
 public class CommandQueue {
     private static Logger log = LoggerFactory.getLogger(CommandQueue.class);
 
-    private LinkedList<Command> queue = new LinkedList<>();
+    private final LinkedList<Command> queue = new LinkedList<>();
     protected Command performing;
 
     private QueueThread thread = null;
@@ -211,6 +211,12 @@ public class CommandQueue {
         notifyAboutNewCommand();
 
         return true;
+    }
+
+    public synchronized void cancelAllBoluses() {
+        removeAll(Command.CommandType.BOLUS);
+        removeAll(Command.CommandType.SMB_BOLUS);
+        ConfigBuilderPlugin.getActivePump().stopBolusDelivering();
     }
 
     // returns true if command is queued

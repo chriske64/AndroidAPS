@@ -136,7 +136,9 @@ public class GraphData {
         double lastBaseBasal = 0;
         double lastTempBasal = 0;
         for (long time = fromTime; time < toTime; time += 60 * 1000L) {
-            BasalData basalData = IobCobCalculatorPlugin.getPlugin().getBasalData(time);
+            Profile profile = MainApp.getConfigBuilder().getProfile(time);
+            if (profile == null) continue;
+            BasalData basalData = IobCobCalculatorPlugin.getPlugin().getBasalData(profile, time);
             double baseBasalValue = basalData.basal;
             double absoluteLineValue = baseBasalValue;
             double tempBasalValue = 0;
@@ -320,14 +322,13 @@ public class GraphData {
     }
 
     private double getNearestBg(long date) {
-        double bg = 0;
         for (int r = bgReadingsArray.size() - 1; r >= 0; r--) {
             BgReading reading = bgReadingsArray.get(r);
             if (reading.date > date) continue;
-            bg = Profile.fromMgdlToUnits(reading.value, units);
-            break;
+            return Profile.fromMgdlToUnits(reading.value, units);
         }
-        return bg;
+        return bgReadingsArray.size() > 0
+                ? Profile.fromMgdlToUnits(bgReadingsArray.get(0).value, units) : 0;
     }
 
     // scale in % of vertical size (like 0.3)

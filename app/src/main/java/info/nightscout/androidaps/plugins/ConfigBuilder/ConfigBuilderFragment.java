@@ -285,7 +285,7 @@ public class ConfigBuilderFragment extends SubscriberFragment {
                 holder.checkboxEnabled.setEnabled(false);
             }
 
-           if (plugin.pluginDescription.alwayVisible) {
+            if (plugin.pluginDescription.alwayVisible) {
                 holder.checkboxEnabled.setEnabled(false);
             }
 
@@ -330,7 +330,7 @@ public class ConfigBuilderFragment extends SubscriberFragment {
             }
 
             if (plugin.isEnabled(type)) {
-                view.setBackgroundColor(MainApp.sResources.getColor(R.color.configBuilderSelectedBackground));
+                view.setBackgroundColor(MainApp.gc(R.color.configBuilderSelectedBackground));
             }
 
             return view;
@@ -339,7 +339,7 @@ public class ConfigBuilderFragment extends SubscriberFragment {
 
     }
 
-    void onEnabledCategoryChanged(PluginBase changedPlugin, PluginType type) {
+    public static void processOnEnabledCategoryChanged(PluginBase changedPlugin, PluginType type) {
         ArrayList<PluginBase> pluginsInCategory = null;
         switch (type) {
             // Multiple selection allowed
@@ -391,8 +391,12 @@ public class ConfigBuilderFragment extends SubscriberFragment {
                 else
                     pluginsInCategory.get(0).setPluginEnabled(type, true);
             }
-            updateGUI();
         }
+    }
+
+    void onEnabledCategoryChanged(PluginBase changedPlugin, PluginType type) {
+        processOnEnabledCategoryChanged(changedPlugin, type);
+        updateGUI();
     }
 
     /****
