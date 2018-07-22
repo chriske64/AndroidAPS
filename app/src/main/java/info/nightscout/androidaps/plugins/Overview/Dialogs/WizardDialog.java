@@ -304,18 +304,18 @@ public class WizardDialog extends DialogFragment implements OnClickListener, Com
                 final Profile profile = MainApp.getConfigBuilder().getProfile();
 
                 if (profile != null && (calculatedTotalInsulin > 0d || calculatedCarbs > 0d)) {
-                    DecimalFormat formatNumber2decimalplaces = new DecimalFormat("0.00");
-
                     String confirmMessage = MainApp.gs(R.string.entertreatmentquestion);
 
                     Double insulinAfterConstraints = MainApp.getConstraintChecker().applyBolusConstraints(new Constraint<>(calculatedTotalInsulin)).value();
                     Integer carbsAfterConstraints = MainApp.getConstraintChecker().applyCarbsConstraints(new Constraint<>(calculatedCarbs)).value();
 
-                    confirmMessage += "<br/>" + MainApp.gs(R.string.bolus) + ": " + "<font color='" + MainApp.sResources.getColor(R.color.bolus) + "'>" + formatNumber2decimalplaces.format(insulinAfterConstraints) + "U" + "</font>";
-                    confirmMessage += "<br/>" + MainApp.gs(R.string.carbs) + ": " + carbsAfterConstraints + "g";
-
+                    if (insulinAfterConstraints > 0)
+                        confirmMessage += "<br/>" + MainApp.gs(R.string.bolus) + ": " + "<font color='" + MainApp.gc(R.color.bolus) + "'>" + DecimalFormatter.toPumpSupportedBolus(insulinAfterConstraints) + "U" + "</font>";
+                    if (carbsAfterConstraints > 0)
+                        confirmMessage += "<br/>" + MainApp.gs(R.string.carbs) + ": " + "<font color='" + MainApp.gc(R.color.carbs) + "'>" + carbsAfterConstraints + "g" + "</font>";
 
                     if (insulinAfterConstraints - calculatedTotalInsulin != 0 || !carbsAfterConstraints.equals(calculatedCarbs)) {
+                        okClicked = false;
                         AlertDialog.Builder builder = new AlertDialog.Builder(context);
                         builder.setTitle(MainApp.gs(R.string.treatmentdeliveryerror));
                         builder.setMessage(MainApp.gs(R.string.constraints_violation) + "\n" + MainApp.gs(R.string.changeyourinput));
@@ -389,7 +389,7 @@ public class WizardDialog extends DialogFragment implements OnClickListener, Com
                                             }
                                         });
                                     } else {
-                                        TreatmentsPlugin.getPlugin().addToHistoryTreatment(detailedBolusInfo);
+                                        TreatmentsPlugin.getPlugin().addToHistoryTreatment(detailedBolusInfo, false);
                                     }
                                     FabricPrivacy.getInstance().logCustom(new CustomEvent("Wizard"));
                                 }
@@ -409,9 +409,9 @@ public class WizardDialog extends DialogFragment implements OnClickListener, Com
 
     private void initDialog() {
         Profile profile = MainApp.getConfigBuilder().getProfile();
-        ProfileStore profileStore = MainApp.getConfigBuilder().getActiveProfileInterface().getProfile();
+        ProfileStore profileStore = MainApp.getConfigBuilder().getActiveProfileInterface() != null ? MainApp.getConfigBuilder().getActiveProfileInterface().getProfile() : null;
 
-        if (profile == null) {
+        if (profile == null || profileStore == null) {
             ToastUtils.showToastInUiThread(MainApp.instance().getApplicationContext(), MainApp.gs(R.string.noprofile));
             dismiss();
             return;

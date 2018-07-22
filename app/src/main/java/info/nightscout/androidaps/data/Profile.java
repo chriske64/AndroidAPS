@@ -180,6 +180,10 @@ public class Profile {
     }
 
     public synchronized boolean isValid(String from) {
+        return isValid(from, true);
+    }
+
+    public synchronized boolean isValid(String from, boolean notify) {
         if (!isValid)
             return false;
         if (!isValidated) {
@@ -198,6 +202,12 @@ public class Profile {
             if (targetHigh_v == null)
                 targetHigh_v = convertToSparseArray(targetHigh);
             validate(targetHigh_v);
+
+            if (targetHigh_v.size() != targetLow_v.size()) isValid = false;
+            else for (int i = 0; i < targetHigh_v.size(); i++)
+                if (targetHigh_v.valueAt(i) < targetLow_v.valueAt(i))
+                    isValid = false;
+
             isValidated = true;
         }
 
@@ -207,7 +217,7 @@ public class Profile {
             if (pump != null && !pump.getPumpDescription().is30minBasalRatesCapable) {
                 for (int index = 0; index < basal_v.size(); index++) {
                     long secondsFromMidnight = basal_v.keyAt(index);
-                    if (secondsFromMidnight % 3600 != 0) {
+                    if (notify && secondsFromMidnight % 3600 != 0) {
                         Notification notification = new Notification(Notification.BASAL_PROFILE_NOT_ALIGNED_TO_HOURS, String.format(MainApp.gs(R.string.basalprofilenotaligned), from), Notification.NORMAL);
                         MainApp.bus().post(new EventNewNotification(notification));
                     }
@@ -220,7 +230,12 @@ public class Profile {
                 for (int i = 0; i < basal_v.size(); i++) {
                     if (basal_v.valueAt(i) < description.basalMinimumRate) {
                         basal_v.setValueAt(i, description.basalMinimumRate);
-                        sendBelowMinimumNotification(from);
+                        if (notify)
+                            sendBelowMinimumNotification(from);
+                    } else if (basal_v.valueAt(i) > description.basalMaximumRate) {
+                        basal_v.setValueAt(i, description.basalMaximumRate);
+                        if (notify)
+                            sendAboveMaximumNotification(from);
                     }
                 }
             } else {
@@ -230,12 +245,16 @@ public class Profile {
                 isValidated = false;
             }
 
-         }
+        }
         return isValid;
     }
 
     protected void sendBelowMinimumNotification(String from) {
-        MainApp.bus().post(new EventNewNotification(new Notification(Notification.MINIMAL_BASAL_VALUE_REPLACED,  String.format(MainApp.gs(R.string.minimalbasalvaluereplaced), from), Notification.NORMAL)));
+        MainApp.bus().post(new EventNewNotification(new Notification(Notification.MINIMAL_BASAL_VALUE_REPLACED, String.format(MainApp.gs(R.string.minimalbasalvaluereplaced), from), Notification.NORMAL)));
+    }
+
+    protected void sendAboveMaximumNotification(String from) {
+        MainApp.bus().post(new EventNewNotification(new Notification(Notification.MAXIMUM_BASAL_VALUE_REPLACED, String.format(MainApp.gs(R.string.maximumbasalvaluereplaced), from), Notification.NORMAL)));
     }
 
     private void validate(LongSparseArray array) {
@@ -439,12 +458,12 @@ public class Profile {
         return ret;
     }
 
-    public double getTarget(){
-        return  getTarget(secondsFromMidnight(System.currentTimeMillis()));
+    public double getTarget() {
+        return getTarget(secondsFromMidnight(System.currentTimeMillis()));
     }
 
     protected double getTarget(int timeAsSeconds) {
-        return (getTargetLowTimeFromMidnight(timeAsSeconds) + getTargetHighTimeFromMidnight(timeAsSeconds))/2;
+        return (getTargetLowTimeFromMidnight(timeAsSeconds) + getTargetHighTimeFromMidnight(timeAsSeconds)) / 2;
     }
 
     public double getTargetLow() {
@@ -537,6 +556,12 @@ public class Profile {
     public static String toUnitsString(Double valueInMgdl, Double valueInMmol, String units) {
         if (units.equals(Constants.MGDL)) return DecimalFormatter.to0Decimal(valueInMgdl);
         else return DecimalFormatter.to1Decimal(valueInMmol);
+    }
+
+    public static String toSignedUnitsString(Double valueInMgdl, Double valueInMmol, String units) {
+        if (units.equals(Constants.MGDL))
+            return (valueInMgdl > 0 ? "+" : "") + DecimalFormatter.to0Decimal(valueInMgdl);
+        else return (valueInMmol > 0 ? "+" : "") + DecimalFormatter.to1Decimal(valueInMmol);
     }
 
     // targets are stored in mg/dl but profile vary
